@@ -1,0 +1,19 @@
+{
+  "name": "TEDxACEEC — Bedrock & Beyond",
+  "short_name": "TEDxACEEC",
+  "description": "An independently organized TEDx event at Acharya College of Engineering. Exploring the resilient foundations of our past and the limitless possibilities shaping our future.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#eb0028",
+  "orientation": "portrait-primary",
+  "categories": ["events", "education", "entertainment"],
+  "lang": "en-US",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}
