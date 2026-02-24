@@ -25,11 +25,12 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Hide scrollbars completely while keeping functionality */
-::-webkit-scrollbar {
-  display: none;
-}
-* {
+/* Hide scrollbars completely while keeping scroll functionality */
+html, body {
+  -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE 10+ */
+}
+
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
 }

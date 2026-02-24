@@ -117,10 +117,16 @@ export default function CinematicHero() {
 
   return (
     <div ref={containerRef} className="h-[400vh] bg-black">
-      <div className="sticky top-0 h-screen w-full overflow-hidden">
+      <div
+        className="sticky top-0 h-screen w-full overflow-hidden"
+        style={{
+          WebkitMaskImage: 'linear-gradient(to top, transparent 0%, black 15%, black 100%)',
+          maskImage: 'linear-gradient(to top, transparent 0%, black 15%, black 100%)'
+        }}
+      >
         {/* Cinematic Text Overlay */}
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center pointer-events-none text-center">
-          <h1 className="text-4xl md:text-7xl lg:text-8xl font-black tracking-[0.2em] text-white uppercase drop-shadow-[0_0_20px_rgba(0,0,0,0.8)] font-sans">
+          <h1 className="text-4xl md:text-7xl lg:text-8xl font-black tracking-[0.2em] text-white uppercase drop-shadow-[0_0_40px_rgba(0,0,0,1)] font-sans">
             UNBREAKABLE
           </h1>
           <p className="mt-6 md:mt-8 text-xs md:text-sm lg:text-lg tracking-[0.3em] text-white/80 uppercase font-sans font-medium drop-shadow-md">
@@ -131,7 +137,7 @@ export default function CinematicHero() {
         {/* The target canvas for drawing frames */}
         <canvas
           ref={canvasRef}
-          className="block w-full h-full"
+          className="block w-full h-full object-cover"
         />
       </div>
     </div>
