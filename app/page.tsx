@@ -125,13 +125,23 @@ export default function CinematicHero() {
         }}
       >
         {/* Cinematic Text Overlay */}
-        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center pointer-events-none text-center">
-          <h1 className="text-4xl md:text-7xl lg:text-8xl font-black tracking-[0.2em] text-white uppercase drop-shadow-[0_0_40px_rgba(0,0,0,1)] font-sans">
-            UNBREAKABLE
-          </h1>
-          <p className="mt-6 md:mt-8 text-xs md:text-sm lg:text-lg tracking-[0.3em] text-white/80 uppercase font-sans font-medium drop-shadow-md">
-            Scroll to descend
-          </p>
+        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center pointer-events-none text-center bg-radial from-transparent via-black/20 to-black/60">
+          <div className="flex flex-col items-center gap-4 px-4 mix-blend-plus-lighter">
+            <span className="text-red-600 font-bold tracking-[0.3em] uppercase text-sm md:text-base drop-shadow-lg">TEDxACEEC</span>
+            <h1 className="text-5xl md:text-8xl lg:text-9xl font-black tracking-tighter text-white uppercase drop-shadow-[0_4px_32px_rgba(0,0,0,0.8)] font-sans leading-none">
+              Bedrock &
+              <br />
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-white via-gray-300 to-gray-500">Beyond</span>
+            </h1>
+            <p className="max-w-xl mt-6 md:mt-8 text-sm md:text-lg lg:text-xl text-white/90 font-sans font-light drop-shadow-md leading-relaxed">
+              Exploring the resilient foundations of our past and the limitless possibilities shaping our future.
+            </p>
+          </div>
+
+          <div className="absolute bottom-12 flex flex-col items-center gap-3 animate-bounce">
+            <span className="text-[10px] md:text-xs tracking-[0.4em] text-white/50 uppercase font-sans font-medium">Scroll to Descend</span>
+            <div className="w-px h-8 bg-linear-to-b from-white/50 to-transparent"></div>
+          </div>
         </div>
 
         {/* The target canvas for drawing frames */}
