@@ -1,65 +1,139 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger, useGSAP);
+}
+
+const frameCount = 150;
+
+const currentFrame = (index: number) =>
+  `/images/hero_sequence/Comp 1_${index.toString().padStart(5, "0")}.webp`;
+
+export default function CinematicHero() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const imagesRef = useRef<HTMLImageElement[]>([]);
+  const renderRef = useRef({ frame: 0 });
+
+  // Preload images into the array
+  useEffect(() => {
+    // Only preload if we haven't already
+    if (imagesRef.current.length === 0) {
+      for (let i = 0; i < frameCount; i++) {
+        const img = new Image();
+        img.src = currentFrame(i);
+        imagesRef.current.push(img);
+      }
+    }
+  }, []);
+
+  const render = React.useCallback(() => {
+    const canvas = canvasRef.current;
+    const context = canvas?.getContext("2d");
+    if (!canvas || !context || imagesRef.current.length === 0) return;
+
+    const frameIndex = Math.round(renderRef.current.frame);
+    const img = imagesRef.current[frameIndex];
+    if (!img) return;
+
+    const drawImageCover = () => {
+      const hRatio = canvas.width / img.width;
+      const vRatio = canvas.height / img.height;
+      const ratio = Math.max(hRatio, vRatio);
+      const centerShift_x = (canvas.width - img.width * ratio) / 2;
+      const centerShift_y = (canvas.height - img.height * ratio) / 2;
+
+      context.clearRect(0, 0, canvas.width, canvas.height);
+      context.drawImage(
+        img,
+        0,
+        0,
+        img.width,
+        img.height,
+        centerShift_x,
+        centerShift_y,
+        img.width * ratio,
+        img.height * ratio
+      );
+    };
+
+    if (img.complete) {
+      drawImageCover();
+    } else {
+      img.onload = drawImageCover;
+    }
+  }, []);
+
+  // Handle Resize Events
+  useEffect(() => {
+    const handleResize = () => {
+      const canvas = canvasRef.current;
+      if (canvas) {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        render(); // redraw the current frame adjusting to new canvas size
+      }
+    };
+
+    handleResize(); // Initial sizing on mount
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [render]);
+
+  // GSAP Animation Logic
+  useGSAP(
+    () => {
+      // Attempt to ensure first frame draws immediately
+      const firstImg = imagesRef.current[0];
+      if (firstImg && !firstImg.complete) {
+        firstImg.addEventListener("load", render, { once: true });
+      } else {
+        render();
+      }
+
+      gsap.to(renderRef.current, {
+        frame: frameCount - 1,
+        snap: "frame",
+        ease: "none",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 0.5, // 0.5 seconds to catch up, smooth scrubbing effect
+        },
+        onUpdate: () => {
+          requestAnimationFrame(render);
+        },
+      });
+    },
+    { scope: containerRef }
+  );
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div ref={containerRef} className="h-[400vh] bg-black">
+      <div className="sticky top-0 h-screen w-full overflow-hidden">
+        {/* Cinematic Text Overlay */}
+        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center pointer-events-none text-center">
+          <h1 className="text-4xl md:text-7xl lg:text-8xl font-black tracking-[0.2em] text-white uppercase drop-shadow-[0_0_20px_rgba(0,0,0,0.8)] font-sans">
+            UNBREAKABLE
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="mt-6 md:mt-8 text-xs md:text-sm lg:text-lg tracking-[0.3em] text-white/80 uppercase font-sans font-medium drop-shadow-md">
+            Scroll to descend
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+
+        {/* The target canvas for drawing frames */}
+        <canvas
+          ref={canvasRef}
+          className="block w-full h-full"
+        />
+      </div>
     </div>
   );
 }
