@@ -256,8 +256,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" dir="ltr">
+    <html lang="en" dir="ltr" className="dark" suppressHydrationWarning>
       <head>
+        {/* Theme initialization — runs before first paint to prevent flash */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='light'){document.documentElement.classList.remove('dark')}else{document.documentElement.classList.add('dark')}}catch(e){}})()`,
+          }}
+        />
+
         {/* JSON-LD Structured Data */}
         <script
           type="application/ld+json"
@@ -272,7 +279,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased selection:bg-white/30 overflow-x-hidden`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden bg-background text-foreground selection:bg-red-500/20 dark:selection:bg-white/30 transition-colors duration-300`}
       >
         {/* Accessibility: skip to main content */}
         <a
