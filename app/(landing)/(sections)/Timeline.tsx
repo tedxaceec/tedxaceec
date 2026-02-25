@@ -39,13 +39,9 @@ const Timeline = () => {
     return (
         <section
             id="timeline"
-            className="relative w-full min-h-screen py-24 bg-black overflow-hidden flex flex-col items-center"
+            className="relative w-full min-h-screen py-24 overflow-hidden flex flex-col items-center"
             ref={containerRef}
         >
-            {/* Background glowing gradients */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-red-600/20 blur-[120px] rounded-[100%] pointer-events-none" />
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[500px] bg-red-900/10 blur-[150px] rounded-[100%] pointer-events-none" />
-
             <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
