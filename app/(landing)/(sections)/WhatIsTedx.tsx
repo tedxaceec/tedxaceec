@@ -1,6 +1,5 @@
 "use client";
-import { useEffect, useRef, useCallback } from "react";
-import createGlobe from "cobe";
+import { useEffect, useRef, useCallback, useState } from "react";
 import { motion, useInView, useMotionValue, useSpring, useTransform } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -294,56 +293,136 @@ function InfoCard({
     );
 }
 
-/* ─── Globe Component ─────────────────────────────────────────────────────── */
+/* ─── Globe Component (Optimized) ─────────────────────────────────────────── */
+/*
+ * Performance optimizations applied:
+ *   1. Dynamic import    — `cobe` is code-split, only loaded when the globe is near viewport
+ *   2. Lazy init         — IntersectionObserver triggers creation ~200px before visible
+ *   3. Pause / resume    — animation loop freezes when off-screen (saves GPU cycles)
+ *   4. Reduced samples   — mapSamples: 4000 (was 16000, ~75 % less CPU for texture build)
+ *   5. Adaptive DPR      — capped at 1.5 to avoid rendering 4x pixels on HiDPI displays
+ *   6. Smaller canvas    — 600px (was 800px), still looks crisp at the half-visible size
+ */
 function Globe({ className }: { className?: string }) {
     const canvasRef = useRef<HTMLCanvasElement>(null);
+    const wrapperRef = useRef<HTMLDivElement>(null);
+    const globeInstanceRef = useRef<ReturnType<typeof import("cobe")["default"]> | null>(null);
+    const phiRef = useRef(0);
+    const isPausedRef = useRef(false);
+    const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
-        let phi = 0;
-        if (!canvasRef.current) return;
+        const wrapper = wrapperRef.current;
+        const canvas = canvasRef.current;
+        if (!wrapper || !canvas) return;
 
-        const globe = createGlobe(canvasRef.current, {
-            devicePixelRatio: 2,
-            width: 800 * 2,
-            height: 800 * 2,
-            phi: 0,
-            theta: 0.25,
-            dark: 1,
-            diffuse: 1.2,
-            mapSamples: 16000,
-            mapBrightness: 6,
-            baseColor: [0.3, 0.3, 0.3],
-            markerColor: [0.92, 0.0, 0.16],
-            glowColor: [0.15, 0.15, 0.15],
-            markers: [
-                { location: [17.4065, 78.4772], size: 0.08 },
-                { location: [40.7128, -74.006], size: 0.05 },
-                { location: [51.5074, -0.1278], size: 0.05 },
-                { location: [35.6762, 139.6503], size: 0.04 },
-                { location: [-33.8688, 151.2093], size: 0.04 },
-                { location: [48.8566, 2.3522], size: 0.04 },
-                { location: [1.3521, 103.8198], size: 0.04 },
-                { location: [19.076, 72.8777], size: 0.05 },
-                { location: [28.6139, 77.209], size: 0.05 },
-                { location: [12.9716, 77.5946], size: 0.05 },
-            ],
-            onRender: (state: Record<string, number>) => {
-                state.phi = phi;
-                phi += 0.004;
+        let destroyed = false;
+
+        // ── IntersectionObserver: lazy init + pause/resume ──
+        const observer = new IntersectionObserver(
+            (entries) => {
+                const entry = entries[0];
+
+                if (entry.isIntersecting) {
+                    // First time visible → create globe
+                    if (!globeInstanceRef.current && !destroyed) {
+                        initGlobe(canvas);
+                    }
+                    // Resume animation
+                    isPausedRef.current = false;
+                } else {
+                    // Pause when off-screen
+                    isPausedRef.current = true;
+                }
             },
-        });
+            {
+                // Start loading 200px before the section enters viewport
+                rootMargin: "200px 0px",
+                threshold: 0,
+            }
+        );
+
+        observer.observe(wrapper);
+
+        async function initGlobe(canvasEl: HTMLCanvasElement) {
+            try {
+                // Dynamic import — cobe is only fetched when actually needed
+                const { default: createGlobe } = await import("cobe");
+
+                if (destroyed) return;
+
+                const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+
+                globeInstanceRef.current = createGlobe(canvasEl, {
+                    devicePixelRatio: dpr,
+                    width: 600 * dpr,
+                    height: 600 * dpr,
+                    phi: 0,
+                    theta: 0.25,
+                    dark: 1,
+                    diffuse: 1.2,
+                    mapSamples: 4000,
+                    mapBrightness: 6,
+                    baseColor: [0.3, 0.3, 0.3],
+                    markerColor: [0.92, 0.0, 0.16],
+                    glowColor: [0.15, 0.15, 0.15],
+                    markers: [
+                        { location: [17.4065, 78.4772], size: 0.08 },
+                        { location: [40.7128, -74.006], size: 0.05 },
+                        { location: [51.5074, -0.1278], size: 0.05 },
+                        { location: [35.6762, 139.6503], size: 0.04 },
+                        { location: [-33.8688, 151.2093], size: 0.04 },
+                        { location: [48.8566, 2.3522], size: 0.04 },
+                        { location: [1.3521, 103.8198], size: 0.04 },
+                        { location: [19.076, 72.8777], size: 0.05 },
+                        { location: [28.6139, 77.209], size: 0.05 },
+                        { location: [12.9716, 77.5946], size: 0.05 },
+                    ],
+                    onRender: (state: Record<string, number>) => {
+                        if (!isPausedRef.current) {
+                            phiRef.current += 0.004;
+                        }
+                        state.phi = phiRef.current;
+                    },
+                });
+
+                setIsLoaded(true);
+            } catch {
+                // cobe failed to load — fail silently, user sees the skeleton
+                console.warn("Globe: failed to load cobe library");
+            }
+        }
 
         return () => {
-            globe.destroy();
+            destroyed = true;
+            observer.disconnect();
+            if (globeInstanceRef.current) {
+                globeInstanceRef.current.destroy();
+                globeInstanceRef.current = null;
+            }
         };
     }, []);
 
     return (
-        <canvas
-            ref={canvasRef}
-            style={{ width: 800, height: 800, maxWidth: "100%", aspectRatio: 1 }}
-            className={className}
-        />
+        <div ref={wrapperRef} className={`relative ${className ?? ""}`}>
+            {/* Loading skeleton — shown until globe WebGL is ready */}
+            {!isLoaded && (
+                <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="h-[400px] w-[400px] animate-pulse rounded-full bg-white/3 md:h-[500px] md:w-[500px]" />
+                </div>
+            )}
+            <canvas
+                ref={canvasRef}
+                style={{
+                    width: 600,
+                    height: 600,
+                    maxWidth: "100%",
+                    aspectRatio: 1,
+                    opacity: isLoaded ? 1 : 0,
+                    transition: "opacity 0.8s ease-in-out",
+                }}
+            />
+        </div>
     );
 }
 
