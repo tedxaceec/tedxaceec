@@ -1,7 +1,11 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useCallback } from "react";
 import createGlobe from "cobe";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useMotionValue, useSpring, useTransform } from "framer-motion";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 /* ─── Animated Counter ────────────────────────────────────────────────────── */
 function AnimatedStat({
@@ -21,7 +25,6 @@ function AnimatedStat({
 
     useEffect(() => {
         if (!isInView || !counterRef.current) return;
-        let start = 0;
         const end = value;
         const duration = 2000;
         const startTime = performance.now();
@@ -29,10 +32,9 @@ function AnimatedStat({
         const timer = requestAnimationFrame(function animate(now) {
             const elapsed = now - startTime;
             const progress = Math.min(elapsed / duration, 1);
-            // easeOutExpo
             const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
-            start = Math.floor(eased * end);
-            if (counterRef.current) counterRef.current.textContent = `${start}${suffix}`;
+            const current = Math.floor(eased * end);
+            if (counterRef.current) counterRef.current.textContent = `${current}${suffix}`;
             if (progress < 1) requestAnimationFrame(animate);
         });
 
@@ -61,42 +63,239 @@ function AnimatedStat({
     );
 }
 
-/* ─── Fade-In Card ────────────────────────────────────────────────────────── */
+/* ─── Interactive 3D Tilt Card with GSAP ──────────────────────────────────── */
 function InfoCard({
     icon,
     title,
     description,
-    delay = 0,
+    index = 0,
 }: {
     icon: React.ReactNode;
     title: string;
     description: string;
-    delay?: number;
+    index?: number;
 }) {
+    const cardRef = useRef<HTMLDivElement>(null);
+    const glowRef = useRef<HTMLDivElement>(null);
+    const borderRef = useRef<HTMLDivElement>(null);
+    const contentRef = useRef<HTMLDivElement>(null);
+
+    // Framer Motion values for smooth tilt
+    const mouseX = useMotionValue(0);
+    const mouseY = useMotionValue(0);
+
+    const springConfig = { damping: 25, stiffness: 200 };
+    const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [8, -8]), springConfig);
+    const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-8, 8]), springConfig);
+
+    // GSAP scroll-triggered entrance
+    useEffect(() => {
+        const card = cardRef.current;
+        if (!card) return;
+
+        // Set initial state
+        gsap.set(card, {
+            opacity: 0,
+            y: 80,
+            scale: 0.92,
+        });
+
+        // Animated border shimmer
+        if (borderRef.current) {
+            gsap.to(borderRef.current, {
+                backgroundPosition: "200% 0",
+                duration: 3,
+                ease: "none",
+                repeat: -1,
+            });
+        }
+
+        // Scroll-triggered entrance
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: card,
+                start: "top 85%",
+                end: "top 60%",
+                toggleActions: "play none none none",
+            },
+        });
+
+        tl.to(card, {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.9,
+            delay: index * 0.15,
+            ease: "power3.out",
+        });
+
+        // Parallax content float on scroll
+        if (contentRef.current) {
+            gsap.to(contentRef.current, {
+                y: -10,
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: 1.5,
+                },
+            });
+        }
+
+        return () => {
+            ScrollTrigger.getAll().forEach((st) => {
+                if (st.trigger === card) st.kill();
+            });
+        };
+    }, [index]);
+
+    const handleMouseMove = useCallback(
+        (e: React.MouseEvent<HTMLDivElement>) => {
+            const card = cardRef.current;
+            const glow = glowRef.current;
+            if (!card) return;
+
+            const rect = card.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width - 0.5;
+            const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+            mouseX.set(x);
+            mouseY.set(y);
+
+            // Move the glow to follow cursor
+            if (glow) {
+                gsap.to(glow, {
+                    x: x * rect.width * 0.6,
+                    y: y * rect.height * 0.6,
+                    duration: 0.4,
+                    ease: "power2.out",
+                });
+            }
+        },
+        [mouseX, mouseY]
+    );
+
+    const handleMouseLeave = useCallback(() => {
+        mouseX.set(0);
+        mouseY.set(0);
+
+        if (glowRef.current) {
+            gsap.to(glowRef.current, {
+                x: 0,
+                y: 0,
+                opacity: 0,
+                duration: 0.5,
+                ease: "power2.out",
+            });
+        }
+    }, [mouseX, mouseY]);
+
+    const handleMouseEnter = useCallback(() => {
+        if (glowRef.current) {
+            gsap.to(glowRef.current, {
+                opacity: 1,
+                duration: 0.3,
+            });
+        }
+        // Scale bump on hover
+        if (cardRef.current) {
+            gsap.to(cardRef.current, {
+                scale: 1.02,
+                duration: 0.3,
+                ease: "power2.out",
+            });
+        }
+    }, []);
+
+    const handleMouseLeaveScale = useCallback(() => {
+        if (cardRef.current) {
+            gsap.to(cardRef.current, {
+                scale: 1,
+                duration: 0.4,
+                ease: "power2.out",
+            });
+        }
+        handleMouseLeave();
+    }, [handleMouseLeave]);
+
     return (
         <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.7, delay, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="relative overflow-hidden rounded-2xl border border-white/6 bg-white/3 p-6 backdrop-blur-lg transition-all duration-500 hover:border-red-500/20 hover:bg-white/5 hover:shadow-[0_0_40px_-12px_rgba(235,0,40,0.15)] md:p-8"
+            ref={cardRef}
+            style={{
+                rotateX,
+                rotateY,
+                transformPerspective: 1200,
+                transformStyle: "preserve-3d",
+            }}
+            onMouseMove={handleMouseMove}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeaveScale}
+            className="group relative cursor-default"
         >
-            {/* Subtle gradient glow on hover */}
-            <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100 bg-linear-to-br from-red-500/5 via-transparent to-transparent" />
+            {/* Animated gradient border */}
+            <div
+                ref={borderRef}
+                className="absolute -inset-px rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                style={{
+                    background:
+                        "linear-gradient(90deg, transparent, rgba(235,0,40,0.3), rgba(235,0,40,0.6), rgba(235,0,40,0.3), transparent)",
+                    backgroundSize: "200% 100%",
+                }}
+            />
 
-            <div className="relative z-10">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-red-500/10 text-red-400 ring-1 ring-red-500/20">
-                    {icon}
+            {/* Card body */}
+            <div className="relative overflow-hidden rounded-2xl border border-white/6 bg-white/3 p-6 backdrop-blur-xl md:p-8">
+                {/* Cursor-following glow */}
+                <div
+                    ref={glowRef}
+                    className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-40 w-40 rounded-full opacity-0"
+                    style={{
+                        background:
+                            "radial-gradient(circle, rgba(235,0,40,0.15) 0%, rgba(235,0,40,0.05) 40%, transparent 70%)",
+                    }}
+                />
+
+                {/* Content */}
+                <div ref={contentRef} className="relative z-10" style={{ transform: "translateZ(30px)" }}>
+                    {/* Icon with animated ring */}
+                    <div className="relative mb-5">
+                        <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-red-500/10 text-red-400 ring-1 ring-red-500/20 transition-all duration-500 group-hover:bg-red-500/15 group-hover:ring-red-500/40 group-hover:shadow-[0_0_20px_-4px_rgba(235,0,40,0.3)]">
+                            {icon}
+                        </div>
+                        {/* Pulse ring on hover */}
+                        <div className="absolute inset-0 flex h-14 w-14 items-center justify-center">
+                            <div className="h-14 w-14 rounded-xl border border-red-500/0 transition-all duration-700 group-hover:h-18 group-hover:w-18 group-hover:border-red-500/10 group-hover:opacity-0" />
+                        </div>
+                    </div>
+
+                    <h3 className="mb-2 text-lg font-semibold text-white transition-colors duration-300 group-hover:text-red-50 md:text-xl">
+                        {title}
+                    </h3>
+                    <p className="text-sm leading-relaxed text-neutral-400 transition-colors duration-300 group-hover:text-neutral-300 md:text-base">
+                        {description}
+                    </p>
+
+                    {/* Animated arrow on hover */}
+                    <div className="mt-4 flex items-center gap-2 text-sm font-medium text-red-400/0 transition-all duration-500 group-hover:text-red-400">
+                        <span>Learn more</span>
+                        <svg
+                            className="h-4 w-4 -translate-x-2 transition-transform duration-500 group-hover:translate-x-0"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            strokeWidth={2}
+                        >
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </div>
                 </div>
-                <h3 className="mb-2 text-lg font-semibold text-white md:text-xl">{title}</h3>
-                <p className="text-sm leading-relaxed text-neutral-400 md:text-base">{description}</p>
             </div>
         </motion.div>
     );
 }
 
 /* ─── Globe Component ─────────────────────────────────────────────────────── */
-export function Globe({ className }: { className?: string }) {
+function Globe({ className }: { className?: string }) {
     const canvasRef = useRef<HTMLCanvasElement>(null);
 
     useEffect(() => {
@@ -105,8 +304,8 @@ export function Globe({ className }: { className?: string }) {
 
         const globe = createGlobe(canvasRef.current, {
             devicePixelRatio: 2,
-            width: 600 * 2,
-            height: 600 * 2,
+            width: 800 * 2,
+            height: 800 * 2,
             phi: 0,
             theta: 0.25,
             dark: 1,
@@ -117,21 +316,20 @@ export function Globe({ className }: { className?: string }) {
             markerColor: [0.92, 0.0, 0.16],
             glowColor: [0.15, 0.15, 0.15],
             markers: [
-                // TEDx events around the world
-                { location: [17.4065, 78.4772], size: 0.08 }, // Hyderabad (Home!)
-                { location: [40.7128, -74.006], size: 0.05 },  // New York
-                { location: [51.5074, -0.1278], size: 0.05 },  // London
-                { location: [35.6762, 139.6503], size: 0.04 }, // Tokyo
-                { location: [-33.8688, 151.2093], size: 0.04 }, // Sydney
-                { location: [48.8566, 2.3522], size: 0.04 },   // Paris
-                { location: [1.3521, 103.8198], size: 0.04 },  // Singapore
-                { location: [19.076, 72.8777], size: 0.05 },   // Mumbai
-                { location: [28.6139, 77.209], size: 0.05 },   // Delhi
-                { location: [12.9716, 77.5946], size: 0.05 },  // Bangalore
+                { location: [17.4065, 78.4772], size: 0.08 },
+                { location: [40.7128, -74.006], size: 0.05 },
+                { location: [51.5074, -0.1278], size: 0.05 },
+                { location: [35.6762, 139.6503], size: 0.04 },
+                { location: [-33.8688, 151.2093], size: 0.04 },
+                { location: [48.8566, 2.3522], size: 0.04 },
+                { location: [1.3521, 103.8198], size: 0.04 },
+                { location: [19.076, 72.8777], size: 0.05 },
+                { location: [28.6139, 77.209], size: 0.05 },
+                { location: [12.9716, 77.5946], size: 0.05 },
             ],
             onRender: (state: Record<string, number>) => {
                 state.phi = phi;
-                phi += 0.005;
+                phi += 0.004;
             },
         });
 
@@ -143,7 +341,7 @@ export function Globe({ className }: { className?: string }) {
     return (
         <canvas
             ref={canvasRef}
-            style={{ width: 600, height: 600, maxWidth: "100%", aspectRatio: 1 }}
+            style={{ width: 800, height: 800, maxWidth: "100%", aspectRatio: 1 }}
             className={className}
         />
     );
@@ -180,19 +378,49 @@ function GlobalIcon() {
 
 /* ─── Main Section ────────────────────────────────────────────────────────── */
 export default function WhatIsTedx() {
+    const sectionRef = useRef<HTMLElement>(null);
+
+    // GSAP parallax for the globe on scroll
+    useEffect(() => {
+        const section = sectionRef.current;
+        if (!section) return;
+
+        const globeWrapper = section.querySelector<HTMLElement>("#globe-wrapper");
+        if (globeWrapper) {
+            gsap.fromTo(
+                globeWrapper,
+                { y: 60 },
+                {
+                    y: -60,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: section,
+                        start: "top bottom",
+                        end: "bottom top",
+                        scrub: 1.2,
+                    },
+                }
+            );
+        }
+
+        return () => {
+            ScrollTrigger.getAll().forEach((st) => {
+                if (st.trigger === section) st.kill();
+            });
+        };
+    }, []);
+
     return (
         <section
+            ref={sectionRef}
             id="what-is-tedx"
             className="relative overflow-hidden py-24 md:py-32 lg:py-40"
         >
             {/* ── Background layers ───────────────────────────────────────── */}
             <div className="pointer-events-none absolute inset-0">
-                {/* Top gradient fade */}
                 <div className="absolute inset-x-0 top-0 h-32 bg-linear-to-b from-background to-transparent" />
-                {/* Bottom gradient fade */}
                 <div className="absolute inset-x-0 bottom-0 h-32 bg-linear-to-t from-background to-transparent" />
-                {/* Radial glow behind globe */}
-                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[800px] w-[800px] rounded-full bg-red-500/3 blur-[120px]" />
+                <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/3 h-[900px] w-[900px] rounded-full bg-red-500/3 blur-[150px]" />
             </div>
 
             <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -203,7 +431,7 @@ export default function WhatIsTedx() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
-                        className="mb-4 inline-flex items-center gap-2 rounded-full border border-red-500/20 bg-red-500/10 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-red-400 bg-linear-to-r from-red-500/10 to-red-500/5"
+                        className="mb-4 inline-flex items-center gap-2 rounded-full border border-red-500/20 bg-linear-to-r from-red-500/10 to-red-500/5 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-red-400"
                     >
                         <span className="h-1.5 w-1.5 rounded-full bg-red-400 animate-pulse" aria-hidden="true" />
                         Ideas Worth Spreading
@@ -241,41 +469,48 @@ export default function WhatIsTedx() {
                     </motion.p>
                 </div>
 
-                {/* ── Globe + Explainer Grid ──────────────────────────────── */}
-                <div className="mt-20 grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-                    {/* Globe */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1, ease: "easeOut" }}
-                        className="relative flex items-center justify-center"
+                {/* ── Globe (half-visible) + Cards Grid ───────────────────── */}
+                <div className="relative mt-20 lg:mt-28">
+                    {/* Globe — pinned to the left, only right half visible */}
+                    <div
+                        id="globe-wrapper"
+                        className="pointer-events-none absolute -left-[300px] top-1/2 -translate-y-1/2 z-0 hidden lg:block"
                     >
-                        {/* Glow ring around globe */}
-                        <div className="absolute h-[420px] w-[420px] rounded-full border border-white/4 md:h-[520px] md:w-[520px]" />
-                        <div className="absolute h-[340px] w-[340px] rounded-full border border-white/3 md:h-[440px] md:w-[440px]" />
-                        <Globe className="relative z-10" />
-                    </motion.div>
+                        {/* Concentric rings */}
+                        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[700px] w-[700px] rounded-full border border-white/4" />
+                        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[580px] w-[580px] rounded-full border border-white/3" />
+                        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[460px] w-[460px] rounded-full border border-white/2" />
+                        <Globe />
+                    </div>
 
-                    {/* Info Cards */}
-                    <div className="flex flex-col gap-4 md:gap-5">
+                    {/* Mobile globe — centered, top-cropped */}
+                    <div className="relative mx-auto mb-12 flex h-[280px] items-end justify-center overflow-hidden lg:hidden">
+                        <div className="absolute -bottom-[320px]">
+                            <Globe />
+                        </div>
+                        {/* Fade-out edges */}
+                        <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-background via-transparent to-background" />
+                    </div>
+
+                    {/* Info Cards — offset to the right on desktop */}
+                    <div className="relative z-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:ml-[280px]">
                         <InfoCard
                             icon={<IdeaIcon />}
                             title="Independently Organized"
                             description="TEDx events are independently organized under a free license from TED. Our event, TEDxACE Engineering College, follows TED's format and guidelines while showcasing local voices."
-                            delay={0.1}
+                            index={0}
                         />
                         <InfoCard
                             icon={<CommunityIcon />}
                             title="Community Driven"
                             description="TEDx creates a unique gathering bringing together bright minds — curating thought-provoking talks, performances, and conversations that spark ideas and inspire action."
-                            delay={0.2}
+                            index={1}
                         />
                         <InfoCard
                             icon={<GlobalIcon />}
                             title="Global Movement"
                             description="With thousands of events held across 170+ countries, TEDx has become the world's largest platform for sharing transformative ideas — from local campuses to global stages."
-                            delay={0.3}
+                            index={2}
                         />
                     </div>
                 </div>
