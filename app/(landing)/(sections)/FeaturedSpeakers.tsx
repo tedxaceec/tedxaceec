@@ -68,61 +68,52 @@ const speakers: Speaker[] = [
 /* ─── Speaker Card ────────────────────────────────────────────────────────── */
 function SpeakerCard({ speaker }: { speaker: Speaker }) {
     return (
-        <div className="group relative h-[480px] w-[360px] shrink-0 cursor-pointer overflow-hidden rounded-2xl md:h-[520px] md:w-[400px]">
-            {/* Speaker image with zoom on hover */}
+        <div className="group relative h-[480px] w-[360px] shrink-0 cursor-pointer overflow-hidden rounded-2xl bg-neutral-900 md:h-[520px] md:w-[400px]">
+            {/* Speaker image: Grayscale to color on hover */}
             <div
                 style={{
                     backgroundImage: `url(${speaker.image})`,
                     backgroundSize: "cover",
                     backgroundPosition: "center top",
                 }}
-                className="absolute inset-0 z-0 transition-transform duration-700 ease-out group-hover:scale-110"
+                className="absolute inset-0 z-0 scale-100 grayscale transition-all duration-700 ease-in-out group-hover:scale-105 group-hover:grayscale-0"
             />
 
-            {/* Dark overlay gradient — stronger at bottom */}
-            <div className="absolute inset-0 z-1 bg-linear-to-t from-black via-black/40 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-90" />
+            {/* Subtle overlay */}
+            <div className="absolute inset-0 z-1 bg-linear-to-t from-black/90 via-black/40 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-100" />
 
-            {/* Red accent line at top */}
-            <div className="absolute top-0 left-0 right-0 z-2 h-[2px] bg-linear-to-r from-transparent via-red-500 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-
-            {/* Speaker number */}
-            <div className="absolute top-5 right-5 z-2">
-                <span className="text-xs font-mono tracking-widest text-white/30 transition-colors duration-300 group-hover:text-red-400/60">
+            {/* Number indicator */}
+            <div className="absolute top-6 right-6 z-2 overflow-hidden">
+                <span className="block translate-y-0 font-mono text-sm font-medium tracking-wider text-white/50 transition-transform duration-500 group-hover:-translate-y-full">
+                    {String(speaker.id).padStart(2, "0")}
+                </span>
+                <span className="absolute left-0 top-0 block translate-y-full font-mono text-sm font-medium tracking-wider text-red-500 transition-transform duration-500 group-hover:translate-y-0">
                     {String(speaker.id).padStart(2, "0")}
                 </span>
             </div>
 
-            {/* TEDx badge */}
-            <div className="absolute top-5 left-5 z-2">
-                <div className="flex items-center gap-1.5 rounded-full border border-white/10 bg-black/40 px-3 py-1 backdrop-blur-md opacity-0 -translate-y-2 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
-                    <div className="h-1.5 w-1.5 rounded-full bg-red-500" />
-                    <span className="text-[10px] font-medium uppercase tracking-widest text-white/80">
-                        Speaker
-                    </span>
-                </div>
-            </div>
-
             {/* Content at bottom */}
-            <div className="absolute bottom-0 left-0 right-0 z-2 p-6 md:p-8">
-                {/* Topic tag */}
-                <div className="mb-3 overflow-hidden">
-                    <span className="inline-block text-xs font-medium uppercase tracking-widest text-red-400 translate-y-full transition-transform duration-500 group-hover:translate-y-0">
+            <div className="absolute bottom-0 left-0 right-0 z-2 flex flex-col justify-end p-6 md:p-8">
+                {/* Topic line */}
+                <div className="mb-4 flex items-center gap-3">
+                    <div className="h-px w-8 bg-red-500 transition-all duration-500 group-hover:w-12" />
+                    <span className="text-xs font-semibold uppercase tracking-widest text-red-500">
                         {speaker.topic}
                     </span>
                 </div>
 
                 {/* Name */}
-                <h3 className="text-2xl font-bold text-white transition-transform duration-500 group-hover:-translate-y-1 md:text-3xl">
+                <h3 className="mb-1 text-3xl font-bold tracking-tight text-white transition-transform duration-500 md:text-4xl">
                     {speaker.name}
                 </h3>
 
                 {/* Title */}
-                <p className="mt-1 text-sm text-neutral-400 transition-all duration-500 group-hover:text-neutral-300">
+                <p className="text-sm font-medium text-neutral-400 transition-colors duration-500 group-hover:text-neutral-300 md:text-base">
                     {speaker.title}
                 </p>
 
-                {/* View profile link — slides in on hover */}
-                <div className="mt-4 flex items-center gap-2 text-sm font-medium text-red-400 opacity-0 translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
+                {/* Optional view profile text on hover */}
+                <div className="mt-6 flex h-0 items-center gap-2 overflow-hidden text-sm font-semibold text-white/90 opacity-0 transition-all duration-500 group-hover:h-5 group-hover:opacity-100">
                     <span>View Profile</span>
                     <svg
                         className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
@@ -134,11 +125,6 @@ function SpeakerCard({ speaker }: { speaker: Speaker }) {
                         <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                 </div>
-            </div>
-
-            {/* Corner accent */}
-            <div className="absolute bottom-0 right-0 z-2 h-16 w-16 overflow-hidden opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                <div className="absolute -bottom-8 -right-8 h-16 w-16 rounded-full border border-red-500/20" />
             </div>
         </div>
     );
@@ -162,14 +148,11 @@ function SpeakersCarousel() {
                     ))}
 
                     {/* End card — CTA to see all speakers */}
-                    <div className="flex h-[480px] w-[300px] shrink-0 items-center justify-center rounded-2xl border border-white/6 bg-white/3 md:h-[520px] md:w-[340px]">
-                        <Link
-                            href="/speakers"
-                            className="group flex flex-col items-center gap-4 text-center"
-                        >
-                            <div className="flex h-16 w-16 items-center justify-center rounded-full border border-red-500/20 bg-red-500/10 transition-all duration-300 group-hover:bg-red-500/20 group-hover:scale-110">
+                    <div className="group relative flex h-[480px] w-[300px] shrink-0 overflow-hidden rounded-2xl bg-neutral-900 border border-neutral-800 transition-colors duration-500 hover:border-neutral-700 md:h-[520px] md:w-[340px]">
+                        <Link href="/speakers" className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center transition-colors duration-500 hover:bg-neutral-800/50">
+                            <div className="mb-6 rounded-full border border-red-500/30 bg-red-500/10 p-4 transition-all duration-500 group-hover:scale-110 group-hover:border-red-500/50 group-hover:bg-red-500/20">
                                 <svg
-                                    className="h-6 w-6 text-red-400 transition-transform duration-300 group-hover:translate-x-0.5"
+                                    className="h-6 w-6 text-red-500 transition-transform duration-500 group-hover:translate-x-1"
                                     fill="none"
                                     viewBox="0 0 24 24"
                                     stroke="currentColor"
@@ -178,8 +161,8 @@ function SpeakersCarousel() {
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                 </svg>
                             </div>
-                            <span className="text-lg font-semibold text-white">View All Speakers</span>
-                            <span className="text-sm text-neutral-500">Explore the full lineup</span>
+                            <h3 className="mb-2 text-2xl font-bold text-white">Full Lineup</h3>
+                            <p className="text-sm font-medium text-neutral-400">Discover all voices shaping the future</p>
                         </Link>
                     </div>
                 </motion.div>
@@ -207,9 +190,9 @@ export default function FeaturedSpeakers() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
-                            className="mb-4 inline-flex items-center gap-2 rounded-full border border-red-500/20 bg-linear-to-r from-red-500/10 to-red-500/5 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-red-400"
+                            className="mb-6 inline-flex items-center gap-2 rounded-full border border-neutral-800 bg-neutral-900/50 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-neutral-300 backdrop-blur-md"
                         >
-                            <span className="h-1.5 w-1.5 rounded-full bg-red-400 animate-pulse" aria-hidden="true" />
+                            <span className="h-1.5 w-1.5 rounded-full bg-red-500" aria-hidden="true" />
                             Bedrock & Beyond
                         </motion.div>
 
@@ -218,12 +201,9 @@ export default function FeaturedSpeakers() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: 0.1 }}
-                            className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl"
+                            className="text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl"
                         >
-                            Featured{" "}
-                            <span className="text-transparent bg-clip-text bg-linear-to-r from-red-500 via-red-400 to-red-600">
-                                Speakers
-                            </span>
+                            Featured <span className="font-light italic text-neutral-400">Speakers</span>
                         </motion.h2>
 
                         <motion.p
@@ -231,7 +211,7 @@ export default function FeaturedSpeakers() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: 0.2 }}
-                            className="mt-4 max-w-xl text-base text-neutral-400 sm:text-lg"
+                            className="mt-6 max-w-xl text-base text-neutral-400 md:text-lg"
                         >
                             Visionaries, innovators, and change-makers sharing ideas that challenge perspectives and inspire action.
                         </motion.p>
@@ -243,15 +223,18 @@ export default function FeaturedSpeakers() {
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.4 }}
-                        className="hidden md:flex items-center gap-3 text-sm text-neutral-500"
+                        className="hidden md:flex flex-col items-end gap-2"
                     >
-                        <span className="uppercase tracking-widest text-xs">Scroll to explore</span>
-                        <div className="flex items-center gap-1">
+                        <span className="text-xs font-semibold uppercase tracking-widest text-neutral-500">
+                            Slide to explore
+                        </span>
+                        <div className="flex items-center space-x-2">
+                            <span className="h-px w-12 bg-neutral-800" />
                             <motion.div
-                                animate={{ x: [0, 6, 0] }}
-                                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                                animate={{ x: [0, 8, 0] }}
+                                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                             >
-                                <svg className="h-5 w-5 text-red-400/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                                <svg className="h-4 w-4 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                 </svg>
                             </motion.div>
