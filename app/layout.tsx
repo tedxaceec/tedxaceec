@@ -18,10 +18,10 @@ const geistMono = Geist_Mono({
 
 // ─── Site Constants ──────────────────────────────────────────────────────────
 const SITE_URL = "https://tedxaceec.vercel.app/";
-const SITE_NAME = "TEDxACEEC";
-const SITE_TITLE = "TEDxACEEC — Bedrock & Beyond | Ideas Worth Spreading";
+const SITE_NAME = "TEDxACE Engineering College";
+const SITE_TITLE = "TEDxACE Engineering College | Bedrock & Beyond | Ideas Worth Spreading";
 const SITE_DESCRIPTION =
-  "TEDxACEEC presents 'Bedrock & Beyond' — an independently organized TED event at Acharya College of Engineering. Explore groundbreaking talks on innovation, technology, creativity, and the resilient foundations of our past that shape our limitless future.";
+  "TEDxACE Engineering College presents 'Bedrock & Beyond' — an independently organized TED event at ACE Engineering College. Explore groundbreaking talks on innovation, technology, creativity, and the resilient foundations of our past that shape our limitless future.";
 
 // ─── Viewport (exported separately in Next.js 14+) ─────────────────────────
 export const viewport: Viewport = {
@@ -50,10 +50,10 @@ export const metadata: Metadata = {
   // ── Keywords (SEO + GEO) ──────────────────────────────────────────────────
   keywords: [
     // Primary brand keywords
-    "TEDxACEEC",
+    "TEDxACE Engineering College",
     "TEDx ACEEC",
-    "TEDx Acharya",
-    "TEDx Acharya College of Engineering",
+    "TEDx ACE Engineering College",
+    "TEDx ACE Engineering College",
     "Bedrock and Beyond",
     "Bedrock & Beyond",
     // Generic TEDx keywords
@@ -76,20 +76,20 @@ export const metadata: Metadata = {
     "engineering conference",
     "leadership talks",
     // Location-based keywords (Local SEO / GEO)
-    "TEDx Bangalore",
+    "TEDx Hyderabad",
     "TEDx Karnataka",
-    "college events Bangalore",
+    "college events Hyderabad",
     "engineering college events India",
-    "Acharya College events",
-    "tech events Bangalore 2026",
+    "ACE Engineering College College events",
+    "tech events Hyderabad 2026",
   ],
 
   // ── Authors & Creator ─────────────────────────────────────────────────────
   authors: [
-    { name: "TEDxACEEC Organizing Committee", url: SITE_URL },
+    { name: "TEDxACE Engineering College Organizing Committee", url: SITE_URL },
   ],
-  creator: "TEDxACEEC",
-  publisher: "TEDxACEEC",
+  creator: "TEDxACE Engineering College",
+  publisher: "TEDxACE Engineering College",
 
   // ── Canonical & Alternate URLs ─────────────────────────────────────────────
   metadataBase: new URL(SITE_URL),
@@ -128,7 +128,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "TEDxACEEC — Bedrock & Beyond",
+        alt: "TEDxACE Engineering College | Bedrock & Beyond",
         type: "image/png",
       },
     ],
@@ -140,14 +140,14 @@ export const metadata: Metadata = {
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
     images: ["/og-image.png"],
-    creator: "@tedxaceec",
-    site: "@tedxaceec",
+    creator: "@tedxaceengineeringcollege",
+    site: "@tedxaceengineeringcollege",
   },
 
   // ── Icons & Manifest ──────────────────────────────────────────────────────
   icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    icon: "/logo.png",
+    apple: "/logo.png",
   },
   manifest: "/manifest.webmanifest",
 
@@ -172,7 +172,7 @@ const jsonLd = {
     {
       "@type": "Organization",
       "@id": `${SITE_URL}/#organization`,
-      name: "TEDxACEEC",
+      name: "TEDxACE Engineering College",
       url: SITE_URL,
       logo: {
         "@type": "ImageObject",
@@ -181,17 +181,17 @@ const jsonLd = {
         height: 630,
       },
       sameAs: [
-        "https://www.instagram.com/tedxaceec",
-        "https://www.linkedin.com/company/tedxaceec",
-        "https://twitter.com/tedxaceec",
+        "https://www.instagram.com/tedxaceengineeringcollege",
+        "https://www.linkedin.com/company/tedxaceengineeringcollege",
+        "https://twitter.com/tedxaceengineeringcollege",
       ],
-      description: "An independently organized TEDx event at Acharya College of Engineering, Electronics and Communications (ACEEC).",
+      description: "An independently organized TEDx event at ACE Engineering College, Electronics and Communications (ACEEC).",
     },
     // Event
     {
       "@type": "Event",
       "@id": `${SITE_URL}/#event`,
-      name: "TEDxACEEC — Bedrock & Beyond",
+      name: "TEDxACE Engineering College | Bedrock & Beyond",
       description: SITE_DESCRIPTION,
       url: SITE_URL,
       eventStatus: "https://schema.org/EventScheduled",
@@ -200,22 +200,22 @@ const jsonLd = {
       organizer: {
         "@type": "Organization",
         "@id": `${SITE_URL}/#organization`,
-        name: "TEDxACEEC",
+        name: "TEDxACE Engineering College",
         url: SITE_URL,
       },
       location: {
         "@type": "Place",
-        name: "Acharya College of Engineering, Electronics and Communications",
+        name: "ACE Engineering College, Electronics and Communications",
         address: {
           "@type": "PostalAddress",
-          addressLocality: "Bangalore",
+          addressLocality: "Hyderabad",
           addressRegion: "Karnataka",
           addressCountry: "IN",
         },
       },
       performer: {
         "@type": "PerformingGroup",
-        name: "TEDxACEEC Speakers",
+        name: "TEDxACE Engineering College Speakers",
       },
       offers: {
         "@type": "Offer",
@@ -300,10 +300,10 @@ export default function RootLayout({
 
         {/* Noscript fallback for SEO crawlers that don't run JS */}
         <noscript>
-          <div style={{ padding: "2rem", textAlign: "center", color: "#fff", backgroundColor: "#0a0a0a" }}>
-            <h1>TEDxACEEC — Bedrock &amp; Beyond</h1>
+          <div style={{ padding: "2rem", textAlign: "center", color: "#fff", backgroundColor: "#000000" }}>
+            <h1>TEDxACE Engineering College | Bedrock &amp; Beyond</h1>
             <p>
-              An independently organized TEDx event at Acharya College of Engineering.
+              An independently organized TEDx event at ACE Engineering College, Hyderabad.
               Exploring the resilient foundations of our past and the limitless possibilities shaping our future.
             </p>
             <p>Please enable JavaScript for the best experience.</p>
