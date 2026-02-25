@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "time": "09:00 AM",
+    "title": "Registration & Networking",
+    "description": "Welcome to TEDxACEEC. Grab your badges, enjoy a warm cup of coffee, and get ready to be inspired.",
+    "icon": "Coffee"
+  },
+  {
+    "id": 2,
+    "time": "10:00 AM",
+    "title": "Opening Ceremony",
+    "description": "The official kickoff for our journey of ideas. We outline the day's theme and what to expect.",
+    "icon": "Mic"
+  },
+  {
+    "id": 3,
+    "time": "10:30 AM",
+    "title": "Session 1: The Sparks of Innovation",
+    "description": "Our first lineup of brilliant speakers sharing ideas that are shaping the future of technology and society.",
+    "icon": "Lightbulb"
+  },
+  {
+    "id": 4,
+    "time": "12:30 PM",
+    "title": "Lunch Break",
+    "description": "Refuel and network. Catering provided, offering a variety of culinary delights.",
+    "icon": "Utensils"
+  },
+  {
+    "id": 5,
+    "time": "02:00 PM",
+    "title": "Session 2: Cultural Shifts",
+    "description": "Engaging talks focusing on the power of art, culture, and human connection in modern times.",
+    "icon": "Globe"
+  },
+  {
+    "id": 6,
+    "time": "04:00 PM",
+    "title": "Tea & Discussion",
+    "description": "A short break to process the talks, engage with speakers, and share your own perspectives.",
+    "icon": "MessageSquare"
+  },
+  {
+    "id": 7,
+    "time": "04:45 PM",
+    "title": "Session 3: Beyond Boundaries",
+    "description": "The final session exploring the limits of human potential and what lies ahead.",
+    "icon": "Rocket"
+  },
+  {
+    "id": 8,
+    "time": "06:30 PM",
+    "title": "Closing Remarks",
+    "description": "Wrapping up the event. Key takeaways and a final expression of gratitude.",
+    "icon": "CheckCircle"
+  }
+]
