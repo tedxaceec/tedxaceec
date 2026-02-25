@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 // ─── Site Constants ──────────────────────────────────────────────────────────
-const SITE_URL = "https://tedxaceec.com";
+const SITE_URL = "https://tedxaceec.vercel.app/";
 const SITE_NAME = "TEDxACEEC";
 const SITE_TITLE = "TEDxACEEC — Bedrock & Beyond | Ideas Worth Spreading";
 const SITE_DESCRIPTION =
