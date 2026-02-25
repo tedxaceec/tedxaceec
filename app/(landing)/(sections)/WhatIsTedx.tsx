@@ -1,6 +1,7 @@
 "use client";
-import { useEffect, useRef, useCallback, useState } from "react";
+import { useEffect, useRef, useCallback } from "react";
 import { motion, useInView, useMotionValue, useSpring, useTransform } from "framer-motion";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -224,12 +225,11 @@ function InfoCard({
                 rotateX,
                 rotateY,
                 transformPerspective: 1200,
-                transformStyle: "preserve-3d",
             }}
             onMouseMove={handleMouseMove}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeaveScale}
-            className="group relative cursor-default"
+            className="group relative cursor-default transform-3d"
         >
             {/* Animated gradient border */}
             <div
@@ -293,139 +293,6 @@ function InfoCard({
     );
 }
 
-/* ─── Globe Component (Optimized) ─────────────────────────────────────────── */
-/*
- * Performance optimizations applied:
- *   1. Dynamic import    — `cobe` is code-split, only loaded when the globe is near viewport
- *   2. Lazy init         — IntersectionObserver triggers creation ~200px before visible
- *   3. Pause / resume    — animation loop freezes when off-screen (saves GPU cycles)
- *   4. Reduced samples   — mapSamples: 4000 (was 16000, ~75 % less CPU for texture build)
- *   5. Adaptive DPR      — capped at 1.5 to avoid rendering 4x pixels on HiDPI displays
- *   6. Smaller canvas    — 600px (was 800px), still looks crisp at the half-visible size
- */
-function Globe({ className }: { className?: string }) {
-    const canvasRef = useRef<HTMLCanvasElement>(null);
-    const wrapperRef = useRef<HTMLDivElement>(null);
-    const globeInstanceRef = useRef<ReturnType<typeof import("cobe")["default"]> | null>(null);
-    const phiRef = useRef(0);
-    const isPausedRef = useRef(false);
-    const [isLoaded, setIsLoaded] = useState(false);
-
-    useEffect(() => {
-        const wrapper = wrapperRef.current;
-        const canvas = canvasRef.current;
-        if (!wrapper || !canvas) return;
-
-        let destroyed = false;
-
-        // ── IntersectionObserver: lazy init + pause/resume ──
-        const observer = new IntersectionObserver(
-            (entries) => {
-                const entry = entries[0];
-
-                if (entry.isIntersecting) {
-                    // First time visible → create globe
-                    if (!globeInstanceRef.current && !destroyed) {
-                        initGlobe(canvas);
-                    }
-                    // Resume animation
-                    isPausedRef.current = false;
-                } else {
-                    // Pause when off-screen
-                    isPausedRef.current = true;
-                }
-            },
-            {
-                // Start loading 200px before the section enters viewport
-                rootMargin: "200px 0px",
-                threshold: 0,
-            }
-        );
-
-        observer.observe(wrapper);
-
-        async function initGlobe(canvasEl: HTMLCanvasElement) {
-            try {
-                // Dynamic import — cobe is only fetched when actually needed
-                const { default: createGlobe } = await import("cobe");
-
-                if (destroyed) return;
-
-                const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
-
-                globeInstanceRef.current = createGlobe(canvasEl, {
-                    devicePixelRatio: dpr,
-                    width: 600 * dpr,
-                    height: 600 * dpr,
-                    phi: 0,
-                    theta: 0.25,
-                    dark: 1,
-                    diffuse: 1.2,
-                    mapSamples: 4000,
-                    mapBrightness: 6,
-                    baseColor: [0.3, 0.3, 0.3],
-                    markerColor: [0.92, 0.0, 0.16],
-                    glowColor: [0.15, 0.15, 0.15],
-                    markers: [
-                        { location: [17.4065, 78.4772], size: 0.08 },
-                        { location: [40.7128, -74.006], size: 0.05 },
-                        { location: [51.5074, -0.1278], size: 0.05 },
-                        { location: [35.6762, 139.6503], size: 0.04 },
-                        { location: [-33.8688, 151.2093], size: 0.04 },
-                        { location: [48.8566, 2.3522], size: 0.04 },
-                        { location: [1.3521, 103.8198], size: 0.04 },
-                        { location: [19.076, 72.8777], size: 0.05 },
-                        { location: [28.6139, 77.209], size: 0.05 },
-                        { location: [12.9716, 77.5946], size: 0.05 },
-                    ],
-                    onRender: (state: Record<string, number>) => {
-                        if (!isPausedRef.current) {
-                            phiRef.current += 0.004;
-                        }
-                        state.phi = phiRef.current;
-                    },
-                });
-
-                setIsLoaded(true);
-            } catch {
-                // cobe failed to load — fail silently, user sees the skeleton
-                console.warn("Globe: failed to load cobe library");
-            }
-        }
-
-        return () => {
-            destroyed = true;
-            observer.disconnect();
-            if (globeInstanceRef.current) {
-                globeInstanceRef.current.destroy();
-                globeInstanceRef.current = null;
-            }
-        };
-    }, []);
-
-    return (
-        <div ref={wrapperRef} className={`relative ${className ?? ""}`}>
-            {/* Loading skeleton — shown until globe WebGL is ready */}
-            {!isLoaded && (
-                <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="h-[400px] w-[400px] animate-pulse rounded-full bg-white/3 md:h-[500px] md:w-[500px]" />
-                </div>
-            )}
-            <canvas
-                ref={canvasRef}
-                style={{
-                    width: 600,
-                    height: 600,
-                    maxWidth: "100%",
-                    aspectRatio: 1,
-                    opacity: isLoaded ? 1 : 0,
-                    transition: "opacity 0.8s ease-in-out",
-                }}
-            />
-        </div>
-    );
-}
-
 /* ─── Icons ───────────────────────────────────────────────────────────────── */
 function IdeaIcon() {
     return (
@@ -457,41 +324,8 @@ function GlobalIcon() {
 
 /* ─── Main Section ────────────────────────────────────────────────────────── */
 export default function WhatIsTedx() {
-    const sectionRef = useRef<HTMLElement>(null);
-
-    // GSAP parallax for the globe on scroll
-    useEffect(() => {
-        const section = sectionRef.current;
-        if (!section) return;
-
-        const globeWrapper = section.querySelector<HTMLElement>("#globe-wrapper");
-        if (globeWrapper) {
-            gsap.fromTo(
-                globeWrapper,
-                { y: 60 },
-                {
-                    y: -60,
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: section,
-                        start: "top bottom",
-                        end: "bottom top",
-                        scrub: 1.2,
-                    },
-                }
-            );
-        }
-
-        return () => {
-            ScrollTrigger.getAll().forEach((st) => {
-                if (st.trigger === section) st.kill();
-            });
-        };
-    }, []);
-
     return (
         <section
-            ref={sectionRef}
             id="what-is-tedx"
             className="relative overflow-hidden py-24 md:py-32 lg:py-40"
         >
@@ -499,7 +333,7 @@ export default function WhatIsTedx() {
             <div className="pointer-events-none absolute inset-0">
                 <div className="absolute inset-x-0 top-0 h-32 bg-linear-to-b from-background to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 h-32 bg-linear-to-t from-background to-transparent" />
-                <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/3 h-[900px] w-[900px] rounded-full bg-red-500/3 blur-[150px]" />
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[800px] w-[800px] rounded-full bg-red-500/3 blur-[150px]" />
             </div>
 
             <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -548,31 +382,31 @@ export default function WhatIsTedx() {
                     </motion.p>
                 </div>
 
-                {/* ── Globe (half-visible) + Cards Grid ───────────────────── */}
-                <div className="relative mt-20 lg:mt-28">
-                    {/* Globe — pinned to the left, only right half visible */}
-                    <div
-                        id="globe-wrapper"
-                        className="pointer-events-none absolute -left-[300px] top-1/2 -translate-y-1/2 z-0 hidden lg:block"
-                    >
-                        {/* Concentric rings */}
-                        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[700px] w-[700px] rounded-full border border-white/4" />
-                        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[580px] w-[580px] rounded-full border border-white/3" />
-                        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[460px] w-[460px] rounded-full border border-white/2" />
-                        <Globe />
+                {/* ── TEDx World Image ─────────────────────────────────── */}
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.3 }}
+                    className="relative mx-auto mt-14 max-w-4xl"
+                >
+                    {/* Glow behind image */}
+                    <div className="absolute inset-0 -z-10 scale-90 rounded-3xl bg-red-500/8 blur-3xl" />
+                    <div className="overflow-hidden rounded-2xl border border-white/10 shadow-2xl shadow-red-500/5">
+                        <Image
+                            src="/tedx_world.png"
+                            alt="TEDx events happening across the world"
+                            width={1200}
+                            height={675}
+                            className="h-auto w-full object-cover"
+                            priority={false}
+                        />
                     </div>
+                </motion.div>
 
-                    {/* Mobile globe — centered, top-cropped */}
-                    <div className="relative mx-auto mb-12 flex h-[280px] items-end justify-center overflow-hidden lg:hidden">
-                        <div className="absolute -bottom-[320px]">
-                            <Globe />
-                        </div>
-                        {/* Fade-out edges */}
-                        <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-background via-transparent to-background" />
-                    </div>
-
-                    {/* Info Cards — offset to the right on desktop */}
-                    <div className="relative z-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:ml-[280px]">
+                {/* ── Info Cards Grid ─────────────────────────────────────── */}
+                <div className="mt-16 lg:mt-20">
+                    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                         <InfoCard
                             icon={<IdeaIcon />}
                             title="Independently Organized"

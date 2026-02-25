@@ -226,7 +226,7 @@ export default function Navbar() {
 
                             {/* ── Theme Toggle ─────────────────────────── */}
                             <AnimatedThemeToggler
-                                className="ml-1 relative size-9 flex items-center justify-center rounded-xl border border-white/10 text-neutral-400 hover:text-white hover:bg-white/8 hover:border-white/20 transition-all duration-300 cursor-pointer"
+                                className="ml-1 p-2 relative size-9 flex items-center justify-center rounded-xl border border-foreground/10 text-foreground/40 hover:text-foreground hover:bg-foreground/8 hover:border-foreground/20 transition-all duration-300 cursor-pointer"
                             />
                         </div>
 
