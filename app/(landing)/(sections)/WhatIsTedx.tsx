@@ -77,7 +77,7 @@ function InfoCard({
 }) {
     const cardRef = useRef<HTMLDivElement>(null);
     const glowRef = useRef<HTMLDivElement>(null);
-    const borderRef = useRef<HTMLDivElement>(null);
+    const shineRef = useRef<HTMLDivElement>(null);
     const contentRef = useRef<HTMLDivElement>(null);
 
     // Framer Motion values for smooth tilt
@@ -100,11 +100,11 @@ function InfoCard({
             scale: 0.92,
         });
 
-        // Animated border shimmer
-        if (borderRef.current) {
-            gsap.to(borderRef.current, {
-                backgroundPosition: "200% 0",
-                duration: 3,
+        // Rotating conic-gradient shine
+        if (shineRef.current) {
+            gsap.to(shineRef.current, {
+                rotation: 360,
+                duration: 4,
                 ease: "none",
                 repeat: -1,
             });
@@ -231,16 +231,19 @@ function InfoCard({
             onMouseLeave={handleMouseLeaveScale}
             className="group relative cursor-default transform-3d"
         >
-            {/* Animated gradient border */}
-            <div
-                ref={borderRef}
-                className="absolute -inset-px rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                style={{
-                    background:
-                        "linear-gradient(90deg, transparent, rgba(235,0,40,0.3), rgba(235,0,40,0.6), rgba(235,0,40,0.3), transparent)",
-                    backgroundSize: "200% 100%",
-                }}
-            />
+            {/* Rotating conic-gradient shine border */}
+            <div className="absolute -inset-px rounded-2xl overflow-hidden opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                <div
+                    ref={shineRef}
+                    className="absolute inset-[-80%] origin-center"
+                    style={{
+                        background:
+                            "conic-gradient(from 0deg, transparent 0%, transparent 60%, rgba(235,0,40,0.6) 75%, rgba(255,120,120,0.8) 80%, rgba(235,0,40,0.6) 85%, transparent 100%)",
+                    }}
+                />
+                {/* Inner mask to make it a border ring */}
+                <div className="absolute inset-px rounded-2xl bg-[#0a0a0a]" />
+            </div>
 
             {/* Card body */}
             <div className="relative overflow-hidden rounded-2xl border border-white/6 bg-white/3 p-6 backdrop-blur-xl md:p-8">
@@ -392,7 +395,15 @@ export default function WhatIsTedx() {
                 >
                     {/* Glow behind image */}
                     <div className="absolute inset-0 -z-10 scale-90 rounded-3xl bg-red-500/8 blur-3xl" />
-                    <div className="overflow-hidden rounded-2xl border border-white/10 shadow-2xl shadow-red-500/5">
+                    <div
+                        className="overflow-hidden rounded-2xl shadow-2xl shadow-red-500/5"
+                        style={{
+                            WebkitMaskImage:
+                                "radial-gradient(ellipse 85% 80% at 50% 50%, black 50%, transparent 100%)",
+                            maskImage:
+                                "radial-gradient(ellipse 85% 80% at 50% 50%, black 50%, transparent 100%)",
+                        }}
+                    >
                         <Image
                             src="/tedx_world.png"
                             alt="TEDx events happening across the world"
