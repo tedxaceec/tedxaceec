@@ -7,8 +7,8 @@ const page = () => {
   return (
     <div>
       <HeroSection />
-      <FeaturedSpeakers />
       <WhatIsTedx />
+      <FeaturedSpeakers />
       <EventTimeline />
     </div>
   )

@@ -121,8 +121,8 @@ export default function Navbar() {
         <>
             <nav
                 className={`fixed top-0 left-0 right-0 w-full z-100 transition-all duration-700 ${scrolled
-                    ? "py-2"
-                    : "py-3"
+                    ? "py-3"
+                    : "py-1"
                     }`}
                 aria-label="Main navigation"
             >
@@ -149,7 +149,7 @@ export default function Navbar() {
                         <Link
                             href="/"
                             className="relative group flex items-center gap-1 shrink-0"
-                            aria-label="TEDxACEEC — Go to homepage"
+                            aria-label="TEDx ACE Engineering College - Go to homepage"
                             onClick={() => handleLinkClick("/", 0)}
                         >
                             <Image
@@ -157,14 +157,14 @@ export default function Navbar() {
                                 alt="TEDxACEEC Logo"
                                 width={100}
                                 height={100}
-                                className="h-10 w-auto dark:hidden transition-transform duration-300 group-hover:scale-105"
+                                className="h-6 w-auto dark:hidden transition-transform duration-300 group-hover:scale-105"
                             />
                             <Image
                                 src="/tedxaceec.svg"
                                 alt="TEDxACEEC Logo"
                                 width={100}
                                 height={100}
-                                className="h-10 w-auto hidden dark:block transition-transform duration-300 group-hover:scale-105"
+                                className="h-6 w-auto hidden dark:block transition-transform duration-300 group-hover:scale-105"
                             />
                         </Link>
 
