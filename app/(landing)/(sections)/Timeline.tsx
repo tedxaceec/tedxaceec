@@ -68,8 +68,8 @@ const Timeline = () => {
 
                 {/* Animated Vertical Line */}
                 <motion.div
-                    className="absolute left-6 md:left-1/2 top-0 w-[2px] bg-gradient-to-b from-red-500 via-red-600 to-transparent md:-translate-x-1/2 origin-top"
-                    style={{ height }}
+                    className="absolute left-6 md:left-1/2 top-0 w-[2px] bg-linear-to-b from-red-500 via-red-600 to-transparent md:-translate-x-1/2 origin-top"
+                    style={{ height } as any}
                 />
 
                 <div className="flex flex-col gap-12 sm:gap-16">
@@ -98,15 +98,15 @@ const Timeline = () => {
                                 {/* Content Card */}
                                 <div
                                     className={`flex flex-col w-full md:w-1/2 pl-16 md:pl-0 ${isEven
-                                            ? "md:pr-16 md:text-right md:items-end"
-                                            : "md:pl-16 md:text-left md:items-start"
+                                        ? "md:pr-16 md:text-right md:items-end"
+                                        : "md:pl-16 md:text-left md:items-start"
                                         }`}
                                 >
                                     <motion.div
                                         whileHover={{ scale: 1.02 }}
                                         className="group relative p-6 sm:p-8 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 overflow-hidden w-full transition-colors hover:border-red-500/50"
                                     >
-                                        <div className="absolute inset-0 bg-gradient-to-br from-red-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                        <div className="absolute inset-0 bg-linear-to-br from-red-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                                         <div className="flex flex-col gap-2 relative z-10">
                                             <span className="text-red-500 font-bold tracking-widest text-sm uppercase">
