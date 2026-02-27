@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 
+import { SPONSOR_CTA } from "@/data/sponsors";
+
 export default function SponsorCTA() {
     return (
         <section className="relative overflow-hidden py-24 md:py-32">
@@ -46,7 +48,7 @@ export default function SponsorCTA() {
                             className="inline-flex items-center gap-2 rounded-full border border-red-500/20 bg-red-500/10 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-red-400"
                         >
                             <span className="h-1.5 w-1.5 rounded-full bg-red-400 animate-pulse" />
-                            Open for Partnership
+                            {SPONSOR_CTA.badge}
                         </motion.div>
 
                         {/* Title */}
@@ -57,11 +59,11 @@ export default function SponsorCTA() {
                             transition={{ duration: 0.5, delay: 0.3 }}
                             className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl max-w-2xl"
                         >
-                            Want to be part of the{" "}
+                            {SPONSOR_CTA.title.part1}{" "}
                             <span className="text-transparent bg-clip-text bg-linear-to-r from-red-500 via-red-400 to-red-600">
-                                TEDx story
+                                {SPONSOR_CTA.title.highlight}
                             </span>
-                            ?
+                            {SPONSOR_CTA.title.part2}
                         </motion.h2>
 
                         {/* Description */}
@@ -72,10 +74,14 @@ export default function SponsorCTA() {
                             transition={{ duration: 0.5, delay: 0.4 }}
                             className="max-w-xl text-base leading-relaxed text-neutral-400 md:text-lg"
                         >
-                            Join forces with us to bring the brightest minds to our stage.
-                            Connect with 2,000+ attendees, gain premium brand visibility, and
-                            be part of a movement at{" "}
-                            <span className="text-white font-medium">TEDx</span>ACE Engineering College.
+                            {SPONSOR_CTA.description.split("TEDx").map((text, i, arr) => (
+                                <span key={i}>
+                                    {text}
+                                    {i < arr.length - 1 && (
+                                        <span className="text-white font-medium">TEDx</span>
+                                    )}
+                                </span>
+                            ))}
                         </motion.p>
 
                         {/* Contact info */}
@@ -90,7 +96,7 @@ export default function SponsorCTA() {
                                 <rect width="20" height="16" x="2" y="4" rx="2" />
                                 <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                             </svg>
-                            sponsorship@tedxaceec.com
+                            {SPONSOR_CTA.contactEmail}
                         </motion.div>
 
                         {/* CTA Buttons */}
@@ -103,7 +109,7 @@ export default function SponsorCTA() {
                         >
                             {/* Primary */}
                             <Link
-                                href="#contact"
+                                href={SPONSOR_CTA.primaryCTA.href}
                                 className="relative px-8 py-3.5 text-sm font-semibold tracking-wide uppercase text-white rounded-xl overflow-hidden transition-all duration-300 hover:shadow-[0_0_28px_rgba(235,0,40,0.35)] group"
                             >
                                 <span className="absolute inset-0 bg-linear-to-r from-red-600 to-red-500 transition-opacity duration-300" />
@@ -111,7 +117,7 @@ export default function SponsorCTA() {
                                 <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-linear-to-r from-transparent via-white/20 to-transparent" />
                                 <span className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 ring-1 ring-inset ring-white/20" />
                                 <span className="relative z-10 flex items-center gap-2">
-                                    Contact Us
+                                    {SPONSOR_CTA.primaryCTA.text}
                                     <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                                     </svg>
@@ -120,10 +126,10 @@ export default function SponsorCTA() {
 
                             {/* Secondary */}
                             <Link
-                                href="#"
+                                href={SPONSOR_CTA.secondaryCTA.href}
                                 className="px-8 py-3.5 text-sm font-semibold tracking-wide uppercase text-neutral-300 rounded-xl border border-white/10 bg-white/5 transition-all duration-300 hover:border-white/20 hover:bg-white/8 hover:text-white"
                             >
-                                Download Brochure
+                                {SPONSOR_CTA.secondaryCTA.text}
                             </Link>
                         </motion.div>
 
@@ -135,8 +141,7 @@ export default function SponsorCTA() {
                             transition={{ duration: 0.6, delay: 0.6 }}
                             className="mt-4 text-[10px] leading-relaxed text-neutral-600 max-w-md"
                         >
-                            This independent TEDx event is operated under license from TED.
-                            Sponsorships support the event and are not endorsements by TED.
+                            {SPONSOR_CTA.notice}
                         </motion.p>
                     </div>
 
