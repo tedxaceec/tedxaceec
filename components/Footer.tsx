@@ -6,10 +6,10 @@ const FOOTER_GRIDS = [
     {
         title: "Event",
         links: [
-            { label: "About", href: "#about" },
-            { label: "Speakers", href: "#speakers" },
-            { label: "Schedule", href: "#schedule" },
-            { label: "Venue", href: "#venue" },
+            { label: "About", href: "/about" },
+            { label: "Speakers", href: "/speakers" },
+            { label: "Schedule", href: "/schedule" },
+            { label: "Venue", href: "/venue" },
         ],
     },
     {
@@ -33,7 +33,7 @@ const FOOTER_GRIDS = [
         title: "Get Involved",
         links: [
             { label: "Register", href: "#register" },
-            { label: "Sponsor Us", href: "#sponsor" },
+            { label: "Sponsor Us", href: "/sponsors" },
             { label: "Contact", href: "/contact" },
         ],
     },
