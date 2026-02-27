@@ -1,0 +1,227 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   Gallery Page
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.gallery-page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 1rem 4rem;
+  overflow: hidden;
+}
+
+/* ── Background Glow ──────────────────────────────────────────────────────── */
+.gallery-bg-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.gallery-bg-glow--top {
+  top: -10%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    circle,
+    rgba(235, 0, 40, 0.08) 0%,
+    transparent 70%
+  );
+}
+
+.gallery-bg-glow--bottom {
+  bottom: -10%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    circle,
+    rgba(235, 0, 40, 0.05) 0%,
+    transparent 70%
+  );
+}
+
+/* ── Header ───────────────────────────────────────────────────────────────── */
+.gallery-header {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.gallery-header__label {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(235, 0, 40, 0.8);
+  margin-bottom: 0.75rem;
+  padding: 0.35rem 1rem;
+  border: 1px solid rgba(235, 0, 40, 0.2);
+  border-radius: 9999px;
+  background: rgba(235, 0, 40, 0.05);
+}
+
+.gallery-header__title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0.5rem 0;
+}
+
+.gallery-header__accent {
+  background: linear-gradient(135deg, #eb0028, #ff4d6a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gallery-header__subtitle {
+  font-size: 1.05rem;
+  color: var(--muted-foreground, #888);
+  max-width: 28rem;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   3D Carousel Ring (adapted from CodePen by @thebabydino)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.scene,
+.a3d {
+  display: grid;
+}
+
+.scene {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 100vw;
+  height: clamp(20rem, 50vh, 32rem);
+  overflow: hidden;
+  perspective: 35em;
+  /* Lateral fade out on the edges */
+  mask: linear-gradient(90deg, #0000, red 15% 85%, #0000);
+  -webkit-mask: linear-gradient(90deg, #0000, red 15% 85%, #0000);
+}
+
+.a3d {
+  place-self: center;
+  transform-style: preserve-3d;
+  animation: carousel-ry 32s linear infinite;
+}
+
+.a3d.paused {
+  animation-play-state: paused;
+}
+
+/* Y-axis rotation keyframe */
+@keyframes carousel-ry {
+  to {
+    rotate: y 1turn;
+  }
+}
+
+.card {
+  /* Base card width */
+  --w: 15em;
+  /* Compute base angle corresponding to a card */
+  --ba: calc(1turn / var(--n));
+
+  grid-area: 1 / 1;
+  width: var(--w);
+  aspect-ratio: 7 / 10;
+  object-fit: cover;
+  border-radius: 1.25em;
+  backface-visibility: hidden;
+
+  /* Subtle shadow for depth */
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 2px 8px rgba(0, 0, 0, 0.2);
+
+  /* Border glow */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  /* Rotate around Y axis, then translate along Z */
+  transform: rotatey(calc(var(--i) * var(--ba)))
+    translatez(calc(-1 * (0.5 * var(--w) + 0.5em) / tan(0.5 * var(--ba))));
+
+  /* Smooth hover transition */
+  transition:
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.card:hover {
+  box-shadow:
+    0 12px 48px rgba(235, 0, 40, 0.2),
+    0 4px 16px rgba(0, 0, 0, 0.3);
+  border-color: rgba(235, 0, 40, 0.3);
+}
+
+/* ── Reduced Motion ───────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .a3d {
+    animation-duration: 128s;
+  }
+}
+
+/* ── Responsive adjustments ───────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .card {
+    --w: 11em;
+  }
+
+  .scene {
+    height: clamp(16rem, 40vh, 24rem);
+    perspective: 25em;
+  }
+
+  .gallery-page {
+    padding: 7rem 1rem 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    --w: 8.5em;
+  }
+
+  .scene {
+    perspective: 20em;
+    height: clamp(14rem, 35vh, 20rem);
+  }
+}
+
+/* ── Pause Hint ───────────────────────────────────────────────────────────── */
+.gallery-pause-hint {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted-foreground, #666);
+  user-select: none;
+}
+
+.gallery-pause-hint__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
