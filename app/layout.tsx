@@ -59,6 +59,8 @@ export const metadata: Metadata = {
     // Primary brand keywords
     "TEDxACE Engineering College",
     "TEDx ACEEC",
+    "ACE Engineering College",
+    "ACEEC",
     "TEDx ACE Engineering College",
     "TEDx ACE Engineering College",
     "Bedrock and Beyond",
