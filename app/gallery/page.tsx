@@ -3,61 +3,12 @@
 import { motion } from "framer-motion";
 import "./carousel.css";
 
-// Same Unsplash image IDs from the CodePen
-const GALLERY_DATA = [
-    {
-        id: "1540968221243-29f5d70540bf",
-        alt: "Event moment 1",
-    },
-    {
-        id: "1596135187959-562c650d98bc",
-        alt: "Event moment 2",
-    },
-    {
-        id: "1628944682084-831f35256163",
-        alt: "Event moment 3",
-    },
-    {
-        id: "1590013330451-3946e83e0392",
-        alt: "Event moment 4",
-    },
-    {
-        id: "1590421959604-741d0eec0a2e",
-        alt: "Event moment 5",
-    },
-    {
-        id: "1572613000712-eadc57acbecd",
-        alt: "Event moment 6",
-    },
-    {
-        id: "1570097192570-4b49a6736f9f",
-        alt: "Event moment 7",
-    },
-    {
-        id: "1620789550663-2b10e0080354",
-        alt: "Event moment 8",
-    },
-    {
-        id: "1617775623669-20bff4ffaa5c",
-        alt: "Event moment 9",
-    },
-    {
-        id: "1548600916-dc8492f8e845",
-        alt: "Event moment 10",
-    },
-    {
-        id: "1573824969595-a76d4365a2e6",
-        alt: "Event moment 11",
-    },
-    {
-        id: "1633936929709-59991b5fdd72",
-        alt: "Event moment 12",
-    },
-];
-
-const N = GALLERY_DATA.length;
+import galleryData from "@/data/gallery.json";
 
 export default function GalleryPage() {
+    const { header, images } = galleryData;
+    const n = images.length;
+
     return (
         <section className="gallery-page">
             {/* Background decorative elements */}
@@ -71,12 +22,14 @@ export default function GalleryPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
             >
-                <span className="gallery-header__label">Moments Captured</span>
+                <span className="gallery-header__label">{header.label}</span>
                 <h1 className="gallery-header__title">
-                    Our <span className="gallery-header__accent">Gallery</span>
+                    {header.title.split(header.accentWord)[0]}
+                    <span className="gallery-header__accent">{header.accentWord}</span>
+                    {header.title.split(header.accentWord)[1]}
                 </h1>
                 <p className="gallery-header__subtitle">
-                    Relive the energy, inspiration, and connections from our events
+                    {header.subtitle}
                 </p>
             </motion.div>
 
@@ -89,9 +42,9 @@ export default function GalleryPage() {
             >
                 <div
                     className="a3d"
-                    style={{ "--n": N } as React.CSSProperties}
+                    style={{ "--n": n } as React.CSSProperties}
                 >
-                    {GALLERY_DATA.map((item, i) => (
+                    {images.map((item, i) => (
                         <img
                             key={item.id}
                             className="card"

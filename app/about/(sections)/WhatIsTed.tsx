@@ -7,6 +7,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+import { WHAT_IS_TED } from "@/data/about";
+
 export default function WhatIsTed() {
     const sectionRef = useRef<HTMLElement>(null);
     const lettersRef = useRef<HTMLDivElement>(null);
@@ -65,7 +67,7 @@ export default function WhatIsTed() {
                             transition={{ duration: 0.6 }}
                             className="mb-4 inline-flex items-center gap-2 rounded-full border border-red-500/20 bg-linear-to-r from-red-500/10 to-red-500/5 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-red-400"
                         >
-                            The Origin
+                            {WHAT_IS_TED.tagline}
                         </motion.div>
 
                         <motion.h2
@@ -75,43 +77,27 @@ export default function WhatIsTed() {
                             transition={{ duration: 0.6, delay: 0.1 }}
                             className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl"
                         >
-                            What is{" "}
+                            {WHAT_IS_TED.title.split("TED")[0]}
                             <span className="text-transparent bg-clip-text bg-linear-to-r from-red-500 via-red-400 to-red-600">
                                 TED
                             </span>
-                            ?
+                            {WHAT_IS_TED.title.split("TED")[1]}
                         </motion.h2>
 
-                        <motion.p
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.2 }}
-                            className="mt-6 text-base leading-relaxed text-neutral-400 sm:text-lg md:text-xl md:leading-relaxed"
-                        >
-                            <strong className="text-white font-medium">TED</strong> is a
-                            nonprofit organization devoted to spreading ideas, usually in the
-                            form of short, powerful talks (18 minutes or less). TED began in
-                            1984 as a conference where{" "}
-                            <strong className="text-white font-medium">Technology</strong>,{" "}
-                            <strong className="text-white font-medium">Entertainment</strong>,
-                            and <strong className="text-white font-medium">Design</strong>{" "}
-                            converged, and today covers almost all topics — from science to
-                            business to global issues — in more than 100 languages.
-                        </motion.p>
-
-                        <motion.p
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.3 }}
-                            className="mt-4 text-base leading-relaxed text-neutral-400 sm:text-lg md:leading-relaxed"
-                        >
-                            TED&apos;s mission is to discover and spread ideas that spark
-                            imagination, embrace possibility, and catalyze impact. Through its
-                            open and free initiatives, TED creates a global community fueled
-                            by curiosity and wonder.
-                        </motion.p>
+                        <div className="mt-6 space-y-4">
+                            {WHAT_IS_TED.description.split('\n\n').map((para, i) => (
+                                <motion.p
+                                    key={i}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: 0.2 + (i * 0.1) }}
+                                    className="text-base leading-relaxed text-neutral-400 sm:text-lg md:text-xl md:leading-relaxed"
+                                >
+                                    {para}
+                                </motion.p>
+                            ))}
+                        </div>
 
                         {/* Three pillars */}
                         <motion.div
@@ -121,11 +107,7 @@ export default function WhatIsTed() {
                             transition={{ duration: 0.6, delay: 0.4 }}
                             className="mt-8 grid grid-cols-3 gap-4"
                         >
-                            {[
-                                { letter: "T", label: "Technology", color: "from-red-500 to-red-600" },
-                                { letter: "E", label: "Entertainment", color: "from-red-400 to-red-500" },
-                                { letter: "D", label: "Design", color: "from-red-500 to-red-400" },
-                            ].map((item) => (
+                            {WHAT_IS_TED.pillars.map((item) => (
                                 <div
                                     key={item.letter}
                                     className="group relative overflow-hidden rounded-xl border border-white/5 bg-white/3 p-4 text-center backdrop-blur-sm transition-all hover:border-red-500/20 hover:bg-white/5"
@@ -171,7 +153,7 @@ export default function WhatIsTed() {
                             {/* Overlay text */}
                             <div className="absolute inset-0 flex items-center justify-center">
                                 <p className="text-sm font-medium text-neutral-500 tracking-[0.3em] uppercase md:text-base">
-                                    Ideas Worth Spreading
+                                    {WHAT_IS_TED.overlayText}
                                 </p>
                             </div>
                         </div>

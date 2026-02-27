@@ -8,45 +8,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const SCHEDULE_DATA = [
-    {
-        time: "09:00 AM",
-        type: "Talk",
-        title: "Opening Ceremony: The Future of AI",
-        description: "A deep dive into how generative models are reshaping our creative landscapes and ethical boundaries in 2024.",
-        speaker: "Dr. Sarah Chen, AI Research Lead",
-    },
-    {
-        time: "10:30 AM",
-        type: "Talk",
-        title: "Sustainable Architecture",
-        description: "Designing living structures that coexist with nature rather than competing for its resources.",
-        speaker: "Mark Sterling, Chief Architect",
-    },
-    {
-        time: "11:45 AM",
-        type: "Performance",
-        title: "Soulful Strings",
-        description: "A contemporary orchestral performance blending traditional instruments with electronic textures.",
-        speaker: "ACEEC Orchestra",
-    },
-    {
-        time: "01:00 PM",
-        type: "Break",
-        title: "Networking Lunch",
-        description: "Refreshments served in the Main Lounge. Connect with speakers and fellow attendees.",
-        speaker: "",
-    },
-    {
-        time: "02:30 PM",
-        type: "Talk",
-        title: "Humanity in the Digital Age",
-        description: "Reclaiming our focus and empathy in a world engineered for distraction.",
-        speaker: "Julian Vescovi, Philosopher & Author",
-    }
-];
+import scheduleData from "@/data/schedule.json";
 
 export default function SchedulePage() {
+    const { header, schedule, footer } = scheduleData;
     const containerRef = useRef<HTMLDivElement>(null);
     const timelineRef = useRef<HTMLDivElement>(null);
 
@@ -107,11 +72,11 @@ export default function SchedulePage() {
                         transition={{ duration: 0.8 }}
                         className="inline-block px-4 py-1.5 rounded-full border border-[#eb0027]/30 bg-[#eb0027]/10 text-[#eb0027] text-sm font-semibold tracking-widest uppercase mb-6"
                     >
-                        Mark Your Calendars
+                        {header.label}
                     </motion.div>
 
                     <h1 className="text-5xl md:text-8xl font-black tracking-tighter uppercase overflow-hidden flex flex-wrap justify-center">
-                        {"Event Schedule".split("").map((char, i) => (
+                        {header.title.split("").map((char, i) => (
                             <span key={i} className="hero-text-char inline-block">
                                 {char === " " ? "\u00A0" : char}
                             </span>
@@ -126,7 +91,7 @@ export default function SchedulePage() {
                     <div className="timeline-line absolute left-8 md:left-1/2 top-0 bottom-0 w-1 bg-linear-to-b from-[#eb0027] to-neutral-900 rounded-full md:-translate-x-1/2" />
 
                     <div className="space-y-16">
-                        {SCHEDULE_DATA.map((item, index) => {
+                        {schedule.map((item, index) => {
                             const isEven = index % 2 === 0;
                             return (
                                 <div key={index} className={`timeline-item relative flex items-center md:justify-between ${isEven ? "md:flex-row-reverse" : "md:flex-row"} flex-col md:items-center`}>
@@ -173,10 +138,10 @@ export default function SchedulePage() {
                     viewport={{ once: true }}
                     className="mt-32 text-center"
                 >
-                    <h2 className="text-4xl font-bold mb-6">Don&apos;t miss out</h2>
-                    <p className="text-neutral-400 mb-8 max-w-xl mx-auto">Tickets are selling fast. Reserve your spot for TEDxACEEC 2024 and be part of the conversation today.</p>
+                    <h2 className="text-4xl font-bold mb-6">{footer.title}</h2>
+                    <p className="text-neutral-400 mb-8 max-w-xl mx-auto">{footer.description}</p>
                     <button className="px-8 py-4 bg-[#eb0027] hover:bg-[#ff1a3f] text-white font-bold rounded-xl transition-colors text-lg shadow-[0_0_30px_rgba(235,0,39,0.3)]">
-                        Register Now
+                        {footer.buttonText}
                     </button>
                 </motion.div>
             </div>

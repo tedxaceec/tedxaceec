@@ -4,6 +4,7 @@ import { useEffect, useRef, useCallback } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { WHAT_IS_TEDX } from "@/data/about";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -123,6 +124,7 @@ function LicenseIcon() {
         </svg>
     );
 }
+
 function SpeakerIcon() {
     return (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -133,6 +135,7 @@ function SpeakerIcon() {
         </svg>
     );
 }
+
 function HeartIcon() {
     return (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -140,6 +143,8 @@ function HeartIcon() {
         </svg>
     );
 }
+
+const ICONS = [<LicenseIcon />, <SpeakerIcon />, <HeartIcon />];
 
 /* ─── Main Section ───────────────────────────────────────────────────────── */
 export default function WhatIsTedx() {
@@ -159,7 +164,7 @@ export default function WhatIsTedx() {
                         className="mb-4 inline-flex items-center gap-2 rounded-full border border-red-500/20 bg-linear-to-r from-red-500/10 to-red-500/5 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-red-400"
                     >
                         <span className="h-1.5 w-1.5 rounded-full bg-red-400 animate-pulse" />
-                        Independently Organized
+                        {WHAT_IS_TEDX.tagline}
                     </motion.div>
 
                     <motion.h2
@@ -169,14 +174,14 @@ export default function WhatIsTedx() {
                         transition={{ duration: 0.6, delay: 0.1 }}
                         className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl"
                     >
-                        What is{" "}
+                        {WHAT_IS_TEDX.title.split("TEDx")[0]}
                         <span className="relative">
                             <span className="text-transparent bg-clip-text bg-linear-to-r from-red-500 via-red-400 to-red-600">
                                 TEDx
                             </span>
                             <span className="absolute -bottom-1 left-0 h-[2px] w-full bg-linear-to-r from-transparent via-red-500/60 to-transparent" />
                         </span>
-                        ?
+                        {WHAT_IS_TEDX.title.split("TEDx")[1]}
                     </motion.h2>
 
                     <motion.p
@@ -186,11 +191,7 @@ export default function WhatIsTedx() {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="mt-6 text-base leading-relaxed text-neutral-400 sm:text-lg md:text-xl md:leading-relaxed"
                     >
-                        In the spirit of{" "}
-                        <strong className="text-white font-medium">ideas worth spreading</strong>,
-                        TEDx is a program of local, self-organized events that bring people together
-                        to share a TED-like experience. At a TEDx event, TEDTalks videos and live
-                        speakers combine to spark deep conversation and connection.
+                        {WHAT_IS_TEDX.description}
                     </motion.p>
                 </div>
 
@@ -214,24 +215,15 @@ export default function WhatIsTedx() {
 
                 {/* Cards Grid */}
                 <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-                    <GlassCard
-                        icon={<LicenseIcon />}
-                        title="Free License from TED"
-                        description="TEDx events are planned and organized independently, under a free license granted by TED. They follow TED's format and guidelines to maintain the quality and spirit of TED."
-                        index={0}
-                    />
-                    <GlassCard
-                        icon={<SpeakerIcon />}
-                        title="Live Speakers & TED Talks"
-                        description="Each TEDx event features a mix of live presenters and TED Talk videos, creating a unique blend of globally-curated and locally-sourced perspectives."
-                        index={1}
-                    />
-                    <GlassCard
-                        icon={<HeartIcon />}
-                        title="Community Connection"
-                        description="By bringing people together in a small group setting, TEDx events spark deep discussions, new friendships, and lasting connections within local communities."
-                        index={2}
-                    />
+                    {WHAT_IS_TEDX.cards.map((card, i) => (
+                        <GlassCard
+                            key={i}
+                            icon={ICONS[i % ICONS.length]}
+                            title={card.title}
+                            description={card.description}
+                            index={i}
+                        />
+                    ))}
                 </div>
             </div>
         </section>

@@ -1,0 +1,49 @@
+{
+  "header": {
+    "label": "Mark Your Calendars",
+    "title": "Event Schedule",
+    "subtitle": "Discover the timeline of ideas worth spreading."
+  },
+  "schedule": [
+    {
+      "time": "09:00 AM",
+      "type": "Talk",
+      "title": "Opening Ceremony: The Future of AI",
+      "description": "A deep dive into how generative models are reshaping our creative landscapes and ethical boundaries in 2024.",
+      "speaker": "Dr. Sarah Chen, AI Research Lead"
+    },
+    {
+      "time": "10:30 AM",
+      "type": "Talk",
+      "title": "Sustainable Architecture",
+      "description": "Designing living structures that coexist with nature rather than competing for its resources.",
+      "speaker": "Mark Sterling, Chief Architect"
+    },
+    {
+      "time": "11:45 AM",
+      "type": "Performance",
+      "title": "Soulful Strings",
+      "description": "A contemporary orchestral performance blending traditional instruments with electronic textures.",
+      "speaker": "ACEEC Orchestra"
+    },
+    {
+      "time": "01:00 PM",
+      "type": "Break",
+      "title": "Networking Lunch",
+      "description": "Refreshments served in the Main Lounge. Connect with speakers and fellow attendees.",
+      "speaker": ""
+    },
+    {
+      "time": "02:30 PM",
+      "type": "Talk",
+      "title": "Humanity in the Digital Age",
+      "description": "Reclaiming our focus and empathy in a world engineered for distraction.",
+      "speaker": "Julian Vescovi, Philosopher & Author"
+    }
+  ],
+  "footer": {
+    "title": "Don't miss out",
+    "description": "Tickets are selling fast. Reserve your spot for TEDxACEEC 2024 and be part of the conversation today.",
+    "buttonText": "Register Now"
+  }
+}

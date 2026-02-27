@@ -269,3 +269,25 @@ export const SPONSOR_STATS = [
   { value: "15+", label: "Speakers" },
   { value: "8hrs", label: "of Content" },
 ];
+
+export const SPONSOR_CTA = {
+  badge: "Open for Partnership",
+  title: {
+    part1: "Want to be part of the",
+    highlight: "TEDx story",
+    part2: "?",
+  },
+  description:
+    "Join forces with us to bring the brightest minds to our stage. Connect with 2,000+ attendees, gain premium brand visibility, and be part of a movement at TEDxACE Engineering College.",
+  contactEmail: "sponsorship@tedxaceec.com",
+  primaryCTA: {
+    text: "Contact Us",
+    href: "#contact",
+  },
+  secondaryCTA: {
+    text: "Download Brochure",
+    href: "#",
+  },
+  notice:
+    "This independent TEDx event is operated under license from TED. Sponsorships support the event and are not endorsements by TED.",
+};

@@ -7,6 +7,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+import { THEME } from "@/data/about";
+
 export default function ThemeSection() {
     const sectionRef = useRef<HTMLElement>(null);
     const bedrockRef = useRef<HTMLDivElement>(null);
@@ -65,7 +67,7 @@ export default function ThemeSection() {
                         transition={{ duration: 0.6 }}
                         className="mb-4 inline-flex items-center gap-2 rounded-full border border-red-500/20 bg-linear-to-r from-red-500/10 to-red-500/5 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-red-400"
                     >
-                        Our Theme
+                        {THEME.header}
                     </motion.div>
 
                     <motion.h2
@@ -76,11 +78,11 @@ export default function ThemeSection() {
                         className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl"
                     >
                         <span className="text-transparent bg-clip-text bg-linear-to-r from-neutral-300 to-neutral-500">
-                            Bedrock
+                            {THEME.title.part1}
                         </span>{" "}
-                        <span className="text-neutral-600">&amp;</span>{" "}
+                        <span className="text-neutral-600">{THEME.title.separator}</span>{" "}
                         <span className="text-transparent bg-clip-text bg-linear-to-r from-red-500 via-red-400 to-red-600">
-                            Beyond
+                            {THEME.title.part2}
                         </span>
                     </motion.h2>
                 </div>
@@ -103,30 +105,22 @@ export default function ThemeSection() {
 
                         <div className="relative z-10">
                             <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-neutral-800 ring-1 ring-white/10">
-                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-neutral-300">
-                                    <path d="M2 22L12 2l10 20H2z" />
-                                    <path d="M12 22V10" />
-                                </svg>
+                                {THEME.bedrock.icon}
                             </div>
 
                             <h3 className="text-2xl font-bold text-white md:text-3xl">
-                                Bedrock
+                                {THEME.bedrock.title}
                             </h3>
                             <p className="mt-1 text-sm font-medium uppercase tracking-[0.2em] text-neutral-500">
-                                The Foundation
+                                {THEME.bedrock.subtitle}
                             </p>
 
                             <p className="mt-6 text-base leading-relaxed text-neutral-400 md:text-lg md:leading-relaxed">
-                                <strong className="text-neutral-200 font-medium">Bedrock</strong>{" "}
-                                represents the unwavering foundations upon which we build — the
-                                timeless principles of knowledge, resilience, culture, and values
-                                that our predecessors laid down for us. It is the solid ground of
-                                wisdom, the unyielding bedrock of science, tradition, and human
-                                experience that gives us the strength to reach higher.
+                                {THEME.bedrock.description}
                             </p>
 
                             <div className="mt-6 flex flex-wrap gap-2">
-                                {["Knowledge", "Resilience", "Heritage", "Values"].map((tag) => (
+                                {THEME.bedrock.tags.map((tag) => (
                                     <span
                                         key={tag}
                                         className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-neutral-400"
@@ -149,32 +143,22 @@ export default function ThemeSection() {
 
                         <div className="relative z-10">
                             <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-red-500/10 ring-1 ring-red-500/20">
-                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-red-400">
-                                    <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                                    <path d="M2 17l10 5 10-5" />
-                                    <path d="M2 12l10 5 10-5" />
-                                </svg>
+                                {THEME.beyond.icon}
                             </div>
 
                             <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-linear-to-r from-red-400 to-red-500 md:text-3xl">
-                                Beyond
+                                {THEME.beyond.title}
                             </h3>
                             <p className="mt-1 text-sm font-medium uppercase tracking-[0.2em] text-red-400/60">
-                                The Frontier
+                                {THEME.beyond.subtitle}
                             </p>
 
                             <p className="mt-6 text-base leading-relaxed text-neutral-400 md:text-lg md:leading-relaxed">
-                                <strong className="text-red-300 font-medium">Beyond</strong>{" "}
-                                represents the limitless horizon of human imagination — the
-                                uncharted territories of innovation, technology, and creative
-                                disruption. It is the call to push past comfort zones, challenge
-                                conventions, and dare to envision a future that doesn&apos;t yet
-                                exist. Together, Bedrock &amp; Beyond remind us that the strongest
-                                futures are built on the deepest foundations.
+                                {THEME.beyond.description}
                             </p>
 
                             <div className="mt-6 flex flex-wrap gap-2">
-                                {["Innovation", "Imagination", "Disruption", "Future"].map((tag) => (
+                                {THEME.beyond.tags.map((tag) => (
                                     <span
                                         key={tag}
                                         className="rounded-full border border-red-500/15 bg-red-500/5 px-3 py-1 text-xs font-medium text-red-400/80"
@@ -195,7 +179,7 @@ export default function ThemeSection() {
                     transition={{ duration: 0.8, delay: 0.3 }}
                     className="mx-auto mt-12 max-w-2xl text-center text-base text-neutral-500 italic md:text-lg"
                 >
-                    &ldquo;The strongest futures are built on the deepest foundations.&rdquo;
+                    &ldquo;{THEME.connector.replace(/“|”/g, '')}&rdquo;
                 </motion.p>
             </div>
         </section>

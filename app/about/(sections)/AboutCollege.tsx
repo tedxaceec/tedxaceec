@@ -3,6 +3,8 @@
 import { useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
+import { COLLEGE } from "@/data/about";
+
 /* ─── Animated Counter ───────────────────────────────────────────────────── */
 function AnimatedStat({
     value,
@@ -87,7 +89,7 @@ export default function AboutCollege() {
                             transition={{ duration: 0.6 }}
                             className="mb-4 inline-flex items-center gap-2 rounded-full border border-red-500/20 bg-linear-to-r from-red-500/10 to-red-500/5 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-red-400"
                         >
-                            Our Campus
+                            {COLLEGE.tagline}
                         </motion.div>
 
                         <motion.h2
@@ -97,67 +99,40 @@ export default function AboutCollege() {
                             transition={{ duration: 0.6, delay: 0.1 }}
                             className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl"
                         >
-                            About{" "}
+                            {COLLEGE.title.split("ACE")[0]}
                             <span className="text-transparent bg-clip-text bg-linear-to-r from-red-500 via-red-400 to-red-600">
                                 ACE
-                            </span>{" "}
-                            Engineering College
+                            </span>
+                            {COLLEGE.title.split("ACE")[1]}
                         </motion.h2>
 
-                        <motion.p
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.2 }}
-                            className="mt-6 text-base leading-relaxed text-neutral-400 sm:text-lg md:text-xl md:leading-relaxed"
-                        >
-                            <strong className="text-white font-medium">
-                                ACE Engineering College
-                            </strong>{" "}
-                            is a premier institution of higher learning located in Hyderabad,
-                            Telangana, India. Established with a vision to nurture innovation
-                            and academic excellence, the college has been at the forefront of
-                            engineering education, producing world-class engineers and
-                            innovators.
-                        </motion.p>
-
-                        <motion.p
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.3 }}
-                            className="mt-4 text-base leading-relaxed text-neutral-400 sm:text-lg md:leading-relaxed"
-                        >
-                            With state-of-the-art infrastructure, dedicated faculty, and a
-                            vibrant campus culture, ACE Engineering College provides a
-                            nurturing environment that encourages students to think beyond
-                            boundaries and create meaningful impact. The college is NAAC
-                            accredited and affiliated to JNTUH, offering a range of
-                            undergraduate and postgraduate programs in engineering and
-                            technology.
-                        </motion.p>
-
-                        <motion.p
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.4 }}
-                            className="mt-4 text-base leading-relaxed text-neutral-400 sm:text-lg md:leading-relaxed"
-                        >
-                            TEDxACE Engineering College is a proud extension of this legacy
-                            — a platform where the spirit of innovation meets the power of
-                            ideas worth spreading.
-                        </motion.p>
+                        <div className="mt-6 space-y-4">
+                            {COLLEGE.description.split('\n\n').map((para, i) => (
+                                <motion.p
+                                    key={i}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: 0.2 + (i * 0.1) }}
+                                    className="text-base leading-relaxed text-neutral-400 sm:text-lg md:text-xl md:leading-relaxed"
+                                >
+                                    {para}
+                                </motion.p>
+                            ))}
+                        </div>
                     </div>
 
                     {/* Right – Stats Grid */}
                     <div className="college-cards-grid grid grid-cols-2 gap-4">
-                        <AnimatedStat value={20} suffix="+" label="Years of Excellence" delay={0} />
-                        <AnimatedStat value={3000} suffix="+" label="Students" delay={0.1} />
-                        <AnimatedStat value={8} suffix="+" label="Departments" delay={0.2} />
-                        <AnimatedStat value={200} suffix="+" label="Faculty Members" delay={0.3} />
-                        <AnimatedStat value={95} suffix="%" label="Placement Rate" delay={0.4} />
-                        <AnimatedStat value={50} suffix="+" label="Clubs & Societies" delay={0.5} />
+                        {COLLEGE.stats.map((stat, i) => (
+                            <AnimatedStat
+                                key={i}
+                                value={stat.value}
+                                suffix={stat.suffix}
+                                label={stat.label}
+                                delay={i * 0.1}
+                            />
+                        ))}
                     </div>
                 </div>
             </div>
