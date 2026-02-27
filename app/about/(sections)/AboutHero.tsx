@@ -129,7 +129,7 @@ export default function AboutHero() {
                         <span className="text-[10px] font-medium uppercase tracking-[0.3em] text-neutral-500">
                             Scroll
                         </span>
-                        <div className="h-8 w-[1px] bg-linear-to-b from-red-500/50 to-transparent" />
+                        <div className="h-8 w-px bg-linear-to-b from-red-500/50 to-transparent" />
                     </motion.div>
                 </motion.div>
             </div>
