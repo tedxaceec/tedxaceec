@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState, useRef } from "react";
+import Image from "next/image";
 import dynamic from "next/dynamic";
 
 /* ─── Lazy-load UnicornScene so it only runs on the client ──────────────── */
@@ -12,19 +13,29 @@ const UnicornScene = dynamic(() => import("unicornstudio-react/next"), {
 const UNICORN_PROJECT_ID = "UwxiOc9Rb5VYIwTLK2rv";
 const UNICORN_SDK_URL =
     "https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v2.0.5/dist/unicornStudio.umd.js";
+const MOBILE_BREAKPOINT = 768;
 
 /* ─── Main Hero Section ─────────────────────────────────────────────────── */
 export default function HeroSection() {
     const sectionRef = useRef<HTMLElement>(null);
     const [isMounted, setIsMounted] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
         setIsMounted(true);
+
+        /* ── Responsive: detect mobile viewport ──────────────────────── */
+        const mql = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT}px)`);
+        setIsMobile(mql.matches);
+
+        const onChange = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+        mql.addEventListener("change", onChange);
+        return () => mql.removeEventListener("change", onChange);
     }, []);
 
     /* Remove Unicorn Studio watermark using MutationObserver */
     useEffect(() => {
-        if (!isMounted) return;
+        if (!isMounted || isMobile) return;
 
         const section = sectionRef.current;
         if (!section) return;
@@ -61,7 +72,7 @@ export default function HeroSection() {
         observer.observe(section, { childList: true, subtree: true });
 
         return () => observer.disconnect();
-    }, [isMounted]);
+    }, [isMounted, isMobile]);
 
     return (
         <section
@@ -69,20 +80,33 @@ export default function HeroSection() {
             id="hero"
             className="relative flex min-h-screen items-center justify-center overflow-hidden"
         >
-            {/* ── WebGL Scene (Unicorn Studio) — full screen, no overlay ──── */}
-            {/* Container extends below viewport so the watermark (at bottom:30px)
-                gets pushed out of view and clipped by overflow-hidden */}
-            <div className="absolute inset-0 z-0" style={{ bottom: "-100px" }}>
-                {isMounted && (
-                    <UnicornScene
-                        projectId={UNICORN_PROJECT_ID}
-                        sdkUrl={UNICORN_SDK_URL}
-                        width="100%"
-                        height="100%"
-                        production
+            {isMobile ? (
+                /* ── Mobile: static hero image ───────────────────────────── */
+                <div className="absolute inset-0 z-0">
+                    <Image
+                        src="/mobile-hero.png"
+                        alt="TEDx ACEEC – Bedrock & Beyond"
+                        fill
+                        priority
+                        className="object-cover object-center"
                     />
-                )}
-            </div>
+                </div>
+            ) : (
+                /* ── Desktop: WebGL Scene (Unicorn Studio) ───────────────── */
+                /* Container extends below viewport so the watermark (at bottom:30px)
+                   gets pushed out of view and clipped by overflow-hidden */
+                <div className="absolute inset-0 z-0" style={{ bottom: "-100px" }}>
+                    {isMounted && (
+                        <UnicornScene
+                            projectId={UNICORN_PROJECT_ID}
+                            sdkUrl={UNICORN_SDK_URL}
+                            width="100%"
+                            height="100%"
+                            production
+                        />
+                    )}
+                </div>
+            )}
 
             {/* ── Bottom vignette — covers watermark area + fades into next section */}
             <div
