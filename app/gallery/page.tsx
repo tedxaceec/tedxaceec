@@ -1,7 +1,5 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import "./carousel.css";
 
@@ -60,13 +58,6 @@ const GALLERY_DATA = [
 const N = GALLERY_DATA.length;
 
 export default function GalleryPage() {
-    const [isPaused, setIsPaused] = useState(false);
-    const carouselRef = useRef<HTMLDivElement>(null);
-
-    // Pause/resume on hover
-    const handleMouseEnter = () => setIsPaused(true);
-    const handleMouseLeave = () => setIsPaused(false);
-
     return (
         <section className="gallery-page">
             {/* Background decorative elements */}
@@ -95,12 +86,9 @@ export default function GalleryPage() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
             >
                 <div
-                    ref={carouselRef}
-                    className={`a3d ${isPaused ? "paused" : ""}`}
+                    className="a3d"
                     style={{ "--n": N } as React.CSSProperties}
                 >
                     {GALLERY_DATA.map((item, i) => (
@@ -114,29 +102,6 @@ export default function GalleryPage() {
                         />
                     ))}
                 </div>
-            </motion.div>
-
-            {/* Pause indicator */}
-            <motion.div
-                className="gallery-pause-hint"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1.5, duration: 0.6 }}
-            >
-                <span className="gallery-pause-hint__icon">
-                    {isPaused ? (
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-                            <rect x="6" y="4" width="4" height="16" rx="1" />
-                            <rect x="14" y="4" width="4" height="16" rx="1" />
-                        </svg>
-                    ) : (
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <circle cx="12" cy="12" r="10" />
-                            <path d="M12 8v4l3 3" strokeLinecap="round" />
-                        </svg>
-                    )}
-                </span>
-                {isPaused ? "Paused — move away to resume" : "Hover to pause rotation"}
             </motion.div>
         </section>
     );
