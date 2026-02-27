@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
@@ -65,12 +66,17 @@ function MagneticLink({
 
 /* ─── Main Navbar ─────────────────────────────────────────────────────────── */
 export default function Navbar() {
+    const pathname = usePathname();
     const [mobileOpen, setMobileOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
-    const [activeLink, setActiveLink] = useState("/");
-    const [activeIndex, setActiveIndex] = useState(0);
     const navListRef = useRef<HTMLUListElement>(null);
     const [pillStyle, setPillStyle] = useState({ left: 0, width: 0 });
+
+    // Derive active link and index from pathname
+    const activeIndex = NAV_LINKS.findIndex(({ href }) =>
+        href === "/" ? pathname === "/" : pathname.startsWith(href)
+    );
+    const activeLink = NAV_LINKS[activeIndex >= 0 ? activeIndex : 0]?.href ?? "/";
 
     // ── Track scroll ────────────────────────────────────────────────────────
     useEffect(() => {
@@ -99,7 +105,8 @@ export default function Navbar() {
     useEffect(() => {
         if (!navListRef.current) return;
         const items = navListRef.current.querySelectorAll("li");
-        const item = items[activeIndex];
+        const idx = activeIndex >= 0 ? activeIndex : 0;
+        const item = items[idx];
         if (!item) return;
 
         const listRect = navListRef.current.getBoundingClientRect();
@@ -111,9 +118,7 @@ export default function Navbar() {
         });
     }, [activeIndex]);
 
-    const handleLinkClick = useCallback((href: string, index: number) => {
-        setActiveLink(href);
-        setActiveIndex(index);
+    const handleLinkClick = useCallback(() => {
         setMobileOpen(false);
     }, []);
 
@@ -150,7 +155,7 @@ export default function Navbar() {
                             href="/"
                             className="relative group flex items-center gap-1 shrink-0"
                             aria-label="TEDx ACE Engineering College - Go to homepage"
-                            onClick={() => handleLinkClick("/", 0)}
+                            onClick={() => handleLinkClick()}
                         >
                             <Image
                                 src="/tedxaceec-dark.svg"
@@ -196,7 +201,7 @@ export default function Navbar() {
                                             href={href}
                                             label={label}
                                             isActive={activeLink === href}
-                                            onClick={() => handleLinkClick(href, i)}
+                                            onClick={() => handleLinkClick()}
                                         />
                                     ))}
                                 </ul>
@@ -307,7 +312,7 @@ export default function Navbar() {
                                 >
                                     <Link
                                         href={href}
-                                        onClick={() => handleLinkClick(href, i)}
+                                        onClick={() => handleLinkClick()}
                                         className={`block px-6 py-4 text-3xl font-light tracking-wider uppercase transition-colors duration-300 ${activeLink === href
                                             ? "text-white"
                                             : "text-neutral-500 hover:text-neutral-300"
