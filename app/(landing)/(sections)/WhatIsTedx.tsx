@@ -326,7 +326,12 @@ function GlobalIcon() {
 }
 
 /* ─── Main Section ────────────────────────────────────────────────────────── */
+import homeData from "@/data/home.json";
+
+/* ─── Main Section ────────────────────────────────────────────────────────── */
 export default function WhatIsTedx() {
+    const { whatIsTedx } = homeData;
+
     return (
         <section
             id="what-is-tedx"
@@ -350,7 +355,7 @@ export default function WhatIsTedx() {
                         className="mb-4 inline-flex items-center gap-2 rounded-full border border-red-500/20 bg-linear-to-r from-red-500/10 to-red-500/5 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-red-400"
                     >
                         <span className="h-1.5 w-1.5 rounded-full bg-red-400 animate-pulse" aria-hidden="true" />
-                        Ideas Worth Spreading
+                        {whatIsTedx.tagline}
                     </motion.div>
 
                     <motion.h2
@@ -375,13 +380,9 @@ export default function WhatIsTedx() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className="mt-6 text-base leading-relaxed text-neutral-400 sm:text-lg md:text-xl md:leading-relaxed"
+                        className="mt-6 text-base leading-relaxed text-neutral-400 sm:text-lg md:text-xl md:leading-relaxed whitespace-pre-line"
                     >
-                        In the spirit of <strong className="text-white font-medium">ideas worth spreading</strong>, TEDx is a program
-                        of local, self-organized events that bring people together to share a TED-like experience.
-                        At a TEDx event, <strong className="text-white font-medium">TEDTalks videos</strong> and{" "}
-                        <strong className="text-white font-medium">live speakers</strong> combine to spark deep
-                        conversation and connection in a small group.
+                        {whatIsTedx.description}
                     </motion.p>
                 </div>
 
@@ -420,20 +421,20 @@ export default function WhatIsTedx() {
                     <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                         <InfoCard
                             icon={<IdeaIcon />}
-                            title="Independently Organized"
-                            description="TEDx events are independently organized under a free license from TED. Our event, TEDxACE Engineering College, follows TED's format and guidelines while showcasing local voices."
+                            title={whatIsTedx.cards[0].title}
+                            description={whatIsTedx.cards[0].description}
                             index={0}
                         />
                         <InfoCard
                             icon={<CommunityIcon />}
-                            title="Community Driven"
-                            description="TEDx creates a unique gathering bringing together bright minds — curating thought-provoking talks, performances, and conversations that spark ideas and inspire action."
+                            title={whatIsTedx.cards[1].title}
+                            description={whatIsTedx.cards[1].description}
                             index={1}
                         />
                         <InfoCard
                             icon={<GlobalIcon />}
-                            title="Global Movement"
-                            description="With thousands of events held across 170+ countries, TEDx has become the world's largest platform for sharing transformative ideas — from local campuses to global stages."
+                            title={whatIsTedx.cards[2].title}
+                            description={whatIsTedx.cards[2].description}
                             index={2}
                         />
                     </div>
@@ -463,10 +464,15 @@ export default function WhatIsTedx() {
 
                 {/* ── Statistics ───────────────────────────────────────────── */}
                 <div className="mt-24 grid grid-cols-2 gap-8 md:grid-cols-4 md:gap-12">
-                    <AnimatedStat value={3000} suffix="+" label="Events per year" delay={0} />
-                    <AnimatedStat value={170} suffix="+" label="Countries" delay={0.1} />
-                    <AnimatedStat value={100} suffix="K+" label="Talks online" delay={0.2} />
-                    <AnimatedStat value={8} suffix="B+" label="Views & counting" delay={0.3} />
+                    {whatIsTedx.stats.map((stat, i) => (
+                        <AnimatedStat
+                            key={i}
+                            value={stat.value}
+                            suffix={stat.suffix}
+                            label={stat.label}
+                            delay={i * 0.1}
+                        />
+                    ))}
                 </div>
 
                 {/* ── Divider Line ─────────────────────────────────────────── */}

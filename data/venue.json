@@ -1,0 +1,46 @@
+{
+  "hero": {
+    "title": "The Venue",
+    "description": "Experience ideas worth spreading at the heart of Acharya College of Engineering."
+  },
+  "locations": [
+    {
+      "id": "auditorium",
+      "name": "The Auditorium",
+      "tag": "Main Stage",
+      "description": "Where the magic happens. A state-of-the-art facility featuring perfect acoustics, dynamic lighting, and seating for over 1,200 attendees."
+    },
+    {
+      "id": "innovation-hub",
+      "name": "Innovation Hub",
+      "description": "Interactive exhibits and partner displays."
+    },
+    {
+      "id": "networking-plaza",
+      "name": "Networking Plaza",
+      "description": "Open-air spaces for coffee and conversation."
+    }
+  ],
+  "transportation": [
+    {
+      "icon": "Bus",
+      "title": "Shuttle Bus",
+      "description": "Dedicated TEDxACEEC shuttles run every 20 mins from the main city terminal starting at 8:00 AM."
+    },
+    {
+      "icon": "Train",
+      "title": "Metro Rail",
+      "description": "Take the Red Line to ACEEC Station. The campus is a brief 5-minute walk from the South Exit."
+    },
+    {
+      "icon": "Car",
+      "title": "Car Parking",
+      "description": "Free designated parking for attendees is available at Gate 4. VIP parking available at Gate 1."
+    }
+  ],
+  "address": {
+    "full": "Acharya Dr. Sarvepalli Radhakrishnan Road, Soladevanahalli, Bangalore, Karnataka 560107",
+    "email": "venue@tedxaceec.com",
+    "phone": "+91 80 237 222 22"
+  }
+}

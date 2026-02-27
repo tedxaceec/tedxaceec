@@ -6,14 +6,8 @@ import React, { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
-const NAV_LINKS = [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
-    { href: "/speakers", label: "Speakers" },
-    { href: "/sponsors", label: "Sponsors" },
-    { href: "/gallery", label: "Gallery" },
-    { href: "/contact", label: "Contact" },
-];
+import { NAV_LINKS } from "@/data/navigation";
+
 
 /* ─── Magnetic Link ───────────────────────────────────────────────────────── */
 function MagneticLink({

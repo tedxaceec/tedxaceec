@@ -7,6 +7,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+import { MOTTO } from "@/data/about";
+
 export default function MottoSection() {
     const sectionRef = useRef<HTMLElement>(null);
     const textRef = useRef<HTMLDivElement>(null);
@@ -67,7 +69,7 @@ export default function MottoSection() {
                 <div ref={textRef} className="relative">
                     {/* Large motto text */}
                     <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 md:gap-x-6">
-                        {["Ideas", "Worth", "Spreading"].map((word) => (
+                        {MOTTO.words.map((word) => (
                             <span
                                 key={word}
                                 className="motto-word text-5xl font-black tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
@@ -75,7 +77,7 @@ export default function MottoSection() {
                                     textShadow: "0 0 80px rgba(235, 0, 40, 0.15)",
                                 }}
                             >
-                                {word === "Worth" ? (
+                                {word === MOTTO.highlightWord ? (
                                     <span className="text-transparent bg-clip-text bg-linear-to-r from-red-500 via-red-400 to-red-600">
                                         {word}
                                     </span>
@@ -103,9 +105,7 @@ export default function MottoSection() {
                     transition={{ duration: 0.8, delay: 0.6 }}
                     className="mx-auto mt-8 max-w-xl text-base text-neutral-500 md:text-lg"
                 >
-                    Every idea has the power to change the world. At TEDxACE Engineering
-                    College, we believe in amplifying those ideas and giving them the
-                    stage they deserve.
+                    {MOTTO.description}
                 </motion.p>
             </div>
         </section>

@@ -1,5 +1,103 @@
 [
   {
+    "id": "featured-1",
+    "name": "Speaker TBA",
+    "role": "Innovation & Entrepreneurship",
+    "organization": "TBA",
+    "topic": "Building Tomorrow's Foundations",
+    "bio": "A visionary leader in the field of innovation and entrepreneurship, sharing insights on how to build sustainable foundations for the future.",
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=1000&fit=crop&q=80",
+    "social": {
+      "twitter": "#",
+      "linkedin": "#"
+    },
+    "isFeatured": true
+  },
+  {
+    "id": "featured-2",
+    "name": "Speaker TBA",
+    "role": "Technology & AI",
+    "organization": "TBA",
+    "topic": "The Intelligence Revolution",
+    "bio": "Deeply involved in the AI revolution, exploring how intelligent systems are reshaping our world and what it means for the future of humanity.",
+    "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=1000&fit=crop&q=80",
+    "social": {
+      "twitter": "#",
+      "linkedin": "#"
+    },
+    "isFeatured": true
+  },
+  {
+    "id": "featured-3",
+    "name": "Speaker TBA",
+    "role": "Education & Research",
+    "organization": "TBA",
+    "topic": "Reimagining Learning",
+    "bio": "Passionate about educational reform and breakthroughs in research that challenge traditional learning paradigms.",
+    "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&h=1000&fit=crop&q=80",
+    "social": {
+      "twitter": "#",
+      "linkedin": "#"
+    },
+    "isFeatured": true
+  },
+  {
+    "id": "featured-4",
+    "name": "Speaker TBA",
+    "role": "Arts & Culture",
+    "organization": "TBA",
+    "topic": "Stories That Shape Us",
+    "bio": "Exploring the profound impact of storytelling and culture on our collective identity and the world we create.",
+    "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&h=1000&fit=crop&q=80",
+    "social": {
+      "twitter": "#",
+      "linkedin": "#"
+    },
+    "isFeatured": true
+  },
+  {
+    "id": "featured-5",
+    "name": "Speaker TBA",
+    "role": "Social Impact",
+    "organization": "TBA",
+    "topic": "Beyond the Bedrock",
+    "bio": "Dedicated to creating meaningful social change and exploring the ripples of impact that ideas can have on communities.",
+    "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800&h=1000&fit=crop&q=80",
+    "social": {
+      "twitter": "#",
+      "linkedin": "#"
+    },
+    "isFeatured": true
+  },
+  {
+    "id": "featured-6",
+    "name": "Speaker TBA",
+    "role": "Science & Discovery",
+    "organization": "TBA",
+    "topic": "Frontiers of Knowledge",
+    "bio": "At the cutting edge of scientific discovery, pushing the boundaries of what we know about the universe and ourselves.",
+    "image": "https://images.unsplash.com/photo-1594824476967-48c8b964e07a?w=800&h=1000&fit=crop&q=80",
+    "social": {
+      "twitter": "#",
+      "linkedin": "#"
+    },
+    "isFeatured": true
+  },
+  {
+    "id": "featured-7",
+    "name": "Speaker TBA",
+    "role": "Sustainability & Future",
+    "organization": "TBA",
+    "topic": "A Greener Tomorrow",
+    "bio": "Focused on sustainable solutions and building a future where technology and nature coexist in harmony.",
+    "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&h=1000&fit=crop&q=80",
+    "social": {
+      "twitter": "#",
+      "linkedin": "#"
+    },
+    "isFeatured": true
+  },
+  {
     "id": "speaker-1",
     "name": "Dr. Aarav Patel",
     "role": "Quantum Computing Researcher",
@@ -10,7 +108,8 @@
     "social": {
       "twitter": "https://twitter.com/",
       "linkedin": "https://linkedin.com/"
-    }
+    },
+    "isFeatured": false
   },
   {
     "id": "speaker-2",
@@ -23,7 +122,8 @@
     "social": {
       "twitter": "https://twitter.com/",
       "linkedin": "https://linkedin.com/"
-    }
+    },
+    "isFeatured": false
   },
   {
     "id": "speaker-3",
@@ -36,7 +136,8 @@
     "social": {
       "twitter": "https://twitter.com/",
       "linkedin": "https://linkedin.com/"
-    }
+    },
+    "isFeatured": false
   },
   {
     "id": "speaker-4",
@@ -49,7 +150,8 @@
     "social": {
       "twitter": "https://twitter.com/",
       "linkedin": "https://linkedin.com/"
-    }
+    },
+    "isFeatured": false
   },
   {
     "id": "speaker-5",
@@ -62,7 +164,8 @@
     "social": {
       "twitter": "https://twitter.com/",
       "linkedin": "https://linkedin.com/"
-    }
+    },
+    "isFeatured": false
   },
   {
     "id": "speaker-6",
@@ -75,6 +178,7 @@
     "social": {
       "twitter": "https://twitter.com/",
       "linkedin": "https://linkedin.com/"
-    }
+    },
+    "isFeatured": false
   }
 ]

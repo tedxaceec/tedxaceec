@@ -4,66 +4,25 @@ import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef } from "react";
 import Link from "next/link";
 
+import allSpeakers from "@/data/speakers.json";
+
 /* ─── Speaker Data ────────────────────────────────────────────────────────── */
 type Speaker = {
     name: string;
     title: string;
     topic: string;
     image: string;
-    id: number;
+    id: string | number;
 };
 
-const speakers: Speaker[] = [
-    {
-        name: "Speaker TBA",
-        title: "Innovation & Entrepreneurship",
-        topic: "Building Tomorrow's Foundations",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=1000&fit=crop&q=80",
-        id: 1,
-    },
-    {
-        name: "Speaker TBA",
-        title: "Technology & AI",
-        topic: "The Intelligence Revolution",
-        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=1000&fit=crop&q=80",
-        id: 2,
-    },
-    {
-        name: "Speaker TBA",
-        title: "Education & Research",
-        topic: "Reimagining Learning",
-        image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&h=1000&fit=crop&q=80",
-        id: 3,
-    },
-    {
-        name: "Speaker TBA",
-        title: "Arts & Culture",
-        topic: "Stories That Shape Us",
-        image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&h=1000&fit=crop&q=80",
-        id: 4,
-    },
-    {
-        name: "Speaker TBA",
-        title: "Social Impact",
-        topic: "Beyond the Bedrock",
-        image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800&h=1000&fit=crop&q=80",
-        id: 5,
-    },
-    {
-        name: "Speaker TBA",
-        title: "Science & Discovery",
-        topic: "Frontiers of Knowledge",
-        image: "https://images.unsplash.com/photo-1594824476967-48c8b964e07a?w=800&h=1000&fit=crop&q=80",
-        id: 6,
-    },
-    {
-        name: "Speaker TBA",
-        title: "Sustainability & Future",
-        topic: "A Greener Tomorrow",
-        image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&h=1000&fit=crop&q=80",
-        id: 7,
-    },
-];
+const speakers = allSpeakers
+    .filter((s) => s.isFeatured)
+    .map((s) => ({
+        ...s,
+        title: s.role,
+    })) as Speaker[];
+
+
 
 /* ─── Speaker Card ────────────────────────────────────────────────────────── */
 function SpeakerCard({ speaker }: { speaker: Speaker }) {

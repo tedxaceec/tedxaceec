@@ -6,6 +6,14 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { Mail, MapPin, Phone, Instagram, Linkedin, Twitter, ArrowRight } from "lucide-react";
 
+import siteConfig from "@/data/site_config.json";
+
+const socialIconMap: Record<string, React.ElementType> = {
+    Instagram,
+    LinkedIn: Linkedin,
+    Twitter,
+};
+
 export default function ContactPage() {
     const containerRef = useRef<HTMLDivElement>(null);
     const headingRef = useRef<HTMLHeadingElement>(null);
@@ -123,7 +131,7 @@ export default function ContactPage() {
                         transition={{ delay: 0.8, duration: 0.8 }}
                         className="text-neutral-400 text-lg md:text-xl max-w-2xl font-light leading-relaxed"
                     >
-                        Have a question about the upcoming TEDxACEEC event? Want to collaborate,
+                        Have a question about the upcoming {siteConfig.name} event? Want to collaborate,
                         sponsor, or become a speaker? Drop us a line and let&apos;s spark a conversation.
                     </motion.p>
                 </div>
@@ -233,13 +241,13 @@ export default function ContactPage() {
                                     Contact Details
                                 </h4>
                                 <div className="space-y-6">
-                                    <a href="mailto:contact@tedxaceec.com" className="group flex items-start gap-4 p-4 rounded-2xl hover:bg-white/5 transition-colors border border-transparent hover:border-white/10">
+                                    <a href={`mailto:${siteConfig.contact.email}`} className="group flex items-start gap-4 p-4 rounded-2xl hover:bg-white/5 transition-colors border border-transparent hover:border-white/10">
                                         <div className="p-3 bg-neutral-900 rounded-xl text-[#eb0027] group-hover:scale-110 transition-transform">
                                             <Mail className="w-6 h-6" />
                                         </div>
                                         <div>
                                             <p className="font-semibold text-lg text-white group-hover:text-[#eb0027] transition-colors">Chat to our team</p>
-                                            <p className="text-neutral-400 mt-1">contact@tedxaceec.com</p>
+                                            <p className="text-neutral-400 mt-1">{siteConfig.contact.email}</p>
                                         </div>
                                     </a>
 
@@ -249,7 +257,7 @@ export default function ContactPage() {
                                         </div>
                                         <div>
                                             <p className="font-semibold text-lg text-white group-hover:text-[#eb0027] transition-colors">Call us directly</p>
-                                            <p className="text-neutral-400 mt-1">+91 123 456 7890</p>
+                                            <p className="text-neutral-400 mt-1">{siteConfig.contact.phone}</p>
                                         </div>
                                     </div>
 
@@ -260,9 +268,9 @@ export default function ContactPage() {
                                         <div>
                                             <p className="font-semibold text-lg text-white group-hover:text-[#eb0027] transition-colors">Visit us</p>
                                             <p className="text-neutral-400 mt-1 leading-relaxed">
-                                                ACE Engineering College<br />
-                                                Ankushapur, Ghatkesar,<br />
-                                                Hyderabad, Telangana 501301
+                                                {siteConfig.contact.address.split(',').slice(0, 1)}<br />
+                                                {siteConfig.contact.address.split(',').slice(1, 2)},<br />
+                                                {siteConfig.contact.address.split(',').slice(2).join(',')}
                                             </p>
                                         </div>
                                     </div>
@@ -275,28 +283,27 @@ export default function ContactPage() {
                                     Follow our journey
                                 </h4>
                                 <div className="flex gap-4 px-4">
-                                    {[
-                                        { icon: Instagram, href: "#", name: "Instagram" },
-                                        { icon: Linkedin, href: "#", name: "LinkedIn" },
-                                        { icon: Twitter, href: "#", name: "Twitter" }
-                                    ].map((social) => (
-                                        <motion.a
-                                            key={social.name}
-                                            href={social.href}
-                                            whileHover={{ y: -5, scale: 1.1 }}
-                                            whileTap={{ scale: 0.95 }}
-                                            className="p-4 bg-neutral-900 border border-white/5 rounded-full text-neutral-400 hover:text-white hover:border-[#eb0027] hover:bg-[#eb0027]/10 transition-colors"
-                                        >
-                                            <social.icon className="w-5 h-5" />
-                                        </motion.a>
-                                    ))}
+                                    {siteConfig.socials.filter(s => s.name !== "YouTube").map((social) => {
+                                        const Icon = socialIconMap[social.name] || Instagram;
+                                        return (
+                                            <motion.a
+                                                key={social.name}
+                                                href={social.href}
+                                                whileHover={{ y: -5, scale: 1.1 }}
+                                                whileTap={{ scale: 0.95 }}
+                                                className="p-4 bg-neutral-900 border border-white/5 rounded-full text-neutral-400 hover:text-white hover:border-[#eb0027] hover:bg-[#eb0027]/10 transition-colors"
+                                            >
+                                                <Icon className="w-5 h-5" />
+                                            </motion.a>
+                                        );
+                                    })}
                                 </div>
                             </motion.div>
                         </div>
 
                         <motion.div variants={fadeInUp} custom={4} className="mt-12 lg:mt-0 p-4">
                             <p className="text-sm text-neutral-600 font-medium">
-                                © {new Date().getFullYear()} TEDxACEEC. This independent TEDx event is operated under license from TED.
+                                {siteConfig.copyright.replace("{year}", new Date().getFullYear().toString())} {siteConfig.tedLicenseNotice}
                             </p>
                         </motion.div>
                     </motion.div>

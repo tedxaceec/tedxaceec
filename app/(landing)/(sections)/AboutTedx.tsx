@@ -15,7 +15,16 @@ const UNICORN_PROJECT_ID = "0EnUnnlviUGXw9gzG8lh";
 const UNICORN_SDK_URL =
     "https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v2.0.5/dist/unicornStudio.umd.js";
 
+import homeData from "@/data/home.json";
+
+const iconMap = {
+    Users,
+    Lightbulb,
+    Rocket
+};
+
 export default function AboutTedxAce() {
+    const { aboutTedxAce } = homeData;
     const embedRef = useRef<HTMLDivElement>(null);
     const [isMounted, setIsMounted] = useState(false);
 
@@ -79,99 +88,55 @@ export default function AboutTedxAce() {
                         transition={{ duration: 0.8 }}
                     >
                         <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-red-500/20 bg-linear-to-r from-red-500/10 to-red-500/5 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-red-400">
-                            Our Mission
+                            {aboutTedxAce.tagline}
                         </div>
 
                         <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
-                            About{" "}
+                            {/* We split by TEDx to keep the red styling */}
+                            {aboutTedxAce.title.split("TEDx")[0]}
                             <span className="text-transparent bg-clip-text bg-linear-to-r from-red-500 via-red-400 to-red-600">
                                 TEDx
-                            </span>{" "}
-                            ACE Engineering College
+                            </span>
+                            {aboutTedxAce.title.split("TEDx")[1]}
                         </h2>
 
-                        <p className="mt-6 text-base leading-relaxed text-neutral-400 sm:text-lg md:text-xl md:leading-relaxed">
-                            <strong className="text-white font-medium">TEDx ACE Engineering College</strong> is an independently organized event that brings together student innovators, thinkers, and creators to share ideas worth spreading. Located in the heart of our campus, we create a platform to spark deep discussion and connection through powerful ideas.
-                        </p>
-
-                        <p className="mt-4 text-base leading-relaxed text-neutral-400 sm:text-lg md:leading-relaxed">
-                            Our mission is to bring together the most innovative minds, fostering a community of thinkers and doers who are ready to take action and change the world.
+                        <p className="mt-6 text-base leading-relaxed text-neutral-400 sm:text-lg md:text-xl md:leading-relaxed whitespace-pre-line">
+                            {aboutTedxAce.description}
                         </p>
                     </motion.div>
 
                     {/* ── Right Content (Cards) ─────────────────────────────── */}
                     <div className="relative">
                         <div className="flex flex-col gap-5 relative z-10">
-                            {/* Card 1 */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: 0.1 }}
-                                className="group relative overflow-hidden rounded-2xl border border-red-500/20 bg-white/5 p-6 backdrop-blur-xl transition-all hover:bg-white/10"
-                            >
-                                <div className="absolute inset-x-0 bottom-0 h-1 bg-linear-to-r from-transparent via-red-500 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
-                                <div className="flex items-start gap-5">
-                                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-red-500/10 text-red-400 ring-1 ring-red-500/20 group-hover:bg-red-500/20 group-hover:ring-red-500/40 transition-all">
-                                        <Users className="h-6 w-6" />
-                                    </div>
-                                    <div>
-                                        <h3 className="text-lg font-semibold text-white group-hover:text-red-50 transition-colors">Student Led</h3>
-                                        <p className="mt-2 text-sm text-neutral-400 group-hover:text-neutral-300 transition-colors">
-                                            Organized entirely by a passionate team of student innovators and leaders devoted to uncovering local brilliance.
-                                        </p>
-                                    </div>
-                                </div>
-                            </motion.div>
-
-                            {/* Card 2 */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: 0.2 }}
-                                className="group relative overflow-hidden rounded-2xl border border-red-500/20 bg-white/5 p-6 backdrop-blur-xl transition-all hover:bg-white/10 lg:translate-x-6"
-                            >
-                                <div className="absolute inset-x-0 bottom-0 h-1 bg-linear-to-r from-transparent via-red-500 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
-                                <div className="flex items-start gap-5">
-                                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-red-500/10 text-red-400 ring-1 ring-red-500/20 group-hover:bg-red-500/20 group-hover:ring-red-500/40 transition-all">
-                                        <Lightbulb className="h-6 w-6" />
-                                    </div>
-                                    <div>
-                                        <h3 className="text-lg font-semibold text-white group-hover:text-red-50 transition-colors">Innovative Ideas</h3>
-                                        <p className="mt-2 text-sm text-neutral-400 group-hover:text-neutral-300 transition-colors">
-                                            A melting pot of breakthroughs in technology, design, and humanity shared on a premium stage.
-                                        </p>
-                                    </div>
-                                </div>
-                            </motion.div>
-
-                            {/* Card 3 */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: 0.3 }}
-                                className="group relative overflow-hidden rounded-2xl border border-red-500/20 bg-white/5 p-6 backdrop-blur-xl transition-all hover:bg-white/10"
-                            >
-                                <div className="absolute inset-x-0 bottom-0 h-1 bg-linear-to-r from-transparent via-red-500 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
-                                <div className="flex items-start gap-5">
-                                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-red-500/10 text-red-400 ring-1 ring-red-500/20 group-hover:bg-red-500/20 group-hover:ring-red-500/40 transition-all">
-                                        <Rocket className="h-6 w-6" />
-                                    </div>
-                                    <div>
-                                        <h3 className="text-lg font-semibold text-white group-hover:text-red-50 transition-colors">Future Leaders</h3>
-                                        <p className="mt-2 text-sm text-neutral-400 group-hover:text-neutral-300 transition-colors">
-                                            Empowering the next generation to take action, disrupt the status quo, and change the world.
-                                        </p>
-                                    </div>
-                                </div>
-                            </motion.div>
-
+                            {aboutTedxAce.cards.map((card, index) => {
+                                const Icon = iconMap[card.icon as keyof typeof iconMap] || Rocket;
+                                return (
+                                    <motion.div
+                                        key={index}
+                                        initial={{ opacity: 0, y: 30 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ duration: 0.6, delay: index * 0.1 }}
+                                        className={`group relative overflow-hidden rounded-2xl border border-red-500/20 bg-white/5 p-6 backdrop-blur-xl transition-all hover:bg-white/10 ${index === 1 ? 'lg:translate-x-6' : ''}`}
+                                    >
+                                        <div className="absolute inset-x-0 bottom-0 h-1 bg-linear-to-r from-transparent via-red-500 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+                                        <div className="flex items-start gap-5">
+                                            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-red-500/10 text-red-400 ring-1 ring-red-500/20 group-hover:bg-red-500/20 group-hover:ring-red-500/40 transition-all">
+                                                <Icon className="h-6 w-6" />
+                                            </div>
+                                            <div>
+                                                <h3 className="text-lg font-semibold text-white group-hover:text-red-50 transition-colors">{card.title}</h3>
+                                                <p className="mt-2 text-sm text-neutral-400 group-hover:text-neutral-300 transition-colors">
+                                                    {card.description}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </motion.div>
+                                );
+                            })}
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
     );

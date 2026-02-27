@@ -2,42 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 
 // ─── Footer Link Grids ──────────────────────────────────────────────────────
-const FOOTER_GRIDS = [
-    {
-        title: "Event",
-        links: [
-            { label: "About", href: "/about" },
-            { label: "Speakers", href: "/speakers" },
-            { label: "Schedule", href: "/schedule" },
-            { label: "Venue", href: "/venue" },
-        ],
-    },
-    {
-        title: "Socials",
-        links: [
-            { label: "Instagram", href: "https://www.instagram.com/tedxaceec" },
-            { label: "LinkedIn", href: "https://www.linkedin.com/company/tedxaceec" },
-            { label: "Twitter", href: "https://twitter.com/tedxaceec" },
-            { label: "YouTube", href: "https://www.youtube.com/@tedxaceec" },
-        ],
-    },
-    {
-        title: "Legal",
-        links: [
-            { label: "Privacy Policy", href: "/privacy" },
-            { label: "Terms of Service", href: "/terms" },
-            { label: "Cookie Policy", href: "/cookies" },
-        ],
-    },
-    {
-        title: "Get Involved",
-        links: [
-            { label: "Register", href: "#register" },
-            { label: "Sponsor Us", href: "/sponsors" },
-            { label: "Contact", href: "/contact" },
-        ],
-    },
-];
+import { FOOTER_GRIDS } from "@/data/navigation";
+
 
 export default function Footer() {
     return (

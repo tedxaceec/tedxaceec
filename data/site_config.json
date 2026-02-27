@@ -1,0 +1,21 @@
+{
+  "name": "TEDxACEEC",
+  "fullName": "TEDx ACE Engineering College",
+  "tagline": "Ideas Worth Spreading — An independently organized TEDx event at Acharya College of Engineering.",
+  "contact": {
+    "email": "contact@tedxaceec.com",
+    "phone": "+91 123 456 7890",
+    "address": "ACE Engineering College, Ankushapur, Ghatkesar, Hyderabad, Telangana 501301"
+  },
+  "socials": [
+    { "name": "Instagram", "href": "https://www.instagram.com/tedxaceec" },
+    {
+      "name": "LinkedIn",
+      "href": "https://www.linkedin.com/company/tedxaceec"
+    },
+    { "name": "Twitter", "href": "https://twitter.com/tedxaceec" },
+    { "name": "YouTube", "href": "https://www.youtube.com/@tedxaceec" }
+  ],
+  "copyright": "© {year} TEDxACEEC. All rights reserved.",
+  "tedLicenseNotice": "This independent TEDx event is operated under license from TED."
+}

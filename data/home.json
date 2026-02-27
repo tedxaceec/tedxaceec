@@ -1,0 +1,49 @@
+{
+  "whatIsTedx": {
+    "tagline": "Ideas Worth Spreading",
+    "title": "What is TEDx?",
+    "description": "In the spirit of ideas worth spreading, TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. At a TEDx event, TEDTalks videos and live speakers combine to spark deep conversation and connection in a small group.",
+    "cards": [
+      {
+        "title": "Independently Organized",
+        "description": "TEDx events are independently organized under a free license from TED. Our event, TEDxACE Engineering College, follows TED's format and guidelines while showcasing local voices."
+      },
+      {
+        "title": "Community Driven",
+        "description": "TEDx creates a unique gathering bringing together bright minds — curating thought-provoking talks, performances, and conversations that spark ideas and inspire action."
+      },
+      {
+        "title": "Global Movement",
+        "description": "With thousands of events held across 170+ countries, TEDx has become the world's largest platform for sharing transformative ideas — from local campuses to global stages."
+      }
+    ],
+    "stats": [
+      { "value": 3000, "suffix": "+", "label": "Events per year" },
+      { "value": 170, "suffix": "+", "label": "Countries" },
+      { "value": 100, "suffix": "K+", "label": "Talks online" },
+      { "value": 8, "suffix": "B+", "label": "Views & counting" }
+    ]
+  },
+  "aboutTedxAce": {
+    "tagline": "Our Mission",
+    "title": "About TEDx ACE Engineering College",
+    "description": "TEDx ACE Engineering College is an independently organized event that brings together student innovators, thinkers, and creators to share ideas worth spreading. Located in the heart of our campus, we create a platform to spark deep discussion and connection through powerful ideas. Our mission is to bring together the most innovative minds, fostering a community of thinkers and doers who are ready to take action and change the world.",
+    "cards": [
+      {
+        "icon": "Users",
+        "title": "Student Led",
+        "description": "Organized entirely by a passionate team of student innovators and leaders devoted to uncovering local brilliance."
+      },
+      {
+        "icon": "Lightbulb",
+        "title": "Innovative Ideas",
+        "description": "A melting pot of breakthroughs in technology, design, and humanity shared on a premium stage."
+      },
+      {
+        "icon": "Rocket",
+        "title": "Future Leaders",
+        "description": "Empowering the next generation to take action, disrupt the status quo, and change the world."
+      }
+    ]
+  }
+}

@@ -4,6 +4,14 @@ import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { MapPin, Bus, Train, Car, ArrowRight } from "lucide-react";
 
+import venueData from "@/data/venue.json";
+
+const iconMap: Record<string, React.ElementType> = {
+    Bus,
+    Train,
+    Car,
+};
+
 export default function VenuePage() {
     const { scrollYProgress } = useScroll();
     const yHero = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
@@ -30,7 +38,7 @@ export default function VenuePage() {
                         transition={{ duration: 0.8, ease: "easeOut" }}
                         className="text-6xl md:text-8xl font-black tracking-tighter uppercase mb-6"
                     >
-                        The Venue
+                        {venueData.hero.title}
                     </motion.h1>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -38,7 +46,7 @@ export default function VenuePage() {
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="text-xl md:text-2xl text-neutral-400 font-light"
                     >
-                        Experience ideas worth spreading at the heart of Acharya College of Engineering.
+                        {venueData.hero.description}
                     </motion.p>
                 </div>
             </div>
@@ -55,35 +63,29 @@ export default function VenuePage() {
                         <div className="absolute inset-0 bg-linear-to-t from-black via-black/40 to-transparent z-10" />
                         <div className="absolute bottom-0 left-0 p-8 md:p-12 z-20">
                             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#eb0027] text-white text-xs font-bold uppercase mb-4">
-                                <MapPin className="w-3 h-3" /> Main Stage
+                                <MapPin className="w-3 h-3" /> {venueData.locations[0].tag}
                             </div>
-                            <h2 className="text-3xl md:text-5xl font-bold mb-4">The Auditorium</h2>
+                            <h2 className="text-3xl md:text-5xl font-bold mb-4">{venueData.locations[0].name}</h2>
                             <p className="text-neutral-300 max-w-xl text-lg">
-                                Where the magic happens. A state-of-the-art facility featuring perfect acoustics, dynamic lighting, and seating for over 1,200 attendees.
+                                {venueData.locations[0].description}
                             </p>
                         </div>
                     </motion.div>
 
                     <div className="md:col-span-4 flex flex-col gap-8">
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-100px" }}
-                            className="bg-neutral-900/50 p-8 rounded-3xl border border-white/5 flex-1 flex flex-col justify-end"
-                        >
-                            <h3 className="text-2xl font-bold mb-2">Innovation Hub</h3>
-                            <p className="text-neutral-400">Interactive exhibits and partner displays.</p>
-                        </motion.div>
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-100px" }}
-                            transition={{ delay: 0.1 }}
-                            className="bg-neutral-900/50 p-8 rounded-3xl border border-white/5 flex-1 flex flex-col justify-end"
-                        >
-                            <h3 className="text-2xl font-bold mb-2">Networking Plaza</h3>
-                            <p className="text-neutral-400">Open-air spaces for coffee and conversation.</p>
-                        </motion.div>
+                        {venueData.locations.slice(1).map((location, i) => (
+                            <motion.div
+                                key={location.id}
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: "-100px" }}
+                                transition={{ delay: i * 0.1 }}
+                                className="bg-neutral-900/50 p-8 rounded-3xl border border-white/5 flex-1 flex flex-col justify-end"
+                            >
+                                <h3 className="text-2xl font-bold mb-2">{location.name}</h3>
+                                <p className="text-neutral-400">{location.description}</p>
+                            </motion.div>
+                        ))}
                     </div>
                 </div>
 
@@ -95,38 +97,25 @@ export default function VenuePage() {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        {[
-                            {
-                                icon: Bus,
-                                title: "Shuttle Bus",
-                                desc: "Dedicated TEDxACEEC shuttles run every 20 mins from the main city terminal starting at 8:00 AM."
-                            },
-                            {
-                                icon: Train,
-                                title: "Metro Rail",
-                                desc: "Take the Red Line to ACEEC Station. The campus is a brief 5-minute walk from the South Exit."
-                            },
-                            {
-                                icon: Car,
-                                title: "Car Parking",
-                                desc: "Free designated parking for attendees is available at Gate 4. VIP parking available at Gate 1."
-                            }
-                        ].map((item, i) => (
-                            <motion.div
-                                key={i}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: i * 0.1 }}
-                                className="bg-neutral-900 border border-white/5 p-8 rounded-3xl hover:border-[#eb0027]/50 transition-colors duration-300 group"
-                            >
-                                <div className="w-14 h-14 bg-black rounded-2xl flex items-center justify-center text-[#eb0027] mb-6 group-hover:scale-110 transition-transform">
-                                    <item.icon className="w-6 h-6" />
-                                </div>
-                                <h3 className="text-xl font-bold mb-3 text-white group-hover:text-[#eb0027] transition-colors">{item.title}</h3>
-                                <p className="text-neutral-400 leading-relaxed text-sm">{item.desc}</p>
-                            </motion.div>
-                        ))}
+                        {venueData.transportation.map((item, i) => {
+                            const Icon = iconMap[item.icon] || Bus;
+                            return (
+                                <motion.div
+                                    key={i}
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: i * 0.1 }}
+                                    className="bg-neutral-900 border border-white/5 p-8 rounded-3xl hover:border-[#eb0027]/50 transition-colors duration-300 group"
+                                >
+                                    <div className="w-14 h-14 bg-black rounded-2xl flex items-center justify-center text-[#eb0027] mb-6 group-hover:scale-110 transition-transform">
+                                        <Icon className="w-6 h-6" />
+                                    </div>
+                                    <h3 className="text-xl font-bold mb-3 text-white group-hover:text-[#eb0027] transition-colors">{item.title}</h3>
+                                    <p className="text-neutral-400 leading-relaxed text-sm">{item.description}</p>
+                                </motion.div>
+                            );
+                        })}
                     </div>
                 </div>
 
@@ -144,15 +133,14 @@ export default function VenuePage() {
                         <div>
                             <h3 className="text-3xl font-bold mb-2">Find us</h3>
                             <p className="text-neutral-400 text-lg mb-6 max-w-sm">
-                                Acharya Dr. Sarvepalli Radhakrishnan Road,<br />
-                                Soladevanahalli, Bangalore, Karnataka 560107
+                                {venueData.address.full}
                             </p>
                             <div className="flex gap-4">
-                                <a href="mailto:venue@tedxaceec.com" className="text-sm font-semibold text-[#eb0027] hover:text-white transition-colors">
-                                    venue@tedxaceec.com
+                                <a href={`mailto:${venueData.address.email}`} className="text-sm font-semibold text-[#eb0027] hover:text-white transition-colors">
+                                    {venueData.address.email}
                                 </a>
                                 <span className="text-neutral-600">|</span>
-                                <span className="text-sm text-neutral-400">+91 80 237 222 22</span>
+                                <span className="text-sm text-neutral-400">{venueData.address.phone}</span>
                             </div>
                         </div>
 
@@ -167,6 +155,7 @@ export default function VenuePage() {
                         </a>
                     </div>
                 </motion.div>
+
             </div>
         </div>
     );
