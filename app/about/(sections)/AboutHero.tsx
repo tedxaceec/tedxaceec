@@ -57,11 +57,7 @@ export default function AboutHero() {
             className="relative flex min-h-[70vh] md:min-h-[80vh] items-center justify-center overflow-hidden"
         >
             {/* Background glows */}
-            <div className="pointer-events-none absolute inset-0">
-                <div className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full bg-red-500/5 blur-[180px]" />
-                <div className="absolute right-0 top-0 h-[400px] w-[400px] rounded-full bg-red-600/3 blur-[120px]" />
-                <div className="absolute left-0 bottom-0 h-[300px] w-[300px] rounded-full bg-red-500/4 blur-[100px]" />
-            </div>
+            {/* Removed background glow divs as requested */}
 
             {/* Grid pattern overlay */}
             <div

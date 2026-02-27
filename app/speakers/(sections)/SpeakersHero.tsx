@@ -4,11 +4,10 @@ import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { SPONSOR_STATS } from "@/data/sponsors";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function SponsorsHero() {
+export default function SpeakersHero() {
     const sectionRef = useRef<HTMLElement>(null);
     const titleRef = useRef<HTMLHeadingElement>(null);
     const subtitleRef = useRef<HTMLParagraphElement>(null);
@@ -55,12 +54,12 @@ export default function SponsorsHero() {
     return (
         <section
             ref={sectionRef}
-            className="relative flex min-h-[80vh] md:min-h-[85vh] items-center justify-center overflow-hidden"
+            className="relative flex min-h-[70vh] items-center justify-center overflow-hidden"
         >
             {/* Background glows */}
             {/* Removed background glow divs as requested */}
             <div
-                className="pointer-events-none absolute inset-0 opacity-[0.015]"
+                className="pointer-events-none absolute inset-0 opacity-[0.02]"
                 style={{
                     backgroundImage:
                         "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
@@ -68,7 +67,7 @@ export default function SponsorsHero() {
                 }}
             />
 
-            <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+            <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center mt-20">
                 {/* Pill badge */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
@@ -77,22 +76,19 @@ export default function SponsorsHero() {
                     className="mb-6 inline-flex items-center gap-2 rounded-full border border-red-500/20 bg-linear-to-r from-red-500/10 to-red-500/5 px-5 py-2 text-xs font-medium uppercase tracking-[0.2em] text-red-400"
                 >
                     <span className="h-1.5 w-1.5 rounded-full bg-red-400 animate-pulse" />
-                    Powering Ideas
+                    Voices of Tomorrow
                 </motion.div>
 
                 {/* Title */}
                 <h1
                     ref={titleRef}
-                    className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
+                    className="text-5xl font-extrabold tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl"
                     style={{ perspective: "1000px" }}
                 >
                     <span className="word inline-block">Our&nbsp;</span>
-                    <span className="word inline-block text-transparent bg-clip-text bg-linear-to-r from-red-500 via-red-400 to-red-600">
-                        Sponsors
+                    <span className="word inline-block text-transparent bg-clip-text bg-linear-to-r from-[#eb0028] via-red-500 to-red-600">
+                        Speakers
                     </span>
-                    <br className="hidden sm:block" />
-                    <span className="word inline-block">&amp;&nbsp;</span>
-                    <span className="word inline-block">Partners</span>
                 </h1>
 
                 {/* Subtitle */}
@@ -100,9 +96,9 @@ export default function SponsorsHero() {
                     ref={subtitleRef}
                     className="mx-auto mt-6 max-w-2xl text-base text-neutral-400 sm:text-lg md:text-xl leading-relaxed"
                 >
-                    The visionaries who make ideas worth spreading a reality.
-                    Their belief in innovation fuels our mission to inspire the next generation of thinkers at{" "}
-                    <span className="text-transparent bg-clip-text bg-linear-to-r from-red-400 to-red-500 font-semibold">
+                    Meet the brilliant minds and thought leaders at the forefront of innovation.
+                    Discover their stories, insights, and visions for the future at{" "}
+                    <span className="text-white font-semibold">
                         Bedrock &amp; Beyond
                     </span>
                     .
@@ -113,26 +109,6 @@ export default function SponsorsHero() {
                     ref={lineRef}
                     className="mx-auto mt-10 h-px max-w-xs bg-linear-to-r from-transparent via-red-500/50 to-transparent"
                 />
-
-                {/* Stats row */}
-                <div className="mx-auto mt-14 grid max-w-3xl grid-cols-2 gap-6 sm:grid-cols-4">
-                    {SPONSOR_STATS.map((stat, i) => (
-                        <motion.div
-                            key={stat.label}
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 1 + i * 0.1 }}
-                            className="flex flex-col items-center gap-1"
-                        >
-                            <span className="text-3xl font-bold text-white md:text-4xl">
-                                {stat.value}
-                            </span>
-                            <span className="text-xs font-medium uppercase tracking-[0.2em] text-neutral-500">
-                                {stat.label}
-                            </span>
-                        </motion.div>
-                    ))}
-                </div>
 
                 {/* Scroll indicator */}
                 <motion.div
@@ -147,7 +123,7 @@ export default function SponsorsHero() {
                         className="flex flex-col items-center gap-2"
                     >
                         <span className="text-[10px] font-medium uppercase tracking-[0.3em] text-neutral-500">
-                            Scroll
+                            Explore
                         </span>
                         <div className="h-8 w-px bg-linear-to-b from-red-500/50 to-transparent" />
                     </motion.div>
