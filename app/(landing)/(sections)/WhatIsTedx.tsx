@@ -393,8 +393,6 @@ export default function WhatIsTedx() {
                     transition={{ duration: 0.8, delay: 0.3 }}
                     className="relative mx-auto mt-14 max-w-4xl"
                 >
-                    {/* Glow behind image */}
-                    <div className="absolute inset-0 -z-10 scale-90 rounded-3xl bg-red-500/8 blur-3xl" />
                     <div
                         className="overflow-hidden rounded-2xl shadow-2xl shadow-red-500/5"
                         style={{
@@ -411,6 +409,8 @@ export default function WhatIsTedx() {
                             height={675}
                             className="h-auto w-full object-cover"
                             priority={false}
+                            loading="lazy"
+                            draggable={false}
                         />
                     </div>
                 </motion.div>
