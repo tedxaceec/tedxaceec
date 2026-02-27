@@ -12,7 +12,7 @@ const NAV_LINKS = [
     { href: "/speakers", label: "Speakers" },
     { href: "/sponsors", label: "Sponsors" },
     { href: "/gallery", label: "Gallery" },
-    { href: "#contact", label: "Contact" },
+    { href: "/contact", label: "Contact" },
 ];
 
 /* ─── Magnetic Link ───────────────────────────────────────────────────────── */
@@ -196,7 +196,7 @@ export default function Navbar() {
                                         }}
                                     />
 
-                                    {NAV_LINKS.map(({ href, label }, i) => (
+                                    {NAV_LINKS.map(({ href, label }) => (
                                         <MagneticLink
                                             key={href}
                                             href={href}

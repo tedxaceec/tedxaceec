@@ -34,7 +34,7 @@ const FOOTER_GRIDS = [
         links: [
             { label: "Register", href: "#register" },
             { label: "Sponsor Us", href: "#sponsor" },
-            { label: "Contact", href: "#contact" },
+            { label: "Contact", href: "/contact" },
         ],
     },
 ];
