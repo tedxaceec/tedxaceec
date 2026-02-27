@@ -141,3 +141,159 @@ body::-webkit-scrollbar {
 a[href*="unicorn.studio"] {
   display: none !important;
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Custom Cursor System
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* Cursor theming variables */
+  --cursor-color: 255, 255, 255;
+  --cursor-hover-color: 235, 0, 40;
+  --cursor-inner-size: 8px;
+  --cursor-outer-size: 40px;
+  --cursor-outer-border: 2px;
+  --cursor-transition-speed: 0.35s;
+  --cursor-label-font-size: 11px;
+}
+
+/* ─── Container ───────────────────────────────────────────────────────────── */
+.custom-cursor-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2147483647; /* max z-index */
+  pointer-events: none;
+  overflow: visible;
+  transition: opacity 0.3s ease;
+}
+
+/* ─── Inner Dot ───────────────────────────────────────────────────────────── */
+.custom-cursor-inner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--cursor-inner-size);
+  height: var(--cursor-inner-size);
+  background: rgba(var(--cursor-color), 1);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 2147483647;
+  mix-blend-mode: difference;
+  will-change: transform;
+  transition:
+    width var(--cursor-transition-speed) cubic-bezier(0.23, 1, 0.32, 1),
+    height var(--cursor-transition-speed) cubic-bezier(0.23, 1, 0.32, 1),
+    opacity var(--cursor-transition-speed) cubic-bezier(0.23, 1, 0.32, 1),
+    background-color var(--cursor-transition-speed) ease;
+}
+
+/* ─── Outer Ring ──────────────────────────────────────────────────────────── */
+.custom-cursor-outer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--cursor-outer-size);
+  height: var(--cursor-outer-size);
+  border: var(--cursor-outer-border) solid rgba(var(--cursor-color), 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 2147483646;
+  mix-blend-mode: difference;
+  will-change: transform;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    width var(--cursor-transition-speed) cubic-bezier(0.23, 1, 0.32, 1),
+    height var(--cursor-transition-speed) cubic-bezier(0.23, 1, 0.32, 1),
+    border-color var(--cursor-transition-speed) ease,
+    border-width var(--cursor-transition-speed) ease,
+    background-color var(--cursor-transition-speed) ease,
+    border-radius var(--cursor-transition-speed) cubic-bezier(0.23, 1, 0.32, 1),
+    opacity var(--cursor-transition-speed) ease;
+}
+
+/* ─── Label ───────────────────────────────────────────────────────────────── */
+.custom-cursor-label {
+  position: absolute;
+  font-size: var(--cursor-label-font-size);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(var(--cursor-color), 1);
+  white-space: nowrap;
+  opacity: 0;
+  transform: scale(0.6);
+  transition:
+    opacity var(--cursor-transition-speed) ease,
+    transform var(--cursor-transition-speed) cubic-bezier(0.23, 1, 0.32, 1);
+  pointer-events: none;
+  user-select: none;
+}
+
+.custom-cursor-label.cursor-label-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Hover State: Morph outer ring into solid pill, fade inner dot
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Inner dot fades out on hover */
+.custom-cursor-inner.cursor-hovered {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Outer ring expands & becomes a filled circle on hover */
+.custom-cursor-outer.cursor-hovered {
+  width: 80px;
+  height: 80px;
+  border-color: rgba(var(--cursor-hover-color), 0.8);
+  background-color: rgba(var(--cursor-hover-color), 0.12);
+  border-width: 2px;
+}
+
+/* When label is visible, expand into a wider pill shape */
+.custom-cursor-outer.cursor-hovered:has(.cursor-label-visible) {
+  width: 100px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: rgba(var(--cursor-hover-color), 0.15);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Click State: Shrink feedback
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.custom-cursor-outer.cursor-clicking {
+  transform: scale(0.85) !important;
+  border-color: rgba(var(--cursor-hover-color), 1);
+  transition-duration: 0.1s;
+}
+
+.custom-cursor-inner.cursor-clicking {
+  transform: scale(0.6);
+  transition-duration: 0.1s;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Hide on touch devices and small screens
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (hover: none), (pointer: coarse) {
+  .custom-cursor-container {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-cursor-container {
+    display: none !important;
+  }
+}

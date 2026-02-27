@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, TASA_Orbiter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CustomCursor from "@/components/CustomCursor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -290,6 +291,8 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
+
+        <CustomCursor />
 
         <Navbar />
 
