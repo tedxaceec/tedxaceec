@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, TASA_Orbiter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -12,6 +12,12 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const tasaOrbiter = TASA_Orbiter({
+  variable: "--font-tasa-orbiter",
   subsets: ["latin"],
   display: "swap",
 });
@@ -275,7 +281,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden bg-background text-foreground selection:bg-red-500/20 dark:selection:bg-white/30 transition-colors duration-300`}
+        className={`${tasaOrbiter.className} antialiased overflow-x-hidden bg-background text-foreground selection:bg-red-500/20 dark:selection:bg-white/30 transition-colors duration-300`}
       >
         {/* Accessibility: skip to main content */}
         <a
