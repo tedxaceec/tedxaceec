@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import React, { useState, useEffect, useCallback, useRef } from "react";
-import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -225,17 +224,11 @@ export default function Navbar() {
                                 </span>
                             </Link>
 
-                            {/* ── Theme Toggle ─────────────────────────── */}
-                            <AnimatedThemeToggler
-                                className="ml-1 p-2 relative size-9 flex items-center justify-center rounded-xl border border-foreground/10 text-foreground/40 hover:text-foreground hover:bg-foreground/8 hover:border-foreground/20 transition-all duration-300 cursor-pointer"
-                            />
+
                         </div>
 
                         {/* ── Mobile: Theme Toggle + Menu Toggle ──────── */}
                         <div className="md:hidden flex items-center gap-1">
-                            <AnimatedThemeToggler
-                                className="relative w-9 h-9 flex items-center justify-center rounded-xl text-neutral-400 hover:text-white hover:bg-white/8 transition-all duration-300 cursor-pointer"
-                            />
                             <button
                                 type="button"
                                 className="relative w-10 h-10 flex items-center justify-center rounded-xl transition-colors duration-300 hover:bg-white/8"
