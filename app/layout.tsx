@@ -276,10 +276,6 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
 
-        {/* Preconnect to external origins for performance */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-
         {/* DNS prefetch for analytics / third-party (add as needed) */}
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
       </head>

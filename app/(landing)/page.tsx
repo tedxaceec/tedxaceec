@@ -1,9 +1,11 @@
+import dynamic from 'next/dynamic'
 import HeroSection from './(sections)/HeroSection'
-import WhatIsTedx from './(sections)/WhatIsTedx'
-import AboutTedxAce from './(sections)/AboutTedx'
-import FeaturedSpeakers from './(sections)/FeaturedSpeakers'
-import EventTimeline from './(sections)/Timeline'
-import FaqSection from './(sections)/FaqSection'
+
+const WhatIsTedx = dynamic(() => import('./(sections)/WhatIsTedx'), { ssr: true })
+const AboutTedxAce = dynamic(() => import('./(sections)/AboutTedx'), { ssr: true })
+const FeaturedSpeakers = dynamic(() => import('./(sections)/FeaturedSpeakers'), { ssr: true })
+const EventTimeline = dynamic(() => import('./(sections)/Timeline'), { ssr: true })
+const FaqSection = dynamic(() => import('./(sections)/FaqSection'), { ssr: true })
 
 const page = () => {
   return (

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import SpeakersHero from "./(sections)/SpeakersHero";
-import SpeakersGrid from "./(sections)/SpeakersGrid";
 import dynamic from "next/dynamic";
+
+const SpeakersGrid = dynamic(() => import("./(sections)/SpeakersGrid"), { ssr: true });
 
 export const metadata: Metadata = {
 	title: "Our Speakers | TEDxACEEC",

@@ -4,6 +4,28 @@ const nextConfig: NextConfig = {
   // ── Performance: Compress responses ────────────────────────────────────────
   compress: true,
 
+  // ── Production Build Optimization (Space) ──────────────────────────────────
+  compiler: {
+    removeConsole:
+      process.env.NODE_ENV === "production" ? { exclude: ["error"] } : false,
+  },
+
+  // ── Experimental Features (Speed & Size) ───────────────────────────────────
+  experimental: {
+    // Optimize specific large packages
+    optimizePackageImports: [
+      "lucide-react",
+      "framer-motion",
+      "gsap",
+      "@gsap/react",
+      "clsx",
+      "tailwind-merge",
+    ],
+    // turbopack: {
+    //   root: "./",
+    // },
+  },
+
   // ── Image Optimization ─────────────────────────────────────────────────────
   images: {
     formats: ["image/avif", "image/webp"],

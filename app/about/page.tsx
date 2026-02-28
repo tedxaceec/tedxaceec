@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import AboutHero from "./(sections)/AboutHero";
-import WhatIsTed from "./(sections)/WhatIsTed";
-import WhatIsTedx from "./(sections)/WhatIsTedx";
-import AboutCollege from "./(sections)/AboutCollege";
-import ThemeSection from "./(sections)/ThemeSection";
-import MottoSection from "./(sections)/MottoSection";
-import ValuesSection from "./(sections)/ValuesSection";
-import AboutCTA from "./(sections)/AboutCTA";
+
+const WhatIsTed = dynamic(() => import("./(sections)/WhatIsTed"), { ssr: true });
+const WhatIsTedx = dynamic(() => import("./(sections)/WhatIsTedx"), { ssr: true });
+const AboutCollege = dynamic(() => import("./(sections)/AboutCollege"), { ssr: true });
+const ThemeSection = dynamic(() => import("./(sections)/ThemeSection"), { ssr: true });
+const MottoSection = dynamic(() => import("./(sections)/MottoSection"), { ssr: true });
+const ValuesSection = dynamic(() => import("./(sections)/ValuesSection"), { ssr: true });
+const AboutCTA = dynamic(() => import("./(sections)/AboutCTA"), { ssr: true });
 
 export const metadata: Metadata = {
     title: "About",
