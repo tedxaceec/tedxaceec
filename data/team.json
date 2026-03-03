@@ -1,0 +1,127 @@
+[
+    {
+        "id": "organisers",
+        "team": "Organisers",
+        "members": [
+            {
+                "id": "org-1",
+                "name": "Jane Doe",
+                "role": "Lead Organizer",
+                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "social": {
+                    "linkedin": "#",
+                    "twitter": "#"
+                }
+            },
+            {
+                "id": "org-2",
+                "name": "John Smith",
+                "role": "Co-Organizer",
+                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "social": {
+                    "linkedin": "#",
+                    "twitter": "#"
+                }
+            }
+        ]
+    },
+    {
+        "id": "curation",
+        "team": "Curation Team",
+        "members": [
+            {
+                "id": "cur-1",
+                "name": "Alice Johnson",
+                "role": "Curation Lead",
+                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "social": {
+                    "linkedin": "#"
+                }
+            },
+            {
+                "id": "cur-2",
+                "name": "Bob Williams",
+                "role": "Curation Member",
+                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "social": {
+                    "linkedin": "#",
+                    "twitter": "#"
+                }
+            }
+        ]
+    },
+    {
+        "id": "event-marketing",
+        "team": "Event Management & Marketing Team",
+        "members": [
+            {
+                "id": "emm-1",
+                "name": "Charlie Brown",
+                "role": "Marketing Lead",
+                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "social": {
+                    "linkedin": "#"
+                }
+            },
+            {
+                "id": "emm-2",
+                "name": "Diana Prince",
+                "role": "Event Manager",
+                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "social": {
+                    "linkedin": "#",
+                    "twitter": "#"
+                }
+            }
+        ]
+    },
+    {
+        "id": "content-design",
+        "team": "Content & Design Team",
+        "members": [
+            {
+                "id": "cd-1",
+                "name": "Eve Davis",
+                "role": "Design Lead",
+                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "social": {
+                    "linkedin": "#"
+                }
+            },
+            {
+                "id": "cd-2",
+                "name": "Frank White",
+                "role": "Content Creator",
+                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "social": {
+                    "linkedin": "#"
+                }
+            }
+        ]
+    },
+    {
+        "id": "logistics-sponsorship",
+        "team": "Logistics & Sponsorship Team",
+        "members": [
+            {
+                "id": "ls-1",
+                "name": "George King",
+                "role": "Logistics Lead",
+                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "social": {
+                    "linkedin": "#",
+                    "twitter": "#"
+                }
+            },
+            {
+                "id": "ls-2",
+                "name": "Helen Scott",
+                "role": "Sponsorship Lead",
+                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "social": {
+                    "linkedin": "#"
+                }
+            }
+        ]
+    }
+]
