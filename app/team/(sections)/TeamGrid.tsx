@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import teamData from "@/data/team.json";
-import { Twitter, Linkedin, Instagram } from "lucide-react";
+import { Twitter, Linkedin, Instagram, Youtube } from "lucide-react";
 import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -109,6 +109,11 @@ export default function TeamGrid() {
                                                         {(member.social as Record<string, string>)?.instagram && (member.social as Record<string, string>).instagram !== "#" && (
                                                             <a href={(member.social as Record<string, string>).instagram} target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-[#eb0028] transition-colors">
                                                                 <Instagram className="w-4 h-4" />
+                                                            </a>
+                                                        )}
+                                                        {(member.social as Record<string, string>)?.youtube && (member.social as Record<string, string>).youtube !== "#" && (
+                                                            <a href={(member.social as Record<string, string>).youtube} target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-[#eb0028] transition-colors">
+                                                                <Youtube className="w-4 h-4" />
                                                             </a>
                                                         )}
                                                     </div>
