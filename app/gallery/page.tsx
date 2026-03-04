@@ -8,7 +8,7 @@ import BentoGrid from "./(sections)/BentoGrid";
 import ParallaxScroll from "./(sections)/ParallaxScroll";
 import DragSlider from "./(sections)/DragSlider";
 export default function GalleryPage() {
-    const { header, images } = galleryData;
+    const { header, images, bentoGrid, dragSlider, parallaxScroll } = galleryData;
     const n = images.length;
 
     return (
@@ -61,9 +61,9 @@ export default function GalleryPage() {
                 </motion.div>
             </section>
 
-            <BentoGrid />
-            <DragSlider />
-            <ParallaxScroll />
+            <BentoGrid images={bentoGrid} />
+            <DragSlider images={dragSlider} />
+            <ParallaxScroll {...parallaxScroll} />
         </main>
     );
 }

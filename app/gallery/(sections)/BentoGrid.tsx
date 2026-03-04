@@ -1,15 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 
-const images = [
-    "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
-    "https://images.pexels.com/photos/3184311/pexels-photo-3184311.jpeg?auto=compress&cs=tinysrgb&w=800",
-    "https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&w=800",
-    "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=800",
-    "https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&w=800"
-];
-
-export default function BentoGrid() {
+export default function BentoGrid({ images }: { images: string[] }) {
     return (
         <section className="py-24 px-6 max-w-7xl mx-auto">
             <motion.div

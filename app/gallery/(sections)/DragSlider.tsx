@@ -2,16 +2,7 @@
 import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-const images = [
-    "https://images.pexels.com/photos/2833037/pexels-photo-2833037.jpeg?auto=compress&cs=tinysrgb&w=800",
-    "https://images.pexels.com/photos/7005101/pexels-photo-7005101.jpeg?auto=compress&cs=tinysrgb&w=800",
-    "https://images.pexels.com/photos/1181391/pexels-photo-1181391.jpeg?auto=compress&cs=tinysrgb&w=800",
-    "https://images.pexels.com/photos/1181373/pexels-photo-1181373.jpeg?auto=compress&cs=tinysrgb&w=800",
-    "https://images.pexels.com/photos/1708988/pexels-photo-1708988.jpeg?auto=compress&cs=tinysrgb&w=800",
-    "https://images.pexels.com/photos/1181345/pexels-photo-1181345.jpeg?auto=compress&cs=tinysrgb&w=800"
-];
-
-export default function DragSlider() {
+export default function DragSlider({ images }: { images: string[] }) {
     const carouselRef = useRef<HTMLDivElement>(null);
     const [width, setWidth] = useState(0);
 
