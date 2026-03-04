@@ -43,6 +43,16 @@
         "team": "Curation Team",
         "members": [
             {
+                "id": "cur-amithsai",
+                "name": "Jangam Amith Sai",
+                "role": "Curation - Speaker-Relations",
+                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "social": {
+                    "instagram": "https://www.instagram.com/amith_xyz",
+                    "linkedin": "https://www.linkedin.com/in/j-amith-sai-919661328"
+                }
+            },
+            {
                 "id": "cur-vedasripeddapeta",
                 "name": "Vedasri Peddapeta",
                 "role": "Curation Team - Speaker Relations",
@@ -93,7 +103,7 @@
                 "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
                 "social": {
                     "linkedin": "https://www.linkedin.com/in/pothireddy-bhavya-sri-031193328/",
-                    "instagram": "https://www.instagram.com/pothireddy.bhavyasri?igsh=MXQ3ZXg3M3h6eTJqaA==",
+                    "instagram": "https://www.instagram.com/pothireddy.bhavyasri",
                     "Portfolio": "https://pothireddy-bhavya-sri-f8jh4i1.gamma.site/",
                     "github": "https://github.com/pothireddybhavyasri"
                 }
@@ -104,8 +114,8 @@
                 "role": "Event Management & Promotions - Member",
                 "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
                 "social": {
-                    "linkedin": "https://www.linkedin.com/in/kotha-lokesh-6b364b32a?utm_source=share_via&utm_content=profile&utm_medium=member_android",
-                    "instagram": "https://www.instagram.com/___.l.o.k.i.__?igsh=eTAzMDI1eHdsaTZ5",
+                    "linkedin": "https://www.linkedin.com/in/kotha-lokesh-6b364b32a",
+                    "instagram": "https://www.instagram.com/___.l.o.k.i.__",
                     "github": "https://github.com/Kothalokesh29"
                 }
             },
@@ -115,8 +125,8 @@
                 "role": "Event Management & Promotions - Member",
                 "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
                 "social": {
-                    "linkedin": "https://www.linkedin.com/in/karthikeya-balaji-8b3b2a371?utm_source=share_via&utm_content=profile&utm_medium=member_android",
-                    "instagram": "https://www.instagram.com/karth1k.xd?igsh=cHd6bjJlbnF1cDF6"
+                    "linkedin": "https://www.linkedin.com/in/karthikeya-balaji-8b3b2a371",
+                    "instagram": "https://www.instagram.com/karth1k.xd"
                 }
             },
             {
@@ -125,7 +135,7 @@
                 "role": "Event Management & Promotions - Member",
                 "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
                 "social": {
-                    "linkedin": "https://www.linkedin.com/in/manasa-duvvuri-146750364?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+                    "linkedin": "https://www.linkedin.com/in/manasa-duvvuri-146750364",
                     "instagram": "https://www.instagram.com/manasaduvvuri_"
                 }
             },
@@ -135,8 +145,8 @@
                 "role": "Event Management & Promotions - Member",
                 "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
                 "social": {
-                    "linkedin": "https://www.linkedin.com/in/sai-srijan-reddy-katta-ba204b377?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-                    "instagram": "https://www.instagram.com/srijan.rdy?igsh=MWVxY2luNjAxdGRmbQ=="
+                    "linkedin": "https://www.linkedin.com/in/sai-srijan-reddy-katta-ba204b377",
+                    "instagram": "https://www.instagram.com/srijan.rdy"
                 }
             },
             {
@@ -158,7 +168,7 @@
         "members": [
             {
                 "id": "cd-akhiranandan",
-                "name": "K.Akhiranandan",
+                "name": "K. Akhiranandan",
                 "role": "Content & Design Lead",
                 "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
                 "social": {
@@ -167,14 +177,35 @@
                 }
             },
             {
+                "id": "cd-abhishek",
+                "name": "J. Abhishek Goud",
+                "role": "Content & Design Co-Lead",
+                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "social": {
+                    "linkedin": "https://www.linkedin.com/in/abhishek-goud-0b6011281",
+                    "instagram": "https://www.instagram.com/abhixdesigns_25"
+                }
+            },
+            {
+                "id": "cd-yashwanth",
+                "name": "M. Yashwanth",
+                "role": "Content & Design - Photography",
+                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "social": {
+                    "linkedin": "https://www.linkedin.com/in/yashwanth-goud-54ab66329",
+                    "instagram": "https://www.instagram.com/yashh_goud5",
+                    "twitter": "https://x.com/goud_myg5?s=21"
+                }
+            },
+            {
                 "id": "cd-sanjay",
                 "name": "Sanjay Kumar Marepally",
                 "role": "Content & Design - Video Editor(sfx)",
                 "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
                 "social": {
-                    "linkedin": "https://www.linkedin.com/in/sanjay-kumar-64a3452b9?utm_source=share_via&utm_content=profile&utm_medium=member_android",
-                    "instagram": "https://www.instagram.com/sanjayyy.110?igsh=M3dnZTlmdTBodzBz",
-                    "youtube": "https://youtube.com/@motologistic110?si=f4Dk46KbCI1WcDkb"
+                    "linkedin": "https://www.linkedin.com/in/sanjay-kumar-64a3452b9",
+                    "instagram": "https://www.instagram.com/sanjayyy.110",
+                    "youtube": "https://youtube.com/@motologistic110"
                 }
             }
         ]
