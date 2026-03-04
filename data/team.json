@@ -100,6 +100,15 @@
                 }
             },
             {
+                "id": "cur-mounikabaddula",
+                "name": "Mounika Baddula",
+                "role": "Curation Team - Speaker Relations",
+                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "social": {
+                    "linkedin": "https://www.linkedin.com/in/mounika-coder2006/"
+                }
+            },
+            {
                 "id": "cur-shivanshu",
                 "name": "Shivanshu",
                 "role": "Curation Team - Speaker Relations",
@@ -123,6 +132,34 @@
                     "linkedin": "https://www.linkedin.com/in/velpula-smaran",
                     "instagram": "https://www.instagram.com/smaran_velpula",
                     "github": "https://github.com/SMARANVELPULA"
+                }
+            },
+            {
+                "id": "emp-vikas",
+                "name": "Vikas Sainoji",
+                "role": "Event Management & Promotions - CoLead",
+                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "social": {
+                    "linkedin": "#"
+                }
+            },
+            {
+                "id": "emp-sandeepjamalpur",
+                "name": "Sandeep Jamalpur",
+                "role": "Event Management & Promotions - CoLead",
+                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "social": {
+                    "linkedin": "#"
+                }
+            },
+            {
+                "id": "emp-mashettyrohith",
+                "name": "Mashetty Rohith",
+                "role": "Event Management & Promotions - Member",
+                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "social": {
+                    "linkedin": "https://www.linkedin.com/in/mashetty-rohith-634a2228b",
+                    "instagram": "https://www.instagram.com/x_rohith_02a"
                 }
             },
             {
@@ -226,6 +263,17 @@
                 "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
                 "social": {
                     "linkedin": "https://www.linkedin.com/in/zuveriya-firdous-6b7631329"
+                }
+            },
+            {
+                "id": "emp-beemaninithinkumar",
+                "name": "Beemani Nithin Kumar",
+                "role": "Event Management & Promotions - Member",
+                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "social": {
+                    "linkedin": "https://www.linkedin.com/in/nithin-beemani-72a423324",
+                    "instagram": "https://www.instagram.com/nithin_beemani_06",
+                    "github": "https://github.com/nithinkumar006"
                 }
             }
         ]
