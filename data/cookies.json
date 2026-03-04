@@ -1,0 +1,110 @@
+{
+    "title": "Cookie Policy",
+    "lastUpdated": "March 4, 2024",
+    "sections": [
+        {
+            "type": "paragraph",
+            "content": "This Cookie Policy explains how **TEDxACEEngineeringCollege** (\"we\", \"us\", or \"our\") uses cookies and similar technologies on our official website, https://tedxaceec.vercel.app."
+        },
+        {
+            "type": "paragraph",
+            "content": "By continuing to browse or use our website, you agree to our use of cookies as described in this policy."
+        },
+        {
+            "type": "heading",
+            "content": "1. What Are Cookies?"
+        },
+        {
+            "type": "paragraph",
+            "content": "Cookies are small text files that are placed on your computer, smartphone, or other devices when you visit a website. They are widely used to make websites work more efficiently, enhance the user experience, and provide analytical information to the website owners."
+        },
+        {
+            "type": "heading",
+            "content": "2. How We Use Cookies"
+        },
+        {
+            "type": "paragraph",
+            "content": "We use cookies to understand how visitors interact with our website, to ensure the site functions securely, and to streamline the ticketing and registration process."
+        },
+        {
+            "type": "paragraph",
+            "content": "The cookies we use fall into the following categories:"
+        },
+        {
+            "type": "list",
+            "items": [
+                "**Strictly Necessary Cookies:** These are essential for the website to function properly. They enable core features such as page navigation, accessing secure areas (like the volunteer or speaker application portals), and processing ticket registrations. Without these cookies, the website cannot function properly.",
+                "**Performance and Analytics Cookies:** These cookies help us understand how visitors use our website by collecting and reporting information anonymously. For example, we may use tools like Google Analytics to see which pages are the most popular, how long visitors stay on the site, and if they encounter any error messages.",
+                "**Functionality Cookies:** These cookies allow the website to remember choices you make (such as your language preference or region) to provide an enhanced, more personalized experience.",
+                "**Third-Party Cookies:** Because we embed external services into our website, you may receive cookies from third parties. These include:\n- **Ticketing & Payments:** Platforms like Razorpay or Townscript may place cookies to process your secure transaction.\n- **Media:** Embedded videos from the official TED or TEDx YouTube channels.\n- **Maps:** Google Maps embedded to show the ACE Engineering College venue location."
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": "(Please note: We do not control these third-party cookies. We recommend checking the respective privacy and cookie policies of these third-party providers.)"
+        },
+        {
+            "type": "heading",
+            "content": "3. How Long Do Cookies Stay on Your Device?"
+        },
+        {
+            "type": "list",
+            "items": [
+                "**Session Cookies:** These are temporary and are deleted from your device automatically as soon as you close your web browser.",
+                "**Persistent Cookies:** These remain on your device until they expire or you manually delete them. They help the website remember you upon your return."
+            ]
+        },
+        {
+            "type": "heading",
+            "content": "4. How to Manage or Delete Cookies"
+        },
+        {
+            "type": "paragraph",
+            "content": "You have the right to choose whether or not to accept cookies. However, please be aware that disabling certain cookies may affect the functionality of our website and your ability to purchase tickets or submit applications."
+        },
+        {
+            "type": "paragraph",
+            "content": "Most web browsers allow you to manage cookies through their settings preferences. You can set your browser to refuse cookies, delete them, or alert you when a cookie is being set."
+        },
+        {
+            "type": "paragraph",
+            "content": "Here is how you can manage cookies on popular browsers:"
+        },
+        {
+            "type": "list",
+            "items": [
+                "**Google Chrome:** Settings > Privacy and security > Cookies and other site data.",
+                "**Mozilla Firefox:** Options > Privacy & Security > Cookies and Site Data.",
+                "**Safari:** Preferences > Privacy > Cookies and website data.",
+                "**Microsoft Edge:** Settings > Cookies and site permissions."
+            ]
+        },
+        {
+            "type": "heading",
+            "content": "5. Updates to This Policy"
+        },
+        {
+            "type": "paragraph",
+            "content": "We may update this Cookie Policy from time to time to reflect changes in our practices or operational requirements. We encourage you to review this page periodically for the latest information on our cookie practices."
+        },
+        {
+            "type": "heading",
+            "content": "6. Contact Us"
+        },
+        {
+            "type": "paragraph",
+            "content": "If you have any questions or concerns about this Cookie Policy or how we handle your data, please contact us at:"
+        },
+        {
+            "type": "list",
+            "items": [
+                "**Email:** tedxaceec@gmail.com",
+                "**Website:** https://tedxaceec.vercel.app"
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": "For more detailed information on how we protect your personal data, please review our [Privacy Policy](/privacy)."
+        }
+    ]
+}
