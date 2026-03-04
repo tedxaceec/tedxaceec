@@ -1,0 +1,132 @@
+{
+    "title": "Terms and Conditions",
+    "lastUpdated": "March 4, 2024",
+    "sections": [
+        {
+            "type": "paragraph",
+            "content": "Welcome to **TEDxACEEngineeringCollege**. These Terms and Conditions govern your access to our website, ticket purchases, and attendance at the event. By purchasing a ticket, registering as a participant, or attending the event, you agree to be bound by these terms."
+        },
+        {
+            "type": "paragraph",
+            "content": "Please read them carefully."
+        },
+        {
+            "type": "heading",
+            "content": "1. Independent Organization"
+        },
+        {
+            "type": "paragraph",
+            "content": "This event is an independently organized TEDx event, operated under a license from TED Conferences LLC. The event is organized, funded, and executed by the local organizing team at ACE Engineering College. TED Conferences LLC is not responsible for the organization or execution of this event."
+        },
+        {
+            "type": "heading",
+            "content": "2. Ticketing and Registration"
+        },
+        {
+            "type": "list",
+            "items": [
+                "**Eligibility:** You must be at least 16 years old to attend. If you are purchasing a student ticket, you must present a valid Student ID card at the registration desk on the day of the event.",
+                "**Non-Refundable:** All ticket sales are final. Tickets are **strictly non-refundable** under any circumstances, including your inability to attend.",
+                "**Transferability:** Tickets are non-transferable unless explicit written permission is granted by the organizing team at least 72 hours prior to the event.",
+                "**Verification:** You must bring a valid Government-issued ID (Aadhar, PAN, Voter ID, or Driving License) and your ticket confirmation (digital or printed) to gain entry."
+            ]
+        },
+        {
+            "type": "heading",
+            "content": "3. Program and Schedule Changes"
+        },
+        {
+            "type": "paragraph",
+            "content": "The organizing team strives to deliver the published lineup of speakers, performers, and activities. However, the event schedule and speaker lineup are subject to change without prior notice due to unforeseen circumstances (e.g., illness, travel disruptions). **No refunds** will be issued due to a change in the schedule or the cancellation of a specific speaker."
+        },
+        {
+            "type": "heading",
+            "content": "4. Right of Admission and Code of Conduct"
+        },
+        {
+            "type": "list",
+            "items": [
+                "**Right of Admission Reserved:** The organizers reserve the right to refuse entry or remove any individual from the venue without a refund.",
+                "**Code of Conduct:** TEDxACEEngineeringCollege is a safe space for sharing ideas. We have a zero-tolerance policy towards harassment, discrimination, disruptive behavior, or intoxication. Anyone violating this policy will be escorted off the premises immediately.",
+                "**Security Checks:** For the safety of all attendees, you may be subject to a security check at the entrance. Prohibited items include weapons, illegal substances, and outside food/beverages."
+            ]
+        },
+        {
+            "type": "heading",
+            "content": "5. Media Consent and Recording Policy"
+        },
+        {
+            "type": "paragraph",
+            "content": "TEDx events are highly produced media events. By entering the event premises, you agree to the following:"
+        },
+        {
+            "type": "list",
+            "items": [
+                "**Consent to be Filmed:** You consent to being photographed, filmed, and/or audio-recorded. You grant TEDxACEEngineeringCollege, ACE Engineering College, and TED Conferences LLC the right to use your image, voice, and likeness in any promotional or educational materials globally, in perpetuity.",
+                "**Attendee Recording:** While you are welcome to take personal photographs (without flash) and short clips for social media, **recording full TEDx talks is strictly prohibited**. All official talks will be professionally recorded and uploaded to the official TEDx YouTube channel. Flash photography and the use of tripods by attendees are not allowed."
+            ]
+        },
+        {
+            "type": "heading",
+            "content": "6. Intellectual Property"
+        },
+        {
+            "type": "list",
+            "items": [
+                "**TED Trademarks:** \"TED\", \"TEDx\", and the TEDx logo are registered trademarks of TED Conferences LLC. You may not use these logos or trademarks for any commercial or personal purposes without explicit written consent from TED.",
+                "**Speaker Content:** The ideas and content presented by the speakers belong to them. You may not reproduce, distribute, or monetize their content without permission."
+            ]
+        },
+        {
+            "type": "heading",
+            "content": "7. Limitation of Liability"
+        },
+        {
+            "type": "list",
+            "items": [
+                "To the maximum extent permitted by law, TEDxACEEngineeringCollege, ACE Engineering College, the organizing committee, and TED Conferences LLC shall not be held liable for any personal injury, loss, damage, or theft of personal property occurring at the venue or during the event.",
+                "Attendees are responsible for their own belongings at all times."
+            ]
+        },
+        {
+            "type": "heading",
+            "content": "8. Force Majeure"
+        },
+        {
+            "type": "paragraph",
+            "content": "If the event is canceled, postponed, or altered due to circumstances beyond the organizers' control—including but not limited to natural disasters, pandemics, government lockdowns, strikes, or acts of God—the organizers will not be liable to issue refunds or cover any travel/accommodation expenses incurred by the attendee."
+        },
+        {
+            "type": "heading",
+            "content": "9. Privacy"
+        },
+        {
+            "type": "paragraph",
+            "content": "Your use of our website and registration for the event is also governed by our Privacy Policy, which outlines how we collect, use, and protect your personal data."
+        },
+        {
+            "type": "heading",
+            "content": "10. Governing Law and Jurisdiction"
+        },
+        {
+            "type": "paragraph",
+            "content": "These Terms and Conditions shall be governed by and construed in accordance with the laws of India. Any disputes arising out of or related to the event shall be subject to the exclusive jurisdiction of the courts in Hyderabad, Telangana."
+        },
+        {
+            "type": "heading",
+            "content": "11. Contact Information"
+        },
+        {
+            "type": "paragraph",
+            "content": "For any inquiries regarding ticketing, event details, or these Terms and Conditions, please contact us at:"
+        },
+        {
+            "type": "list",
+            "items": [
+                "**Email:** tedxaceec@gmail.com",
+                "**Phone:** +91 7995162648",
+                "**Website:** https://tedxaceec.vercel.app"
+            ]
+        }
+    ]
+}

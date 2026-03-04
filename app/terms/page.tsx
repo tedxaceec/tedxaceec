@@ -1,6 +1,22 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import termsData from "../../data/terms.json";
+
+const renderText = (text?: string) => {
+    if (!text) return null;
+    const parts = text.split(/(\*\*.*?\*\*)/g);
+    return parts.map((part, i) => {
+        if (part.startsWith("**") && part.endsWith("**")) {
+            return (
+                <strong key={i} className="text-white font-bold">
+                    {part.slice(2, -2)}
+                </strong>
+            );
+        }
+        return <span key={i}>{part}</span>;
+    });
+};
 
 export default function TermsPage() {
     return (
@@ -13,14 +29,28 @@ export default function TermsPage() {
                 <div className="inline-block px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs font-bold uppercase tracking-widest text-[#eb0027] mb-6">
                     Legal
                 </div>
-                <h1 className="text-4xl md:text-6xl font-bold mb-8">Terms of Service</h1>
-                <p className="text-neutral-400 mb-6">Last updated: {new Date().toLocaleDateString()}</p>
+                <h1 className="text-4xl md:text-6xl font-bold mb-8">{termsData.title}</h1>
+                <p className="text-neutral-400 mb-6">Last updated: {termsData.lastUpdated}</p>
                 <div className="space-y-8 text-neutral-300 leading-relaxed max-w-none prose prose-invert">
-                    <p>By purchasing a ticket or attending TEDxACEEC, you agree to these fundamental terms. We expect all attendees and speakers to maintain a respectful and welcoming environment for everyone.</p>
-                    <h2 className="text-2xl font-bold text-white mt-12 mb-4">Ticketing and Etiquette</h2>
-                    <p>Tickets are non-refundable unless the event is indefinitely canceled or rescheduled in a way that prohibits your attendance. We reserve the right to deny entry to anyone who acts in a disruptive or unsafe manner.</p>
-                    <h2 className="text-2xl font-bold text-white mt-12 mb-4">Media Release</h2>
-                    <p>TEDx events are globally recorded and broadcasted. By attending, you consent to being photographed or documented by our media crew for promotional or archival purposes.</p>
+                    {termsData.sections.map((section, index) => {
+                        if (section.type === "heading") {
+                            return (
+                                <h2 key={index} className="text-2xl font-bold text-white mt-12 mb-4">
+                                    {renderText(section.content)}
+                                </h2>
+                            );
+                        } else if (section.type === "list") {
+                            return (
+                                <ul key={index} className="list-disc pl-6 space-y-2">
+                                    {section.items?.map((item, itemIndex) => (
+                                        <li key={itemIndex}>{renderText(item)}</li>
+                                    ))}
+                                </ul>
+                            );
+                        } else {
+                            return <p key={index}>{renderText(section.content)}</p>;
+                        }
+                    })}
                 </div>
             </motion.div>
         </div>

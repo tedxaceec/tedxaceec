@@ -1,0 +1,129 @@
+{
+    "title": "Privacy Policy for TEDxACEEngineeringCollege",
+    "lastUpdated": "March 4, 2024",
+    "sections": [
+        {
+            "type": "paragraph",
+            "content": "Welcome to **TEDxACEEngineeringCollege**. This event is an independently organized TEDx event, operated under license from TED Conferences LLC. At TEDxACEEngineeringCollege, we deeply value your privacy and are committed to protecting your personal data."
+        },
+        {
+            "type": "paragraph",
+            "content": "This Privacy Policy outlines how we collect, use, store, and protect your information when you interact with our website, apply to be a speaker or volunteer, or register to attend our event."
+        },
+        {
+            "type": "heading",
+            "content": "1. Information We Collect"
+        },
+        {
+            "type": "paragraph",
+            "content": "We collect personal information that you voluntarily provide to us, as well as some technical data collected automatically:"
+        },
+        {
+            "type": "list",
+            "items": [
+                "**Personal Information:** When you purchase a ticket, register as a volunteer, or apply as a speaker, we collect details such as your name, email address, phone number, institution/organization, profession, and student ID (if applicable).",
+                "**Event Logistics Data:** We may collect specific preferences such as dietary requirements or accessibility needs to accommodate you during the event.",
+                "**Payment Information:** Ticket payments are processed securely through a third-party ticketing and payment gateway (e.g., Razorpay, Townscript). We do not process or store your credit/debit card details on our servers.",
+                "**Technical Data:** When you browse our website, we may collect non-identifiable data such as your IP address, browser type, and device information via cookies to improve user experience."
+            ]
+        },
+        {
+            "type": "heading",
+            "content": "2. How We Use Your Information"
+        },
+        {
+            "type": "paragraph",
+            "content": "We use your data strictly for event management and to improve your TEDx experience. Specifically, we use it to:"
+        },
+        {
+            "type": "list",
+            "items": [
+                "Process your registration and issue event tickets.",
+                "Send you important updates regarding the event schedule, speakers, and venue.",
+                "Evaluate and process speaker, sponsor, and volunteer applications.",
+                "Facilitate event logistics (e.g., catering, seating arrangements).",
+                "Send you the official post-event TEDx attendee feedback survey."
+            ]
+        },
+        {
+            "type": "heading",
+            "content": "3. Sharing Your Information"
+        },
+        {
+            "type": "paragraph",
+            "content": "We respect your privacy and **will never sell, rent, or trade your personal data to third parties**. We only share your data under the following circumstances:"
+        },
+        {
+            "type": "list",
+            "items": [
+                "**TED Conferences LLC:** As part of our TEDx licensing agreement, we are required to share attendee names and email addresses with TED globally. This is solely for the purpose of sending the official TEDx post-event evaluation survey.",
+                "**Service Providers:** We may share information with trusted third-party platforms (such as ticketing websites or email service providers) strictly for the purpose of organizing the event. These platforms are bound by their own privacy policies.",
+                "**Legal Requirements:** We may disclose your data if required by law or to protect the safety and rights of our attendees, college, and organizing team."
+            ]
+        },
+        {
+            "type": "heading",
+            "content": "4. Photography, Videography, and Media Release (Important)"
+        },
+        {
+            "type": "paragraph",
+            "content": "TEDx events are highly visual, and talks are recorded for global distribution. By attending TEDxACEEngineeringCollege, you acknowledge and consent that:"
+        },
+        {
+            "type": "list",
+            "items": [
+                "You may be photographed, filmed, or audio-recorded during the event.",
+                "These media materials may be used, edited, and distributed globally by TED, TEDxACEEngineeringCollege, and ACE Engineering College via platforms like TED.com, the TEDx YouTube channel, and various social media networks."
+            ]
+        },
+        {
+            "type": "heading",
+            "content": "5. Data Security and Retention"
+        },
+        {
+            "type": "paragraph",
+            "content": "We implement reasonable physical and digital security measures to protect your personal information against unauthorized access, alteration, or destruction. Your personal data will only be retained for as long as necessary to fulfill the purposes outlined in this policy, or as required by applicable laws."
+        },
+        {
+            "type": "heading",
+            "content": "6. Your Rights"
+        },
+        {
+            "type": "paragraph",
+            "content": "In accordance with applicable data protection laws (such as India's DPDP Act), you have the right to:"
+        },
+        {
+            "type": "list",
+            "items": [
+                "Request access to the personal data we hold about you.",
+                "Request corrections to any inaccurate or incomplete data.",
+                "Request the deletion of your data (subject to legal or ticketing restrictions).",
+                "Opt-out of future promotional communications by contacting us."
+            ]
+        },
+        {
+            "type": "heading",
+            "content": "7. Changes to This Privacy Policy"
+        },
+        {
+            "type": "paragraph",
+            "content": "We may update this Privacy Policy periodically to reflect changes in our event practices or legal obligations. The latest version will always be available on our official website."
+        },
+        {
+            "type": "heading",
+            "content": "8. Contact Us"
+        },
+        {
+            "type": "paragraph",
+            "content": "If you have any questions, concerns, or requests regarding this Privacy Policy or your personal data, please contact the organizing team:"
+        },
+        {
+            "type": "list",
+            "items": [
+                "**Email:** tedxaceec@gmail.com",
+                "**Website:** https://tedxaceec.vercel.app",
+                "**Address:** ACE Engineering College, Ankushapur, Ghatkesar Mandal, Medchal District, Hyderabad, Telangana 501301, India."
+            ]
+        }
+    ]
+}
