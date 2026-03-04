@@ -56,7 +56,7 @@ export default function Footer() {
 
                         {/* Copyright */}
                         <p className="mt-2 text-xs text-neutral-400 dark:text-neutral-500">
-                            © {new Date().getFullYear()} TEDxACEEC. All rights reserved.
+                            All rights reserved © {new Date().getFullYear()} TEDxACEEC.
                         </p>
 
                         {/* TED License Notice */}
