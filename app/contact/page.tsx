@@ -308,6 +308,30 @@ export default function ContactPage() {
                         </motion.div>
                     </motion.div>
                 </div>
+
+                {/* Map View Section */}
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2, duration: 0.8 }}
+                    className="mt-16 md:mt-24 w-full h-[350px] md:h-[450px] rounded-3xl overflow-hidden border border-neutral-800 relative z-10 group"
+                >
+                    <div className="absolute inset-0 bg-neutral-900/40 animate-pulse -z-10 flex items-center justify-center">
+                        <span className="text-neutral-500 font-medium text-sm tracking-widest uppercase">Loading Map...</span>
+                    </div>
+                    <iframe
+                        src="https://maps.google.com/maps?q=ACE%20Engineering%20College,%20Ankushapur,%20Ghatkesar,%20Telangana&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                        width="100%"
+                        height="100%"
+                        style={{ border: 0, filter: "invert(90%) hue-rotate(180deg) brightness(85%) contrast(85%)" }}
+                        allowFullScreen
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        title="ACE Engineering College Location"
+                        className="opacity-70 group-hover:opacity-100 transition-opacity duration-500 relative z-10"
+                    />
+                </motion.div>
             </main>
 
             {/* Decorative Custom Tailwind Animation for Button */}
