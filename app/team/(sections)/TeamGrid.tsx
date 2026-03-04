@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import teamData from "@/data/team.json";
-import { Twitter, Linkedin } from "lucide-react";
+import { Twitter, Linkedin, Instagram } from "lucide-react";
 import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -96,14 +96,19 @@ export default function TeamGrid() {
                                                     </p>
 
                                                     <div className="flex items-center gap-3">
-                                                        {member.social?.twitter && member.social.twitter !== "#" && (
-                                                            <a href={member.social.twitter} target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-[#eb0028] transition-colors">
+                                                        {(member.social as Record<string, string>)?.twitter && (member.social as Record<string, string>).twitter !== "#" && (
+                                                            <a href={(member.social as Record<string, string>).twitter} target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-[#eb0028] transition-colors">
                                                                 <Twitter className="w-4 h-4" />
                                                             </a>
                                                         )}
-                                                        {member.social?.linkedin && member.social.linkedin !== "#" && (
-                                                            <a href={member.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-[#eb0028] transition-colors">
+                                                        {(member.social as Record<string, string>)?.linkedin && (member.social as Record<string, string>).linkedin !== "#" && (
+                                                            <a href={(member.social as Record<string, string>).linkedin} target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-[#eb0028] transition-colors">
                                                                 <Linkedin className="w-4 h-4" />
+                                                            </a>
+                                                        )}
+                                                        {(member.social as Record<string, string>)?.instagram && (member.social as Record<string, string>).instagram !== "#" && (
+                                                            <a href={(member.social as Record<string, string>).instagram} target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-[#eb0028] transition-colors">
+                                                                <Instagram className="w-4 h-4" />
                                                             </a>
                                                         )}
                                                     </div>

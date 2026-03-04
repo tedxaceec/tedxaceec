@@ -17,6 +17,7 @@ export const NAV_LINKS: NavLink[] = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/speakers", label: "Speakers" },
+  { href: "/team", label: "Team" },
   { href: "/sponsors", label: "Sponsors" },
   { href: "/gallery", label: "Gallery" },
   { href: "/contact", label: "Contact" },
@@ -28,6 +29,7 @@ export const FOOTER_GRIDS: FooterGrid[] = [
     links: [
       { label: "About", href: "/about" },
       { label: "Speakers", href: "/speakers" },
+      { label: "Team", href: "/team" },
       { label: "Schedule", href: "/schedule" },
       { label: "Venue", href: "/venue" },
     ],

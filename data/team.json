@@ -4,23 +4,36 @@
         "team": "Organisers",
         "members": [
             {
-                "id": "org-1",
-                "name": "Jane Doe",
+                "id": "org-madhavmadupu",
+                "name": "Madhav Madupu",
                 "role": "Lead Organizer",
                 "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
                 "social": {
-                    "linkedin": "#",
-                    "twitter": "#"
+                    "linkedin": "https://www.linkedin.com/in/madhavmadupu/",
+                    "instagram": "https://www.instagram.com/madhavmadupu/",
+                    "twitter": "https://twitter.com/madhavmadupu"
                 }
             },
             {
-                "id": "org-2",
-                "name": "John Smith",
+                "id": "org-vinaybolloju",
+                "name": "Vinay Bolloju",
                 "role": "Co-Organizer",
                 "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
                 "social": {
-                    "linkedin": "#",
-                    "twitter": "#"
+                    "linkedin": "https://www.linkedin.com/in/vinaybolloju/",
+                    "instagram": "https://www.instagram.com/vinaybolloju/",
+                    "twitter": "https://twitter.com/vinaybolloju"
+                }
+            },
+            {
+                "id": "org-tarunvuppala",
+                "name": "Tarun Vuppala",
+                "role": "Co-Organizer",
+                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "social": {
+                    "linkedin": "https://www.linkedin.com/in/tarunvuppala/",
+                    "instagram": "https://www.instagram.com/tarunvuppala/",
+                    "twitter": "https://twitter.com/tarunvuppala"
                 }
             }
         ]
@@ -30,22 +43,30 @@
         "team": "Curation Team",
         "members": [
             {
-                "id": "cur-1",
-                "name": "Alice Johnson",
-                "role": "Curation Lead",
+                "id": "cur-vedasripeddapeta",
+                "name": "Vedasri Peddapeta",
+                "role": "Curation Team - Speaker Relations",
                 "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
                 "social": {
-                    "linkedin": "#"
+                    "linkedin": "https://www.linkedin.com/in/vedasri-peddapeta/"
                 }
             },
             {
-                "id": "cur-2",
-                "name": "Bob Williams",
-                "role": "Curation Member",
+                "id": "cur-shreeharidarekar",
+                "name": "Shree Hari Darekar",
+                "role": "Curation Team - Speaker Relations",
                 "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
                 "social": {
-                    "linkedin": "#",
-                    "twitter": "#"
+                    "linkedin": "https://www.linkedin.com/in/shree-hari-darekar-8b4814358/"
+                }
+            },
+            {
+                "id": "cur-shivanshu",
+                "name": "Shivanshu",
+                "role": "Curation Team - Speaker Relations",
+                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "social": {
+                    "instagram": "https://www.instagram.com/__shivanshuu___/"
                 }
             }
         ]
@@ -55,22 +76,78 @@
         "team": "Event Management & Marketing Team",
         "members": [
             {
-                "id": "emm-1",
-                "name": "Charlie Brown",
-                "role": "Marketing Lead",
+                "id": "emp-smaranvelpula",
+                "name": "Smaran Velpula",
+                "role": "Event Management & Promotions - Lead",
                 "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
                 "social": {
-                    "linkedin": "#"
+                    "linkedin": "https://www.linkedin.com/in/velpula-smaran",
+                    "instagram": "https://www.instagram.com/smaran_velpula",
+                    "github": "https://github.com/SMARANVELPULA"
                 }
             },
             {
-                "id": "emm-2",
-                "name": "Diana Prince",
-                "role": "Event Manager",
+                "id": "emp-pothireddybhavyasri",
+                "name": "Pothireddy Bhavya Sri",
+                "role": "Event Management & Promotions - Member",
                 "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
                 "social": {
-                    "linkedin": "#",
-                    "twitter": "#"
+                    "linkedin": "https://www.linkedin.com/in/pothireddy-bhavya-sri-031193328/",
+                    "instagram": "https://www.instagram.com/pothireddy.bhavyasri?igsh=MXQ3ZXg3M3h6eTJqaA==",
+                    "Portfolio": "https://pothireddy-bhavya-sri-f8jh4i1.gamma.site/",
+                    "github": "https://github.com/pothireddybhavyasri"
+                }
+            },
+            {
+                "id": "emp-kothalokesh",
+                "name": "Kotha Lokesh",
+                "role": "Event Management & Promotions - Member",
+                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "social": {
+                    "linkedin": "https://www.linkedin.com/in/kotha-lokesh-6b364b32a?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+                    "instagram": "https://www.instagram.com/___.l.o.k.i.__?igsh=eTAzMDI1eHdsaTZ5",
+                    "github": "https://github.com/Kothalokesh29"
+                }
+            },
+            {
+                "id": "emp-balajikarthikeya",
+                "name": "Balaji Karthikeya",
+                "role": "Event Management & Promotions - Member",
+                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "social": {
+                    "linkedin": "https://www.linkedin.com/in/karthikeya-balaji-8b3b2a371?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+                    "instagram": "https://www.instagram.com/karth1k.xd?igsh=cHd6bjJlbnF1cDF6"
+                }
+            },
+            {
+                "id": "emp-manasduvvuri",
+                "name": "Manasa Duvvuri",
+                "role": "Event Management & Promotions - Member",
+                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "social": {
+                    "linkedin": "https://www.linkedin.com/in/manasa-duvvuri-146750364?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+                    "instagram": "https://www.instagram.com/manasaduvvuri_"
+                }
+            },
+            {
+                "id": "emp-saisrijanreddykatta",
+                "name": "Sai Srijan Reddy Katta",
+                "role": "Event Management & Promotions - Member",
+                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "social": {
+                    "linkedin": "https://www.linkedin.com/in/sai-srijan-reddy-katta-ba204b377?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+                    "instagram": "https://www.instagram.com/srijan.rdy?igsh=MWVxY2luNjAxdGRmbQ=="
+                }
+            },
+            {
+                "id": "emp-keesarhansini",
+                "name": "Keesari Hansini",
+                "role": "Event Management & Promotions - Member",
+                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "social": {
+                    "linkedin": "https://www.linkedin.com/in/hansini-reddy-k-152740327/",
+                    "instagram": "https://www.instagram.com/hansini_reddyy/",
+                    "github": "https://github.com/hansini01"
                 }
             }
         ]
@@ -80,21 +157,24 @@
         "team": "Content & Design Team",
         "members": [
             {
-                "id": "cd-1",
-                "name": "Eve Davis",
-                "role": "Design Lead",
+                "id": "cd-akhiranandan",
+                "name": "K.Akhiranandan",
+                "role": "Content & Design Lead",
                 "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
                 "social": {
-                    "linkedin": "#"
+                    "linkedin": "https://www.linkedin.com/in/akhiranandan-kaithala-a46a86291",
+                    "instagram": "https://www.instagram.com/akhiranandan_04"
                 }
             },
             {
-                "id": "cd-2",
-                "name": "Frank White",
-                "role": "Content Creator",
+                "id": "cd-sanjay",
+                "name": "Sanjay Kumar Marepally",
+                "role": "Content & Design - Video Editor(sfx)",
                 "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
                 "social": {
-                    "linkedin": "#"
+                    "linkedin": "https://www.linkedin.com/in/sanjay-kumar-64a3452b9?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+                    "instagram": "https://www.instagram.com/sanjayyy.110?igsh=M3dnZTlmdTBodzBz",
+                    "youtube": "https://youtube.com/@motologistic110?si=f4Dk46KbCI1WcDkb"
                 }
             }
         ]
@@ -104,22 +184,23 @@
         "team": "Logistics & Sponsorship Team",
         "members": [
             {
-                "id": "ls-1",
-                "name": "George King",
-                "role": "Logistics Lead",
+                "id": "ls-lohit",
+                "name": "Lohit MYK",
+                "role": "Logistics & Sponsorship - Lead",
                 "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
                 "social": {
-                    "linkedin": "#",
-                    "twitter": "#"
+                    "instagram": "https://instagram.com/lohitmyk",
+                    "linkedin": "https://linkedin.com/in/lohitKanchupati"
                 }
             },
             {
-                "id": "ls-2",
-                "name": "Helen Scott",
-                "role": "Sponsorship Lead",
+                "id": "ls-asad",
+                "name": "Mohammad Asad",
+                "role": "Logistics & Sponsorship - Member",
                 "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
                 "social": {
-                    "linkedin": "#"
+                    "instagram": "https://instagram.com/mohammadasad_1",
+                    "linkedin": "https://www.linkedin.com/in/mohammad-asad-12337b328"
                 }
             }
         ]

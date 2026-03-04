@@ -99,7 +99,12 @@ export default function AboutCTA() {
                             {/* Shine effect */}
                             <div className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/15 to-transparent group-hover:translate-x-full transition-transform duration-700" />
                         </Link>
-
+                        <Link
+                            href="/team"
+                            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-8 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-all hover:border-white/20 hover:bg-white/10"
+                        >
+                            Meet Our Team
+                        </Link>
                         <Link
                             href="/gallery"
                             className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-8 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-all hover:border-white/20 hover:bg-white/10"
@@ -109,6 +114,6 @@ export default function AboutCTA() {
                     </motion.div>
                 </div>
             </div>
-        </section>
+        </section >
     );
 }
