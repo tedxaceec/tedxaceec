@@ -6,6 +6,8 @@ import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
 import PageTransition from "@/components/PageTransition";
 import PageLoader from "@/components/PageLoader";
+import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/next"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -318,6 +320,8 @@ export default function RootLayout({
             <p>Please enable JavaScript for the best experience.</p>
           </div>
         </noscript>
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
