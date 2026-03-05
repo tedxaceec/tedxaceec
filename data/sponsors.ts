@@ -279,7 +279,7 @@ export const SPONSOR_CTA = {
   },
   description:
     "Join forces with us to bring the brightest minds to our stage. Connect with 2,000+ attendees, gain premium brand visibility, and be part of a movement at TEDxACE Engineering College.",
-  contactEmail: "sponsorship@tedxaceec.com",
+  contactEmail: "tedx@aceec.ac.in",
   primaryCTA: {
     text: "Contact Us",
     href: "#contact",
