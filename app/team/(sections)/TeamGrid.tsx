@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import teamData from "@/data/team.json";
-import { Twitter, Linkedin, Instagram, Youtube } from "lucide-react";
+import { Twitter, Linkedin, Instagram, Youtube, Github, Link as LinkIcon } from "lucide-react";
 import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -96,26 +96,23 @@ export default function TeamGrid() {
                                                     </p>
 
                                                     <div className="flex items-center gap-3">
-                                                        {(member.social as Record<string, string>)?.twitter && (member.social as Record<string, string>).twitter !== "#" && (
-                                                            <a href={(member.social as Record<string, string>).twitter} target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-[#eb0028] transition-colors">
-                                                                <Twitter className="w-4 h-4" />
-                                                            </a>
-                                                        )}
-                                                        {(member.social as Record<string, string>)?.linkedin && (member.social as Record<string, string>).linkedin !== "#" && (
-                                                            <a href={(member.social as Record<string, string>).linkedin} target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-[#eb0028] transition-colors">
-                                                                <Linkedin className="w-4 h-4" />
-                                                            </a>
-                                                        )}
-                                                        {(member.social as Record<string, string>)?.instagram && (member.social as Record<string, string>).instagram !== "#" && (
-                                                            <a href={(member.social as Record<string, string>).instagram} target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-[#eb0028] transition-colors">
-                                                                <Instagram className="w-4 h-4" />
-                                                            </a>
-                                                        )}
-                                                        {(member.social as Record<string, string>)?.youtube && (member.social as Record<string, string>).youtube !== "#" && (
-                                                            <a href={(member.social as Record<string, string>).youtube} target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-[#eb0028] transition-colors">
-                                                                <Youtube className="w-4 h-4" />
-                                                            </a>
-                                                        )}
+                                                        {Object.entries((member.social || {}) as Record<string, string>).map(([platform, url]) => {
+                                                            if (!url || url === "#") return null;
+                                                            const lowerPlatform = platform.toLowerCase();
+
+                                                            let Icon = LinkIcon;
+                                                            if (lowerPlatform === 'twitter' || lowerPlatform === 'x') Icon = Twitter;
+                                                            else if (lowerPlatform === 'linkedin') Icon = Linkedin;
+                                                            else if (lowerPlatform === 'instagram') Icon = Instagram;
+                                                            else if (lowerPlatform === 'youtube') Icon = Youtube;
+                                                            else if (lowerPlatform === 'github') Icon = Github;
+
+                                                            return (
+                                                                <a key={platform} href={url} target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-[#eb0028] transition-colors">
+                                                                    <Icon className="w-4 h-4" />
+                                                                </a>
+                                                            );
+                                                        })}
                                                     </div>
                                                 </div>
                                             </div>

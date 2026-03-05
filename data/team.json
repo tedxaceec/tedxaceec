@@ -10,8 +10,9 @@
                 "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
                 "social": {
                     "linkedin": "https://www.linkedin.com/in/madhavmadupu/",
+                    "github": "https://github.com/madhavmadupu",
                     "instagram": "https://www.instagram.com/madhavmadupu/",
-                    "twitter": "https://twitter.com/madhavmadupu"
+                    "portfolio": "https://madhavmadupu.vercel.app/"
                 }
             },
             {
@@ -50,6 +51,16 @@
                 "social": {
                     "instagram": "https://www.instagram.com/amith_xyz",
                     "linkedin": "https://www.linkedin.com/in/j-amith-sai-919661328"
+                }
+            },
+            {
+                "id": "cur-akshaya",
+                "name": "Akshaya MV",
+                "role": "Curation - Speaker-Relations",
+                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "social": {
+                    "instagram": "https://www.instagram.com/akshhyyaaa?igsh=ejV1ZDBsd21yaTJ1",
+                    "linkedin": "https://www.linkedin.com/in/akshaya-mavila-veettil-294990327"
                 }
             },
             {
@@ -149,7 +160,18 @@
                 "role": "Event Management & Promotions - CoLead",
                 "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
                 "social": {
-                    "linkedin": "#"
+                    "linkedin": "https://www.linkedin.com/in/jamalpursandeep-5a806a303",
+                    "instagram": "https://www.instagram.com/mr_sandeep_4007?igsh=YXZ5YmxoamxkYXIw"
+                }
+            },
+            {
+                "id": "emp-rohanoddam",
+                "name": "Rohan Oddam",
+                "role": "Event Management & Promotions - Member",
+                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "social": {
+                    "linkedin": "www.linkedin.com/in/rohanoddam",
+                    "github": "https://github.com/posderd"
                 }
             },
             {
@@ -186,6 +208,16 @@
                 }
             },
             {
+                "id": "emp-aishwarya",
+                "name": "S Aishwarya",
+                "role": "Event Management & Promotions - Member",
+                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "social": {
+                    "instagram": "https://www.instagram.com/aishwarya.s_1217",
+                    "linkedin": "https://www.linkedin.com/in/aishwarya-supreeth-096b263b4"
+                }
+            },
+            {
                 "id": "emp-balajikarthikeya",
                 "name": "Balaji Karthikeya",
                 "role": "Event Management & Promotions - Member",
@@ -193,6 +225,25 @@
                 "social": {
                     "linkedin": "https://www.linkedin.com/in/karthikeya-balaji-8b3b2a371",
                     "instagram": "https://www.instagram.com/karth1k.xd"
+                }
+            },
+            {
+                "id": "emp-samhikar",
+                "name": "Samhika Reddy Puli",
+                "role": "Event Management & Promotions - Member",
+                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "social": {
+                    "linkedin": "www.linkedin.com/in/samhika-puli",
+                    "instagram": "https://www.instagram.com/samhika_puli"
+                }
+            },
+            {
+                "id": "emp-sayarisreeharsha",
+                "name": "Sayari Sreeharsha",
+                "role": "Event Management & Promotions - Member",
+                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "social": {
+                    "linkedin": "https://www.linkedin.com/in/sreeharsha-sayari-1b5911327"
                 }
             },
             {
@@ -223,6 +274,16 @@
                 "social": {
                     "instagram": "https://www.instagram.com/ank1_tha",
                     "linkedin": "https://www.linkedin.com/in/ankitha-kamble-4ba3b5380"
+                }
+            },
+            {
+                "id": "emp-bogalepratikshareddy",
+                "name": "Bogale Pratiksha Reddy",
+                "role": "Event Management & Promotions - Member",
+                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "social": {
+                    "linkedin": "https://www.linkedin.com/in/bogale-pratiksha-reddy-11a186328",
+                    "Instagram": "https://www.instagram.com/urstrulypratikshaaa?igsh=cnFyaDR5ejZiYmdi"
                 }
             },
             {
@@ -274,6 +335,17 @@
                     "linkedin": "https://www.linkedin.com/in/nithin-beemani-72a423324",
                     "instagram": "https://www.instagram.com/nithin_beemani_06",
                     "github": "https://github.com/nithinkumar006"
+                }
+            },
+            {
+                "id": "emp-gouraramsoumyareddy",
+                "name": "Gouraram Sowmya Reddy",
+                "role": "Event Management & Promotions - Member",
+                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "social": {
+                    "linkedin": "https://www.linkedin.com/in/g-sowmya-reddy-a387052b9",
+                    "instagram": "https://www.instagram.com/_sowmyareddyyy?igsh=ZDM4dTR0Mm5oZjhm",
+                    "github": "https://github.com/Sowmya-726"
                 }
             }
         ]
