@@ -375,6 +375,27 @@
                 }
             },
             {
+                "id": "cd-saiharshith",
+                "name": "T Sai Harshith",
+                "role": "Content & Design - Video Editor",
+                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "social": {
+                    "linkedin": "https://www.linkedin.com/in/sai-harshith-67330732a?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+                    "instagram": "https://www.instagram.com/harshith._96?igsh=dnBkZ3NyZ2piMzVy"
+                }
+            },
+            {
+                "id": "cd-praharsha",
+                "name": "Praharsha Maroju",
+                "role": "Content & Design - Designer",
+                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "social": {
+                    "linkedin": "https://www.linkedin.com/in/praharsha-maroju-b619b9327?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+                    "instagram": "https://www.instagram.com/praharsha.maroju?igsh=djNhaTZwc3VvY25v",
+                    "github": "https://github.com/praharshamaroju"
+                }
+            },
+            {
                 "id": "cd-yashwanth",
                 "name": "M. Yashwanth",
                 "role": "Content & Design - Photography",
