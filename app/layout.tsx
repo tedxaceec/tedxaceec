@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
+import PageTransition from "@/components/PageTransition";
+import PageLoader from "@/components/PageLoader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -285,6 +287,7 @@ export default function RootLayout({
         {/* Accessibility: skip to main content */}
         <a
           href="#main-content"
+          data-transition-ignore
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-999 focus:bg-red-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:text-sm"
         >
           Skip to main content
@@ -292,11 +295,15 @@ export default function RootLayout({
 
         <CustomCursor />
 
+        <PageLoader />
+
         <Navbar />
 
-        <main id="main-content">
-          {children}
-        </main>
+        <PageTransition>
+          <main id="main-content">
+            {children}
+          </main>
+        </PageTransition>
 
         <Footer />
 

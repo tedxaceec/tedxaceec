@@ -208,6 +208,7 @@ export default function Navbar() {
                             {/* ── CTA Button ───────────────────────────── */}
                             <Link
                                 href="#register"
+                                data-transition-ignore
                                 className="relative px-5 py-2 text-[13px] font-semibold tracking-wide uppercase text-white rounded-xl overflow-hidden transition-all duration-300 hover:shadow-[0_0_28px_rgba(235,0,40,0.35)] group"
                             >
                                 <span className="absolute inset-0 bg-linear-to-r from-red-600 to-red-500 transition-opacity duration-300" />
@@ -335,6 +336,7 @@ export default function Navbar() {
                             >
                                 <Link
                                     href="#register"
+                                    data-transition-ignore
                                     onClick={() => setMobileOpen(false)}
                                     className="mt-8 inline-flex items-center gap-2 px-8 py-3.5 text-sm font-semibold tracking-widest uppercase text-white bg-linear-to-r from-red-600 to-red-500 rounded-xl hover:shadow-[0_0_32px_rgba(235,0,40,0.4)] transition-all duration-500"
                                 >
