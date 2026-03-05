@@ -413,6 +413,16 @@
                 }
             },
             {
+                "id": "ls-giridhar",
+                "name": "Giridhar reddy Singam",
+                "role": "Logistics and Sponsorship - Member",
+                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "social": {
+                    "linkedin": "https://www.linkedin.com/in/giridhar-reddy-singam",
+                    "instagram": "https://www.instagram.com/giridharredy"
+                }
+            },
+            {
                 "id": "ls-sarasrijith",
                 "name": "Sara Srijith",
                 "role": "Logistics & Sponsorship - Member",
