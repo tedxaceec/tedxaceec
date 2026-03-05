@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useTransform, useScroll } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 
 import allSpeakers from "@/data/speakers.json";
@@ -27,7 +27,7 @@ const speakers = allSpeakers
 /* ─── Speaker Card ────────────────────────────────────────────────────────── */
 function SpeakerCard({ speaker }: { speaker: Speaker }) {
     return (
-        <div className="group relative h-[480px] w-[360px] shrink-0 cursor-pointer overflow-hidden rounded-2xl bg-neutral-900 md:h-[520px] md:w-[400px]">
+        <div className="group relative h-[400px] w-[280px] shrink-0 cursor-pointer overflow-hidden rounded-2xl bg-neutral-900 sm:h-[480px] sm:w-[360px] md:h-[520px] md:w-[400px]">
             {/* Speaker image: Grayscale to color on hover */}
             <div
                 style={{
@@ -62,7 +62,7 @@ function SpeakerCard({ speaker }: { speaker: Speaker }) {
                 </div>
 
                 {/* Name */}
-                <h3 className="mb-1 text-3xl font-bold tracking-tight text-white transition-transform duration-500 md:text-4xl">
+                <h3 className="mb-1 text-2xl font-bold tracking-tight text-white transition-transform duration-500 sm:text-3xl md:text-4xl">
                     {speaker.name}
                 </h3>
 
@@ -92,22 +92,110 @@ function SpeakerCard({ speaker }: { speaker: Speaker }) {
 /* ─── Horizontal Scroll Carousel ──────────────────────────────────────────── */
 function SpeakersCarousel() {
     const targetRef = useRef<HTMLDivElement | null>(null);
+    const contentRef = useRef<HTMLDivElement | null>(null);
+    const [endX, setEndX] = useState(0);
+
     const { scrollYProgress } = useScroll({
         target: targetRef,
     });
 
-    const x = useTransform(scrollYProgress, [0, 1], ["5%", "-75%"]);
+    // Dynamically measure how far we need to scroll
+    useEffect(() => {
+        const measure = () => {
+            if (contentRef.current) {
+                const contentWidth = contentRef.current.scrollWidth;
+                const viewportWidth = window.innerWidth;
+                // Scroll distance = total content width - one viewport width + right padding
+                const distance = contentWidth - viewportWidth + 64;
+                setEndX(Math.max(0, distance));
+            }
+        };
+
+        measure();
+        window.addEventListener("resize", measure);
+        return () => window.removeEventListener("resize", measure);
+    }, []);
+
+    const x = useTransform(scrollYProgress, [0, 1], [0, -endX]);
 
     return (
-        <section ref={targetRef} className="relative h-[300vh]">
-            <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-                <motion.div style={{ x }} className="flex gap-6 pl-8 md:pl-16 lg:pl-24">
+        // Taller on mobile to allow enough scroll distance for the cards to traverse
+        <section ref={targetRef} className="relative h-[250vh] md:h-[300vh]">
+            <div className="sticky top-0 flex h-screen flex-col justify-center overflow-hidden">
+                {/* ── Section Header (sticky with carousel) ─────────────── */}
+                <div className="mx-auto w-full max-w-7xl px-4 pb-6 sm:px-6 md:pb-8 lg:px-8">
+                    <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between md:gap-6">
+                        <div>
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6 }}
+                                className="mb-4 inline-flex items-center gap-2 rounded-full border border-neutral-800 bg-neutral-900/50 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-neutral-300 backdrop-blur-md md:mb-6"
+                            >
+                                <span className="h-1.5 w-1.5 rounded-full bg-red-500" aria-hidden="true" />
+                                Bedrock & Beyond
+                            </motion.div>
+
+                            <motion.h2
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.1 }}
+                                className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl"
+                            >
+                                Featured <span className="font-light italic text-neutral-400">Speakers</span>
+                            </motion.h2>
+
+                            <motion.p
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.2 }}
+                                className="mt-3 max-w-xl text-sm text-neutral-400 sm:text-base md:mt-4 md:text-lg"
+                            >
+                                Visionaries, innovators, and change-makers sharing ideas that challenge perspectives and inspire action.
+                            </motion.p>
+                        </div>
+
+                        {/* Scroll hint */}
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.4 }}
+                            className="hidden md:flex flex-col items-end gap-2"
+                        >
+                            <span className="text-xs font-semibold uppercase tracking-widest text-neutral-500">
+                                Slide to explore
+                            </span>
+                            <div className="flex items-center space-x-2">
+                                <span className="h-px w-12 bg-neutral-800" />
+                                <motion.div
+                                    animate={{ x: [0, 8, 0] }}
+                                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                                >
+                                    <svg className="h-4 w-4 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                    </svg>
+                                </motion.div>
+                            </div>
+                        </motion.div>
+                    </div>
+                </div>
+
+                {/* ── Speaker Cards ─────────────────────────────────────── */}
+                <motion.div
+                    ref={contentRef}
+                    style={{ x }}
+                    className="flex gap-4 pl-4 pr-4 sm:gap-6 sm:pl-8 sm:pr-8 md:pl-16 md:pr-16 lg:pl-24 lg:pr-24"
+                >
                     {speakers.map((speaker) => (
                         <SpeakerCard speaker={speaker} key={speaker.id} />
                     ))}
 
                     {/* End card — CTA to see all speakers */}
-                    <div className="group relative flex h-[480px] w-[300px] shrink-0 overflow-hidden rounded-2xl bg-neutral-900 border border-neutral-800 transition-colors duration-500 hover:border-neutral-700 md:h-[520px] md:w-[340px]">
+                    <div className="group relative flex h-[400px] w-[260px] shrink-0 overflow-hidden rounded-2xl bg-neutral-900 border border-neutral-800 transition-colors duration-500 hover:border-neutral-700 sm:h-[480px] sm:w-[300px] md:h-[520px] md:w-[340px]">
                         <Link href="/speakers" className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center transition-colors duration-500 hover:bg-neutral-800/50">
                             <div className="mb-6 rounded-full border border-red-500/30 bg-red-500/10 p-4 transition-all duration-500 group-hover:scale-110 group-hover:border-red-500/50 group-hover:bg-red-500/20">
                                 <svg
@@ -140,70 +228,8 @@ export default function FeaturedSpeakers() {
                 <div className="absolute left-0 bottom-[20%] h-[400px] w-[400px] rounded-full bg-red-500/2 blur-[120px]" />
             </div>
 
-            {/* ── Section Header ──────────────────────────────────────────── */}
-            <div className="relative z-10 mx-auto max-w-7xl px-4 pt-24 sm:px-6 md:pt-32 lg:px-8">
-                <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-                    <div>
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6 }}
-                            className="mb-6 inline-flex items-center gap-2 rounded-full border border-neutral-800 bg-neutral-900/50 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-neutral-300 backdrop-blur-md"
-                        >
-                            <span className="h-1.5 w-1.5 rounded-full bg-red-500" aria-hidden="true" />
-                            Bedrock & Beyond
-                        </motion.div>
-
-                        <motion.h2
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.1 }}
-                            className="text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl"
-                        >
-                            Featured <span className="font-light italic text-neutral-400">Speakers</span>
-                        </motion.h2>
-
-                        <motion.p
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.2 }}
-                            className="mt-6 max-w-xl text-base text-neutral-400 md:text-lg"
-                        >
-                            Visionaries, innovators, and change-makers sharing ideas that challenge perspectives and inspire action.
-                        </motion.p>
-                    </div>
-
-                    {/* Scroll hint */}
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.4 }}
-                        className="hidden md:flex flex-col items-end gap-2"
-                    >
-                        <span className="text-xs font-semibold uppercase tracking-widest text-neutral-500">
-                            Slide to explore
-                        </span>
-                        <div className="flex items-center space-x-2">
-                            <span className="h-px w-12 bg-neutral-800" />
-                            <motion.div
-                                animate={{ x: [0, 8, 0] }}
-                                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                            >
-                                <svg className="h-4 w-4 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                                </svg>
-                            </motion.div>
-                        </div>
-                    </motion.div>
-                </div>
-            </div>
-
             {/* ── Horizontal Scroll Carousel ──────────────────────────────── */}
-            <div className="relative z-10 mt-12 md:mt-16">
+            <div className="relative z-10">
                 <SpeakersCarousel />
             </div>
         </div>
