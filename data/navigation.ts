@@ -54,7 +54,10 @@ export const FOOTER_GRIDS: FooterGrid[] = [
   {
     title: "Get Involved",
     links: [
-      { label: "Register", href: "#register" },
+      {
+        label: "Register",
+        href: "https://events.studenttribe.in/event/69abeff62aa8ba7856944b10",
+      },
       { label: "Sponsor Us", href: "/sponsors" },
       { label: "Contact", href: "/contact" },
     ],

@@ -140,9 +140,14 @@ export default function SchedulePage() {
                 >
                     <h2 className="text-4xl font-bold mb-6">{footer.title}</h2>
                     <p className="text-neutral-400 mb-8 max-w-xl mx-auto">{footer.description}</p>
-                    <button className="px-8 py-4 bg-[#eb0027] hover:bg-[#ff1a3f] text-white font-bold rounded-xl transition-colors text-lg shadow-[0_0_30px_rgba(235,0,39,0.3)]">
+                    <a
+                        href="https://events.studenttribe.in/event/69abeff62aa8ba7856944b10"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block px-8 py-4 bg-[#eb0027] hover:bg-[#ff1a3f] text-white font-bold rounded-xl transition-colors text-lg shadow-[0_0_30px_rgba(235,0,39,0.3)]"
+                    >
                         {footer.buttonText}
-                    </button>
+                    </a>
                 </motion.div>
             </div>
         </div>
