@@ -6,6 +6,7 @@ const AboutTedxAce = dynamic(() => import('./(sections)/AboutTedx'), { ssr: true
 const FeaturedSpeakers = dynamic(() => import('./(sections)/FeaturedSpeakers'), { ssr: true })
 const EventTimeline = dynamic(() => import('./(sections)/Timeline'), { ssr: true })
 const FaqSection = dynamic(() => import('./(sections)/FaqSection'), { ssr: true })
+const RegisterCTA = dynamic(() => import('./(sections)/RegisterCTA'), { ssr: true })
 
 const page = () => {
   return (
@@ -16,6 +17,7 @@ const page = () => {
       <FeaturedSpeakers />
       <EventTimeline />
       <FaqSection />
+      <RegisterCTA />
     </div>
   )
 }
