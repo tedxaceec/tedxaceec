@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import teamData from "@/data/team.json";
+import { IMAGEKIT_BASE_URL } from "@/lib/constants";
 import {
     Twitter,
     Linkedin,
@@ -97,7 +98,7 @@ export default function TeamGrid() {
                                             {/* Image Container */}
                                             <div className="relative aspect-3/4 w-full overflow-hidden">
                                                 <Image
-                                                    src={member.image}
+                                                    src={member.image.startsWith('/') ? `${IMAGEKIT_BASE_URL}${member.image}` : member.image}
                                                     alt={member.name}
                                                     fill
                                                     className="object-cover

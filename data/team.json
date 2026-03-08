@@ -7,7 +7,7 @@
                 "id": "org-madhavmadupu",
                 "name": "Madhav Madupu",
                 "role": "Lead Organizer",
-                "image": "https://ik.imagekit.io/tedxaceec/team/MadhavMadupu.png",
+                "image": "/team/org_madhavmadupu.png",
                 "social": {
                     "linkedin": "https://www.linkedin.com/in/madhavmadupu/",
                     "github": "https://github.com/madhavmadupu",
@@ -19,7 +19,7 @@
                 "id": "org-vinaybolloju",
                 "name": "Vinay Bolloju",
                 "role": "Co-Organizer",
-                "image": "https://ik.imagekit.io/tedxaceec/team/Vinay.png",
+                "image": "/team/org_vinaybolloju.png",
                 "social": {
                     "linkedin": "https://www.linkedin.com/in/vinaybolloju/",
                     "instagram": "https://www.instagram.com/vinaybolloju/",
@@ -30,7 +30,7 @@
                 "id": "org-tarunvuppala",
                 "name": "Tarun Vuppala",
                 "role": "Co-Organizer",
-                "image": "https://ik.imagekit.io/tedxaceec/team/TarunVuppala.png",
+                "image": "/team/org_tarunvuppala.png",
                 "social": {
                     "linkedin": "https://www.linkedin.com/in/tarunvuppala/",
                     "instagram": "https://www.instagram.com/tarunvuppala/",
@@ -47,7 +47,7 @@
                 "id": "cur-amithsai",
                 "name": "Jangam Amith Sai",
                 "role": "Curation - Speaker-Relations",
-                "image": "https://ik.imagekit.io/tedxaceec/team/curation_amith.png",
+                "image": "/team/curation_amith.png",
                 "social": {
                     "instagram": "https://www.instagram.com/amith_xyz",
                     "linkedin": "https://www.linkedin.com/in/j-amith-sai-919661328"
@@ -57,7 +57,7 @@
                 "id": "cur-akshaya",
                 "name": "Akshaya MV",
                 "role": "Curation - Speaker-Relations",
-                "image": "https://ik.imagekit.io/tedxaceec/team/curation_akshaya.png",
+                "image": "/team/curation_akshaya.png",
                 "social": {
                     "instagram": "https://www.instagram.com/akshhyyaaa?igsh=ejV1ZDBsd21yaTJ1",
                     "linkedin": "https://www.linkedin.com/in/akshaya-mavila-veettil-294990327"
@@ -67,7 +67,7 @@
                 "id": "cur-jacob",
                 "name": "Jacob Kothapally",
                 "role": "Curation - Speaker-Relations",
-                "image": "https://ik.imagekit.io/tedxaceec/team/curation_jacob.png",
+                "image": "/team/curation_jacob.png",
                 "social": {
                     "instagram": "https://www.instagram.com/jkayy1_",
                     "linkedin": "https://www.linkedin.com/in/jacob-kothapally-747224387"
@@ -77,7 +77,7 @@
                 "id": "cur-harshithamadisetti",
                 "name": "Harshitha Madisetti",
                 "role": "Curation - Speaker-Relations",
-                "image": "https://ik.imagekit.io/tedxaceec/team/curation_harshitha.png",
+                "image": "/team/curation_harshitha.png",
                 "social": {
                     "linkedin": "https://www.linkedin.com/in/harshitha-madisetti-3a6bb53b4"
                 }
@@ -86,7 +86,7 @@
                 "id": "cur-ksaisnehitha",
                 "name": "K. Sai Snehitha",
                 "role": "Curation - Speaker-Relations",
-                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "image": "/team/curation_snehitha.png",
                 "social": {
                     "instagram": "https://www.instagram.com/_._snehitha12/",
                     "linkedin": "https://www.linkedin.com/in/sai-snehithak/"
@@ -96,25 +96,16 @@
                 "id": "cur-vedasripeddapeta",
                 "name": "Vedasri Peddapeta",
                 "role": "Curation Team - Speaker Relations",
-                "image": "https://ik.imagekit.io/tedxaceec/team/curation_veda.png",
+                "image": "/team/curation_veda.png",
                 "social": {
                     "linkedin": "https://www.linkedin.com/in/vedasri-peddapeta/"
-                }
-            },
-            {
-                "id": "cur-shreeharidarekar",
-                "name": "Shree Hari Darekar",
-                "role": "Curation Team - Speaker Relations",
-                "image": "https://ik.imagekit.io/tedxaceec/team/curation_shreehari.png",
-                "social": {
-                    "linkedin": "https://www.linkedin.com/in/shree-hari-darekar-8b4814358/"
                 }
             },
             {
                 "id": "cur-mounikabaddula",
                 "name": "Mounika Baddula",
                 "role": "Curation Team - Speaker Relations",
-                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "image": "/team/curation_mounika.png",
                 "social": {
                     "linkedin": "https://www.linkedin.com/in/mounika-coder2006/"
                 }
@@ -123,7 +114,7 @@
                 "id": "cur-shivanshu",
                 "name": "Shivanshu",
                 "role": "Curation Team - Speaker Relations",
-                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "image": "/team/curation_shivanshu.png",
                 "social": {
                     "instagram": "https://www.instagram.com/__shivanshuu___/"
                 }
@@ -138,7 +129,7 @@
                 "id": "cd-akhiranandan",
                 "name": "K. Akhiranandan",
                 "role": "Content & Design Lead",
-                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "image": "/team/content_akhira.png",
                 "social": {
                     "linkedin": "https://www.linkedin.com/in/akhiranandan-kaithala-a46a86291",
                     "instagram": "https://www.instagram.com/akhiranandan_04"
@@ -148,7 +139,7 @@
                 "id": "cd-abhishek",
                 "name": "J. Abhishek Goud",
                 "role": "Content & Design Co-Lead",
-                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "image": "/team/content_abhishek.png",
                 "social": {
                     "linkedin": "https://www.linkedin.com/in/abhishek-goud-0b6011281",
                     "instagram": "https://www.instagram.com/abhixdesigns_25"
@@ -158,7 +149,7 @@
                 "id": "cd-saiharshith",
                 "name": "T Sai Harshith",
                 "role": "Content & Design - Video Editor",
-                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "image": "/team/content_harshith.png",
                 "social": {
                     "linkedin": "https://www.linkedin.com/in/sai-harshith-67330732a?utm_source=share_via&utm_content=profile&utm_medium=member_android",
                     "instagram": "https://www.instagram.com/harshith._96?igsh=dnBkZ3NyZ2piMzVy"
@@ -168,7 +159,7 @@
                 "id": "cd-praharsha",
                 "name": "Praharsha Maroju",
                 "role": "Content & Design - Designer",
-                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "image": "/team/content_praharsha.png",
                 "social": {
                     "linkedin": "https://www.linkedin.com/in/praharsha-maroju-b619b9327?utm_source=share_via&utm_content=profile&utm_medium=member_android",
                     "instagram": "https://www.instagram.com/praharsha.maroju?igsh=djNhaTZwc3VvY25v",
@@ -179,7 +170,7 @@
                 "id": "cd-yashwanth",
                 "name": "M. Yashwanth",
                 "role": "Content & Design - Photography",
-                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "image": "/team/content_yashwanth.png",
                 "social": {
                     "linkedin": "https://www.linkedin.com/in/yashwanth-goud-54ab66329",
                     "instagram": "https://www.instagram.com/yashh_goud5",
@@ -190,7 +181,7 @@
                 "id": "cd-sanjay",
                 "name": "Sanjay Kumar Marepally",
                 "role": "Content & Design - Video Editor(sfx)",
-                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "image": "/team/content_sanjay.png",
                 "social": {
                     "linkedin": "https://www.linkedin.com/in/sanjay-kumar-64a3452b9",
                     "instagram": "https://www.instagram.com/sanjayyy.110",
@@ -207,7 +198,7 @@
                 "id": "ls-lohit",
                 "name": "Lohit MYK",
                 "role": "Logistics & Sponsorship - Lead",
-                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "image": "/team/logistics_lohit.png",
                 "social": {
                     "instagram": "https://instagram.com/lohitmyk",
                     "linkedin": "https://linkedin.com/in/lohitKanchupati"
@@ -217,7 +208,7 @@
                 "id": "ls-giridhar",
                 "name": "Giridhar reddy Singam",
                 "role": "Logistics and Sponsorship - Member",
-                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "image": "/team/logistics_giridhar.png",
                 "social": {
                     "linkedin": "https://www.linkedin.com/in/giridhar-reddy-singam",
                     "instagram": "https://www.instagram.com/giridharredy"
@@ -227,7 +218,7 @@
                 "id": "ls-sarasrijith",
                 "name": "Sara Srijith",
                 "role": "Logistics & Sponsorship - Member",
-                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "image": "/team/logistics_sreejith.png",
                 "social": {
                     "instagram": "https://www.instagram.com/srijithh_/",
                     "linkedin": "https://www.linkedin.com/in/srijith-sara-53064731a/"
@@ -237,21 +228,32 @@
                 "id": "ls-asad",
                 "name": "Mohammad Asad",
                 "role": "Logistics & Sponsorship - Member",
-                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "image": "/team/logistics_asad.png",
                 "social": {
                     "instagram": "https://instagram.com/mohammadasad_1",
                     "linkedin": "https://www.linkedin.com/in/mohammad-asad-12337b328"
                 }
             },
             {
-                "id": "ls-david",
-                "name": "V David Paul Charan",
+                "id": "ls-teja",
+                "name": "Teja",
                 "role": "Logistics & Sponsorship - Member",
-                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-                "social": {
-                    "instagram": "https://instagram.com/charanartz",
-                    "linkedin": "https://www.linkedin.com/in/charan-velpula-4485a9321"
-                }
+                "image": "/team/logistics_teja.png",
+                "social": {}
+            },
+            {
+                "id": "ls-tejasree",
+                "name": "Tejasree",
+                "role": "Logistics & Sponsorship - Member",
+                "image": "/team/logistics_tejasree.png",
+                "social": {}
+            },
+            {
+                "id": "ls-priyanka",
+                "name": "Priyanka",
+                "role": "Logistics & Sponsorship - Member",
+                "image": "/team/logistics_priyanka.png",
+                "social": {}
             }
         ]
     },
@@ -263,7 +265,7 @@
                 "id": "emp-smaranvelpula",
                 "name": "Smaran Velpula",
                 "role": "Event Management & Promotions - Lead",
-                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "image": "/team/emm_smaran.png",
                 "social": {
                     "linkedin": "https://www.linkedin.com/in/velpula-smaran",
                     "instagram": "https://www.instagram.com/smaran_velpula",
@@ -274,7 +276,7 @@
                 "id": "emp-vikas",
                 "name": "Vikas Sainoji",
                 "role": "Event Management & Promotions - CoLead",
-                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "image": "/team/emm_vikas.png",
                 "social": {
                     "instagram": "https://www.instagram.com/vikkyy__30",
                     "linkedin": "https://www.linkedin.com/in/sainoji-vikas-796762341",
@@ -285,7 +287,7 @@
                 "id": "emp-sandeepjamalpur",
                 "name": "Sandeep Jamalpur",
                 "role": "Event Management & Promotions - CoLead",
-                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "image": "/team/emm_sandeep.png",
                 "social": {
                     "linkedin": "https://www.linkedin.com/in/jamalpursandeep-5a806a303",
                     "instagram": "https://www.instagram.com/mr_sandeep_4007?igsh=YXZ5YmxoamxkYXIw"
@@ -295,17 +297,17 @@
                 "id": "emp-rohanoddam",
                 "name": "Rohan Oddam",
                 "role": "Event Management & Promotions - Member",
-                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "image": "/team/emm_rohan.png",
                 "social": {
                     "linkedin": "www.linkedin.com/in/rohanoddam",
                     "github": "https://github.com/posderd"
                 }
             },
             {
-                "id": "emp-mashettyrohith",
+                "id": "emp-rohith",
                 "name": "Mashetty Rohith",
                 "role": "Event Management & Promotions - Member",
-                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "image": "/team/emm_rohit.png",
                 "social": {
                     "linkedin": "https://www.linkedin.com/in/mashetty-rohith-634a2228b",
                     "instagram": "https://www.instagram.com/x_rohith_02a"
@@ -315,7 +317,7 @@
                 "id": "emp-pothireddybhavyasri",
                 "name": "Pothireddy Bhavya Sri",
                 "role": "Event Management & Promotions - Member",
-                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "image": "/team/emm_bhavyasri.png",
                 "social": {
                     "linkedin": "https://www.linkedin.com/in/pothireddy-bhavya-sri-031193328/",
                     "instagram": "https://www.instagram.com/pothireddy.bhavyasri",
@@ -327,7 +329,7 @@
                 "id": "emp-kothalokesh",
                 "name": "Kotha Lokesh",
                 "role": "Event Management & Promotions - Member",
-                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "image": "/team/emm_koushik.png",
                 "social": {
                     "linkedin": "https://www.linkedin.com/in/kotha-lokesh-6b364b32a",
                     "instagram": "https://www.instagram.com/___.l.o.k.i.__",
@@ -338,7 +340,7 @@
                 "id": "emp-aishwarya",
                 "name": "S Aishwarya",
                 "role": "Event Management & Promotions - Member",
-                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "image": "/team/emm_aishwarya.png",
                 "social": {
                     "instagram": "https://www.instagram.com/aishwarya.s_1217",
                     "linkedin": "https://www.linkedin.com/in/aishwarya-supreeth-096b263b4"
@@ -348,7 +350,7 @@
                 "id": "emp-balajikarthikeya",
                 "name": "Balaji Karthikeya",
                 "role": "Event Management & Promotions - Member",
-                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "image": "/team/emm_karthikeya.png",
                 "social": {
                     "linkedin": "https://www.linkedin.com/in/karthikeya-balaji-8b3b2a371",
                     "instagram": "https://www.instagram.com/karth1k.xd"
@@ -358,7 +360,7 @@
                 "id": "emp-samhikar",
                 "name": "Samhika Reddy Puli",
                 "role": "Event Management & Promotions - Member",
-                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "image": "/team/emm_samhika.png",
                 "social": {
                     "linkedin": "www.linkedin.com/in/samhika-puli",
                     "instagram": "https://www.instagram.com/samhika_puli"
@@ -368,7 +370,7 @@
                 "id": "emp-sayarisreeharsha",
                 "name": "Sayari Sreeharsha",
                 "role": "Event Management & Promotions - Member",
-                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "image": "/team/emm_sreeharsha.png",
                 "social": {
                     "linkedin": "https://www.linkedin.com/in/sreeharsha-sayari-1b5911327"
                 }
@@ -377,7 +379,7 @@
                 "id": "emp-venneladevanapalli",
                 "name": "Vennela Devanapalli",
                 "role": "Event Management & Promotions - Member",
-                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "image": "/team/emm_vennela.png",
                 "social": {
                     "linkedin": "https://www.linkedin.com/in/vennela-devanapalli",
                     "instagram": "https://www.instagram.com/_.vennelaa_"
@@ -387,7 +389,7 @@
                 "id": "emp-cdhikshitha",
                 "name": "C.Dhikshitha",
                 "role": "Event Management & Promotions - Member",
-                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "image": "/team/emm_dikshitha.png",
                 "social": {
                     "instagram": "https://www.instagram.com/dhikshitha_004",
                     "linkedin": "https://www.linkedin.com/in/dhikshitha-chilimikoti-3b33653b0"
@@ -397,17 +399,17 @@
                 "id": "emp-ankithakamble",
                 "name": "Ankitha Kamble",
                 "role": "Event Management & Promotions - Member",
-                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "image": "/team/emm_ankitha.png",
                 "social": {
                     "instagram": "https://www.instagram.com/ank1_tha",
                     "linkedin": "https://www.linkedin.com/in/ankitha-kamble-4ba3b5380"
                 }
             },
             {
-                "id": "emp-bogalepratikshareddy",
-                "name": "Bogale Pratiksha Reddy",
+                "id": "emp-pratiksha",
+                "name": "Pratiksha Reddy",
                 "role": "Event Management & Promotions - Member",
-                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "image": "/team/emm_pratiksha.png",
                 "social": {
                     "linkedin": "https://www.linkedin.com/in/bogale-pratiksha-reddy-11a186328",
                     "Instagram": "https://www.instagram.com/urstrulypratikshaaa?igsh=cnFyaDR5ejZiYmdi"
@@ -417,7 +419,7 @@
                 "id": "emp-manasduvvuri",
                 "name": "Manasa Duvvuri",
                 "role": "Event Management & Promotions - Member",
-                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "image": "/team/emm_manasa.png",
                 "social": {
                     "linkedin": "https://www.linkedin.com/in/manasa-duvvuri-146750364",
                     "instagram": "https://www.instagram.com/manasaduvvuri_"
@@ -427,17 +429,17 @@
                 "id": "emp-saisrijanreddykatta",
                 "name": "Sai Srijan Reddy Katta",
                 "role": "Event Management & Promotions - Member",
-                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "image": "/team/emm_srijan.png",
                 "social": {
                     "linkedin": "https://www.linkedin.com/in/sai-srijan-reddy-katta-ba204b377",
                     "instagram": "https://www.instagram.com/srijan.rdy"
                 }
             },
             {
-                "id": "emp-keesarhansini",
+                "id": "emp-hansini",
                 "name": "Keesari Hansini",
                 "role": "Event Management & Promotions - Member",
-                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "image": "/team/emm_hansini.png",
                 "social": {
                     "linkedin": "https://www.linkedin.com/in/hansini-reddy-k-152740327/",
                     "instagram": "https://www.instagram.com/hansini_reddyy/",
@@ -448,7 +450,7 @@
                 "id": "emp-zuveriyafirdous",
                 "name": "Zuveriya Firdous",
                 "role": "Event Management & Promotions - Member",
-                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "image": "/team/emm_firdous.png",
                 "social": {
                     "linkedin": "https://www.linkedin.com/in/zuveriya-firdous-6b7631329"
                 }
@@ -457,7 +459,7 @@
                 "id": "emp-beemaninithinkumar",
                 "name": "Beemani Nithin Kumar",
                 "role": "Event Management & Promotions - Member",
-                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "image": "/team/emm_nithin.png",
                 "social": {
                     "linkedin": "https://www.linkedin.com/in/nithin-beemani-72a423324",
                     "instagram": "https://www.instagram.com/nithin_beemani_06",
@@ -465,15 +467,11 @@
                 }
             },
             {
-                "id": "emp-gouraramsoumyareddy",
-                "name": "Gouraram Sowmya Reddy",
+                "id": "emp-isaacchowdary",
+                "name": "Isaac Chowdary",
                 "role": "Event Management & Promotions - Member",
-                "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-                "social": {
-                    "linkedin": "https://www.linkedin.com/in/g-sowmya-reddy-a387052b9",
-                    "instagram": "https://www.instagram.com/_sowmyareddyyy?igsh=ZDM4dTR0Mm5oZjhm",
-                    "github": "https://github.com/Sowmya-726"
-                }
+                "image": "/team/emm_isaac.png",
+                "social": {}
             }
         ]
     }
