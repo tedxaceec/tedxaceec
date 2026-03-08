@@ -64,16 +64,6 @@
                 }
             },
             {
-                "id": "cur-jacob",
-                "name": "Jacob Kothapally",
-                "role": "Curation - Speaker-Relations",
-                "image": "/team/curation_jacob.png",
-                "social": {
-                    "instagram": "https://www.instagram.com/jkayy1_",
-                    "linkedin": "https://www.linkedin.com/in/jacob-kothapally-747224387"
-                }
-            },
-            {
                 "id": "cur-harshithamadisetti",
                 "name": "Harshitha Madisetti",
                 "role": "Curation - Speaker-Relations",
@@ -108,6 +98,16 @@
                 "image": "/team/curation_mounika.png",
                 "social": {
                     "linkedin": "https://www.linkedin.com/in/mounika-coder2006/"
+                }
+            },
+            {
+                "id": "cur-jacob",
+                "name": "Jacob Kothapally",
+                "role": "Curation - Speaker-Relations",
+                "image": "/team/curation_jacob.png",
+                "social": {
+                    "instagram": "https://www.instagram.com/jkayy1_",
+                    "linkedin": "https://www.linkedin.com/in/jacob-kothapally-747224387"
                 }
             },
             {
