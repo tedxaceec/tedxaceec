@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = "https://tedxaceec.vercel.app/";
+  const baseUrl = "https://tedx.aceec.ac.in";
 
   return {
     rules: [
@@ -16,7 +16,27 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
       {
+        userAgent: "Googlebot-Image",
+        allow: "/",
+      },
+      {
         userAgent: "Bingbot",
+        allow: "/",
+      },
+      {
+        userAgent: "Slurp",
+        allow: "/",
+      },
+      {
+        userAgent: "DuckDuckBot",
+        allow: "/",
+      },
+      {
+        userAgent: "Baiduspider",
+        allow: "/",
+      },
+      {
+        userAgent: "YandexBot",
         allow: "/",
       },
       // Allow AI / GEO crawlers
@@ -34,6 +54,35 @@ export default function robots(): MetadataRoute.Robots {
       },
       {
         userAgent: "ClaudeBot",
+        allow: "/",
+      },
+      {
+        userAgent: "Applebot",
+        allow: "/",
+      },
+      {
+        userAgent: "anthropic-ai",
+        allow: "/",
+      },
+      {
+        userAgent: "Bytespider",
+        allow: "/",
+      },
+      // Social media crawlers
+      {
+        userAgent: "facebookexternalhit",
+        allow: "/",
+      },
+      {
+        userAgent: "Twitterbot",
+        allow: "/",
+      },
+      {
+        userAgent: "LinkedInBot",
+        allow: "/",
+      },
+      {
+        userAgent: "WhatsApp",
         allow: "/",
       },
     ],

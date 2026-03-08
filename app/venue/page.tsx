@@ -145,7 +145,7 @@ export default function VenuePage() {
                         </div>
 
                         <a
-                            href="https://maps.google.com"
+                            href="https://maps.google.com/?q=ACE+Engineering+College,+Ankushapur,+Ghatkesar,+Telangana+501301"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="mt-8 md:mt-0 px-8 py-4 bg-white text-black font-bold rounded-xl hover:bg-[#eb0027] hover:text-white transition-colors flex items-center gap-2"

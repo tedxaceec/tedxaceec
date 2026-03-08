@@ -51,7 +51,7 @@ export default function Footer() {
                         {/* Tagline */}
                         <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400 max-w-xs">
                             Ideas Worth Spreading — An independently organized TEDx event at
-                            Acharya College of Engineering.
+                            ACE Engineering College, Hyderabad.
                         </p>
 
                         {/* Copyright */}

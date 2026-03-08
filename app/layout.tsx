@@ -28,11 +28,11 @@ const tasaOrbiter = TASA_Orbiter({
 });
 
 // ─── Site Constants ──────────────────────────────────────────────────────────
-const SITE_URL = "https://tedxaceec.vercel.app/";
+const SITE_URL = "https://tedx.aceec.ac.in/";
 const SITE_NAME = "TEDxACE Engineering College";
-const SITE_TITLE = "TEDxACE Engineering College | Bedrock & Beyond | Ideas Worth Spreading";
+const SITE_TITLE = "TEDxACEEC | Bedrock & Beyond | TEDx at ACE Engineering College, Hyderabad";
 const SITE_DESCRIPTION =
-  "TEDxACE Engineering College presents 'Bedrock & Beyond' — an independently organized TED event at ACE Engineering College. Explore groundbreaking talks on innovation, technology, creativity, and the resilient foundations of our past that shape our limitless future.";
+  "TEDxACEEC — Bedrock & Beyond is an independently organized TEDx event at ACE Engineering College, Ankushapur, Ghatkesar, Hyderabad, Telangana. Experience powerful talks on innovation, technology, leadership, and ideas worth spreading from India's brightest minds.";
 
 // ─── Viewport (exported separately in Next.js 14+) ─────────────────────────
 export const viewport: Viewport = {
@@ -61,40 +61,65 @@ export const metadata: Metadata = {
   // ── Keywords (SEO + GEO) ──────────────────────────────────────────────────
   keywords: [
     // Primary brand keywords
-    "TEDxACE Engineering College",
+    "TEDxACEEC",
     "TEDx ACEEC",
+    "TEDxACE Engineering College",
+    "TEDx ACE Engineering College",
     "ACE Engineering College",
     "ACEEC",
-    "TEDx ACE Engineering College",
-    "TEDx ACE Engineering College",
+    "ACE Engineering College TEDx",
     "Bedrock and Beyond",
     "Bedrock & Beyond",
+    "tedxaceec 2026",
     // Generic TEDx keywords
     "TEDx event",
     "TEDx talks",
     "TEDx conference",
+    "TEDx event 2026",
     "TED talks India",
     "TEDx India",
+    "TEDx India 2026",
     "TEDx college event",
-    "TEDx university",
-    // Topic keywords (GEO optimized)
+    "TEDx university event",
+    "TEDx student event",
+    // Topic keywords
     "innovation talks",
     "ideas worth spreading",
     "technology conference",
     "inspiration event",
-    "motivational speakers",
-    "thought leaders",
+    "motivational speakers India",
+    "thought leaders India",
     "creative talks",
     "student innovation",
-    "engineering conference",
+    "engineering conference India",
     "leadership talks",
-    // Location-based keywords (Local SEO / GEO)
+    "startup talks India",
+    "entrepreneurship talks",
+    // Location-based keywords (Local SEO / GEO — Hyderabad + Telangana)
     "TEDx Hyderabad",
-    "TEDx Karnataka",
+    "TEDx Hyderabad 2026",
+    "TEDx Telangana",
+    "TEDx Secunderabad",
+    "TEDx Ghatkesar",
     "college events Hyderabad",
+    "college events Telangana",
+    "engineering college events Hyderabad",
     "engineering college events India",
-    "ACE Engineering College College events",
+    "ACE Engineering College events",
+    "ACE Engineering College Hyderabad",
+    "ACE Engineering College Ghatkesar",
+    "ACE Engineering College Ankushapur",
     "tech events Hyderabad 2026",
+    "events near Ghatkesar",
+    "events in Medchal district",
+    "student events Hyderabad 2026",
+    "JNTUH affiliated college events",
+    // Long-tail / Conversational / Voice search
+    "TEDx events near me Hyderabad",
+    "upcoming TEDx events in Hyderabad",
+    "best TEDx events in India 2026",
+    "TEDx college events near Hyderabad",
+    "ACE Engineering College Ankushapur Ghatkesar Telangana",
   ],
 
   // ── Authors & Creator ─────────────────────────────────────────────────────
@@ -186,30 +211,51 @@ const jsonLd = {
       "@type": "Organization",
       "@id": `${SITE_URL}/#organization`,
       name: "TEDxACE Engineering College",
+      alternateName: ["TEDxACEEC", "TEDx ACEEC", "TEDx ACE Engineering College"],
       url: SITE_URL,
       logo: {
         "@type": "ImageObject",
-        url: `${SITE_URL}/og-image.png`,
+        url: `${SITE_URL}og-image.png`,
         width: 1200,
         height: 630,
       },
       sameAs: [
         "https://www.instagram.com/tedxaceengineeringcollege",
-        "https://www.linkedin.com/company/tedxaceengineeringcollege",
-        "https://twitter.com/tedxaceengineeringcollege",
+        "https://www.linkedin.com/in/tedxaceengineeringcollege/",
+        "https://x.com/TedxC28766",
+        "https://www.youtube.com/@tedxaceengineeringcollege",
       ],
-      description: "An independently organized TEDx event at ACE Engineering College, Electronics and Communications (ACEEC).",
+      description: "TEDxACEEC is an independently organized TEDx event hosted at ACE Engineering College, Ankushapur, Ghatkesar, Hyderabad, Telangana. We bring together innovators, thought leaders, and change-makers to share ideas worth spreading.",
+      contactPoint: {
+        "@type": "ContactPoint",
+        email: "tedx@aceec.ac.in",
+        telephone: "+917995162648",
+        contactType: "General Inquiry",
+        areaServed: "IN",
+        availableLanguage: ["English", "Hindi", "Telugu"],
+      },
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Engineering Block, ACE Engineering College, Ankushapur",
+        addressLocality: "Ghatkesar",
+        addressRegion: "Telangana",
+        postalCode: "501301",
+        addressCountry: "IN",
+      },
     },
     // Event
     {
       "@type": "Event",
       "@id": `${SITE_URL}/#event`,
-      name: "TEDxACE Engineering College | Bedrock & Beyond",
+      name: "TEDxACEEC — Bedrock & Beyond",
       description: SITE_DESCRIPTION,
       url: SITE_URL,
       eventStatus: "https://schema.org/EventScheduled",
       eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
-      image: `${SITE_URL}/og-image.png`,
+      image: [
+        `${SITE_URL}og-image.png`,
+        `${SITE_URL}logo.png`,
+      ],
       organizer: {
         "@type": "Organization",
         "@id": `${SITE_URL}/#organization`,
@@ -218,17 +264,24 @@ const jsonLd = {
       },
       location: {
         "@type": "Place",
-        name: "ACE Engineering College, Electronics and Communications",
+        name: "Engineering Block, ACE Engineering College",
         address: {
           "@type": "PostalAddress",
-          addressLocality: "Hyderabad",
-          addressRegion: "Karnataka",
+          streetAddress: "Engineering Block, ACE Engineering College, Ankushapur",
+          addressLocality: "Ghatkesar",
+          addressRegion: "Telangana",
+          postalCode: "501301",
           addressCountry: "IN",
+        },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: 17.4602,
+          longitude: 78.6569,
         },
       },
       performer: {
         "@type": "PerformingGroup",
-        name: "TEDxACE Engineering College Speakers",
+        name: "TEDxACEEC Speakers",
       },
       offers: {
         "@type": "Offer",
@@ -237,12 +290,35 @@ const jsonLd = {
         priceCurrency: "INR",
       },
     },
+    // EducationalOrganization (for ACE Engineering College)
+    {
+      "@type": "EducationalOrganization",
+      "@id": `${SITE_URL}/#college`,
+      name: "ACE Engineering College",
+      alternateName: ["ACEEC", "ACE Engineering College Hyderabad"],
+      url: "https://aceec.ac.in",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Engineering Block, ACE Engineering College, Ankushapur",
+        addressLocality: "Ghatkesar",
+        addressRegion: "Telangana",
+        postalCode: "501301",
+        addressCountry: "IN",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 17.4602,
+        longitude: 78.6569,
+      },
+      description: "ACE Engineering College is a premier engineering institution affiliated to JNTUH, located in Ankushapur, Ghatkesar, Telangana. NAAC accredited with 20+ years of academic excellence.",
+    },
     // WebSite (for sitelinks search box)
     {
       "@type": "WebSite",
       "@id": `${SITE_URL}/#website`,
       url: SITE_URL,
       name: SITE_NAME,
+      alternateName: "TEDxACEEC",
       description: SITE_DESCRIPTION,
       publisher: {
         "@id": `${SITE_URL}/#organization`,
@@ -260,6 +336,19 @@ const jsonLd = {
       description: SITE_DESCRIPTION,
       inLanguage: "en-US",
     },
+    // BreadcrumbList
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${SITE_URL}/#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: SITE_URL,
+        },
+      ],
+    },
   ],
 };
 
@@ -272,7 +361,15 @@ export default function RootLayout({
   return (
     <html lang="en" dir="ltr" className="dark" suppressHydrationWarning>
       <head>
-
+        {/* ── GEO Meta Tags (Local SEO) ────────────────────────────────────── */}
+        <meta name="geo.region" content="IN-TG" />
+        <meta name="geo.placename" content="Ghatkesar, Hyderabad, Telangana" />
+        <meta name="geo.position" content="17.4602;78.6569" />
+        <meta name="ICBM" content="17.4602, 78.6569" />
+        <meta name="language" content="English" />
+        <meta name="revisit-after" content="3 days" />
+        <meta name="distribution" content="global" />
+        <meta name="rating" content="general" />
 
         {/* JSON-LD Structured Data */}
         <script
@@ -280,8 +377,11 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
 
-        {/* DNS prefetch for analytics / third-party (add as needed) */}
+        {/* DNS prefetch for analytics / third-party */}
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://maps.google.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body
         className={`${tasaOrbiter.className} antialiased overflow-x-hidden bg-background text-foreground selection:bg-red-500/20 dark:selection:bg-white/30 transition-colors duration-300`}
@@ -312,11 +412,13 @@ export default function RootLayout({
         {/* Noscript fallback for SEO crawlers that don't run JS */}
         <noscript>
           <div style={{ padding: "2rem", textAlign: "center", color: "#fff", backgroundColor: "#000000" }}>
-            <h1>TEDxACE Engineering College | Bedrock &amp; Beyond</h1>
+            <h1>TEDxACEEC | Bedrock &amp; Beyond — TEDx at ACE Engineering College, Hyderabad</h1>
             <p>
-              An independently organized TEDx event at ACE Engineering College, Hyderabad.
-              Exploring the resilient foundations of our past and the limitless possibilities shaping our future.
+              TEDxACEEC is an independently organized TEDx event at ACE Engineering College,
+              Engineering Block, Ankushapur, Ghatkesar, Hyderabad, Telangana 501301.
+              Experience powerful talks on innovation, technology, leadership, and ideas worth spreading.
             </p>
+            <p>Explore groundbreaking talks on innovation, technology, creativity, and the resilient foundations of our past that shape our limitless future.</p>
             <p>Please enable JavaScript for the best experience.</p>
           </div>
         </noscript>

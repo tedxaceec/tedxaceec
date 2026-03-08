@@ -8,9 +8,21 @@ import CommunityPartners from "./(sections)/CommunityPartners";
 import SponsorCTA from "./(sections)/SponsorCTA";
 
 export const metadata: Metadata = {
-    title: "Sponsors & Partners",
+    title: "Sponsors & Partners | TEDxACEEC | ACE Engineering College Hyderabad",
     description:
-        "Meet the visionary sponsors and partners powering TEDxACE Engineering College's 'Bedrock & Beyond' event. Explore sponsorship tiers, partnership benefits, and collaboration opportunities.",
+        "Meet the visionary sponsors and partners powering TEDxACEEC's Bedrock & Beyond event at ACE Engineering College, Ghatkesar, Hyderabad. Explore sponsorship tiers, partnership benefits, and collaboration opportunities.",
+    openGraph: {
+        title: "TEDxACEEC Sponsors & Partners | Bedrock & Beyond",
+        description:
+            "Explore sponsorship opportunities and meet the partners powering TEDxACEEC at ACE Engineering College, Hyderabad.",
+        type: "website",
+    },
+    keywords: [
+        "TEDxACEEC sponsors",
+        "TEDx ACE Engineering College sponsors",
+        "TEDx sponsor opportunities Hyderabad",
+        "sponsor TEDx event",
+    ],
 };
 
 export default function SponsorsPage() {
