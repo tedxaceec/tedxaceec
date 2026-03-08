@@ -3,6 +3,7 @@ import SpeakersHero from "./(sections)/SpeakersHero";
 import dynamic from "next/dynamic";
 
 const SpeakersGrid = dynamic(() => import("./(sections)/SpeakersGrid"), { ssr: true });
+const SpeakerCTA = dynamic(() => import("./(sections)/SpeakerCTA"), { ssr: true });
 
 export const metadata: Metadata = {
 	title: "Our Speakers | TEDxACEEC",
@@ -15,6 +16,7 @@ export default function SpeakersPage() {
 		<div className="relative overflow-hidden bg-[#0A0A0A] min-h-screen">
 			<SpeakersHero />
 			<SpeakersGrid />
+			<SpeakerCTA />
 		</div>
 	);
 }
