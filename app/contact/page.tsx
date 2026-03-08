@@ -79,7 +79,7 @@ export default function ContactPage() {
         const mailtoUrl = `mailto:${siteConfig.contact.email}?subject=${encodeURIComponent(formState.subject)}&body=${encodeURIComponent(
             `Name: ${formState.name}\nEmail: ${formState.email}\n\nMessage:\n${formState.message}`
         )}`;
-        window.location.href = mailtoUrl;
+        window.open(mailtoUrl, '_blank');
     };
 
     const fadeInUp = {
