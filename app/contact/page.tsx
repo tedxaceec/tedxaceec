@@ -76,8 +76,10 @@ export default function ContactPage() {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        // Simulate form submission
-        console.log("Form submitted", formState);
+        const mailtoUrl = `mailto:${siteConfig.contact.email}?subject=${encodeURIComponent(formState.subject)}&body=${encodeURIComponent(
+            `Name: ${formState.name}\nEmail: ${formState.email}\n\nMessage:\n${formState.message}`
+        )}`;
+        window.location.href = mailtoUrl;
     };
 
     const fadeInUp = {
@@ -252,7 +254,7 @@ export default function ContactPage() {
                                         </div>
                                     </a>
 
-                                    <div className="group flex items-start gap-4 p-4 rounded-2xl hover:bg-white/5 transition-colors border border-transparent hover:border-white/10">
+                                    <a href={`tel:${siteConfig.contact.phone.replace(/[^0-9+\-()]/g, '')}`} className="group flex items-start gap-4 p-4 rounded-2xl hover:bg-white/5 transition-colors border border-transparent hover:border-white/10">
                                         <div className="p-3 bg-neutral-900 rounded-xl text-[#eb0027] group-hover:scale-110 transition-transform">
                                             <Phone className="w-6 h-6" />
                                         </div>
@@ -260,9 +262,9 @@ export default function ContactPage() {
                                             <p className="font-semibold text-lg text-white group-hover:text-[#eb0027] transition-colors">Call us directly</p>
                                             <p className="text-neutral-400 mt-1">{siteConfig.contact.phone}</p>
                                         </div>
-                                    </div>
+                                    </a>
 
-                                    <div className="group flex items-start gap-4 p-4 rounded-2xl hover:bg-white/5 transition-colors border border-transparent hover:border-white/10">
+                                    <a href={`https://maps.google.com/?q=${encodeURIComponent(siteConfig.contact.address)}`} target="_blank" rel="noopener noreferrer" className="group flex items-start gap-4 p-4 rounded-2xl hover:bg-white/5 transition-colors border border-transparent hover:border-white/10">
                                         <div className="p-3 bg-neutral-900 rounded-xl text-[#eb0027] group-hover:scale-110 transition-transform">
                                             <MapPin className="w-6 h-6" />
                                         </div>
@@ -274,7 +276,7 @@ export default function ContactPage() {
                                                 {siteConfig.contact.address.split(',').slice(2).join(',')}
                                             </p>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
                             </motion.div>
 
