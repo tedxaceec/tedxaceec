@@ -4,7 +4,7 @@ import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { Mail, MapPin, Phone, Instagram, Linkedin, Twitter, ArrowRight } from "lucide-react";
+import { Mail, MapPin, Phone, Instagram, Linkedin, Twitter, ArrowRight, Youtube } from "lucide-react";
 
 import siteConfig from "@/data/site_config.json";
 
@@ -12,6 +12,7 @@ const socialIconMap: Record<string, React.ElementType> = {
     Instagram,
     LinkedIn: Linkedin,
     Twitter,
+    YouTube: Youtube,
 };
 
 export default function ContactPage() {
@@ -283,12 +284,13 @@ export default function ContactPage() {
                                     Follow our journey
                                 </h4>
                                 <div className="flex gap-4 px-4">
-                                    {siteConfig.socials.filter(s => s.name !== "YouTube").map((social) => {
+                                    {siteConfig.socials.map((social) => {
                                         const Icon = socialIconMap[social.name] || Instagram;
                                         return (
                                             <motion.a
                                                 key={social.name}
                                                 href={social.href}
+                                                target="_blank"
                                                 whileHover={{ y: -5, scale: 1.1 }}
                                                 whileTap={{ scale: 0.95 }}
                                                 className="p-4 bg-neutral-900 border border-white/5 rounded-full text-neutral-400 hover:text-white hover:border-[#eb0027] hover:bg-[#eb0027]/10 transition-colors"
