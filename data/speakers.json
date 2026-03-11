@@ -1,57 +1,57 @@
 [
   {
     "id": "featured-1",
-    "name": "Speaker TBA",
-    "role": "Innovation & Entrepreneurship",
-    "organization": "TBA",
-    "topic": "Building Tomorrow's Foundations",
-    "bio": "A visionary leader in the field of innovation and entrepreneurship, sharing insights on how to build sustainable foundations for the future.",
+    "name": "Charan Lakkaraju",
+    "role": "Founder & CEO, Student Tribe",
+    "organization": "Student Tribe",
+    "topic": "Entrepreneurship",
+    "bio": "Sri Charan Lakkaraju is the Founder and CEO of Student Tribe, a platform dedicated to empowering students with access to opportunities, skills, and meaningful networks. A Forbes 30 Under 30 Asia (2018), he has trained over 300,000 students in entrepreneurship, and career readiness.",
     "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=1000&fit=crop&q=80",
     "social": {
-      "twitter": "#",
-      "linkedin": "#"
+      "twitter": "https://x.com/lakkarajucharan",
+      "linkedin": "https://www.linkedin.com/in/sricharanlakkaraju/"
     },
     "isFeatured": true
   },
   {
     "id": "featured-2",
-    "name": "Speaker TBA",
-    "role": "Technology & AI",
-    "organization": "TBA",
-    "topic": "The Intelligence Revolution",
-    "bio": "Deeply involved in the AI revolution, exploring how intelligent systems are reshaping our world and what it means for the future of humanity.",
+    "name": "Kaushik NC",
+    "role": "Sports Broadcaster & Host",
+    "organization": "Star Sports",
+    "topic": "The Voice Behind the Moment",
+    "bio": "Kaushik NC is a Telugu sports broadcaster, presenter, and storyteller. He is known for hosting pre- and post-match shows, interviewing cricketers, and bringing iconic sporting moments to life for millions of fans. Kaushik has voiced Virat Kohli's 71st international century, his 49th and 50th ODI centuries, the India vs Pakistan T20 World Cup 2022 clash, and the Olympics 2024.",
     "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=1000&fit=crop&q=80",
     "social": {
-      "twitter": "#",
-      "linkedin": "#"
+      "twitter": "https://x.com/kaushiknc",
+      "linkedin": "https://www.linkedin.com/in/kaushik-nc"
     },
     "isFeatured": true
   },
   {
     "id": "featured-3",
-    "name": "Speaker TBA",
-    "role": "Education & Research",
-    "organization": "TBA",
-    "topic": "Reimagining Learning",
-    "bio": "Passionate about educational reform and breakthroughs in research that challenge traditional learning paradigms.",
+    "name": "Kireeti Damaraju",
+    "role": "Actor",
+    "organization": "Telugu Film Industry",
+    "topic": "Storytelling Through Cinema",
+    "bio": "Kireeti Damaraju is an Indian actor who works in Telugu cinema. He trained in acting through theatre before venturing into films and transitioned from an engineering background into film and media.",
     "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&h=1000&fit=crop&q=80",
     "social": {
-      "twitter": "#",
-      "linkedin": "#"
+      "twitter": "https://x.com/KirrD",
+      "linkedin": "https://www.linkedin.com/in/kireeti-damaraju/"
     },
     "isFeatured": true
   },
   {
     "id": "featured-4",
-    "name": "Speaker TBA",
-    "role": "Arts & Culture",
-    "organization": "TBA",
+    "name": "Poorna Malavath",
+    "role": "Mountaineer",
+    "organization": "Transcend Adventures",
     "topic": "Stories That Shape Us",
     "bio": "Exploring the profound impact of storytelling and culture on our collective identity and the world we create.",
     "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&h=1000&fit=crop&q=80",
     "social": {
-      "twitter": "#",
-      "linkedin": "#"
+      "twitter": "https://x.com/MalavathPoorna",
+      "linkedin": "http://linkedin.com/in/poorna-malavath/"
     },
     "isFeatured": true
   },
