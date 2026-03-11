@@ -195,13 +195,13 @@
         "team": "Logistics & Sponsorship Team",
         "members": [
             {
-                "id": "ls-lohit",
-                "name": "Lohit MYK",
+                "id": "ls-asad",
+                "name": "Mohammad Asad",
                 "role": "Logistics & Sponsorship - Lead",
-                "image": "/team/logistics_lohit.png",
+                "image": "/team/logistics_asad.png",
                 "social": {
-                    "instagram": "https://instagram.com/lohitmyk",
-                    "linkedin": "https://linkedin.com/in/lohitKanchupati"
+                    "instagram": "https://instagram.com/mohammadasad_1",
+                    "linkedin": "https://www.linkedin.com/in/mohammad-asad-12337b328"
                 }
             },
             {
@@ -222,16 +222,6 @@
                 "social": {
                     "instagram": "https://www.instagram.com/srijithh_/",
                     "linkedin": "https://www.linkedin.com/in/srijith-sara-53064731a/"
-                }
-            },
-            {
-                "id": "ls-asad",
-                "name": "Mohammad Asad",
-                "role": "Logistics & Sponsorship - Member",
-                "image": "/team/logistics_asad.png",
-                "social": {
-                    "instagram": "https://instagram.com/mohammadasad_1",
-                    "linkedin": "https://www.linkedin.com/in/mohammad-asad-12337b328"
                 }
             },
             {
