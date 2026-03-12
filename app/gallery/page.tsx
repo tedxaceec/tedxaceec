@@ -49,9 +49,9 @@ export default function GalleryPage() {
                     >
                         {images.map((item, i) => (
                             <img
-                                key={item.id}
+                                key={i}
                                 className="card"
-                                src={`https://images.unsplash.com/photo-${item.id}?w=400&q=80`}
+                                src={item.url}
                                 style={{ "--i": i } as React.CSSProperties}
                                 alt={item.alt}
                                 loading={i < 4 ? "eager" : "lazy"}

@@ -7,84 +7,68 @@
   },
   "images": [
     {
-      "id": "1540968221243-29f5d70540bf",
-      "alt": "Event moment 1"
+      "url": "https://ik.imagekit.io/tedxaceec/gallery/DSC07440.webp?updatedAt=1773333436589",
+      "alt": "TEDx event moment 1"
     },
     {
-      "id": "1596135187959-562c650d98bc",
-      "alt": "Event moment 2"
+      "url": "https://ik.imagekit.io/tedxaceec/gallery/DSC07416.webp?updatedAt=1773333436633",
+      "alt": "TEDx event moment 2"
     },
     {
-      "id": "1628944682084-831f35256163",
-      "alt": "Event moment 3"
+      "url": "https://ik.imagekit.io/tedxaceec/gallery/_DSC1248.webp?updatedAt=1773333436577",
+      "alt": "TEDx event moment 3"
     },
     {
-      "id": "1590013330451-3946e83e0392",
-      "alt": "Event moment 4"
+      "url": "https://ik.imagekit.io/tedxaceec/gallery/_DSC1084.webp?updatedAt=1773333436543",
+      "alt": "TEDx event moment 4"
     },
     {
-      "id": "1590421959604-741d0eec0a2e",
-      "alt": "Event moment 5"
+      "url": "https://ik.imagekit.io/tedxaceec/gallery/_DSC0590.webp?updatedAt=1773333436563",
+      "alt": "TEDx event moment 5"
     },
     {
-      "id": "1572613000712-eadc57acbecd",
-      "alt": "Event moment 6"
+      "url": "https://ik.imagekit.io/tedxaceec/gallery/_DSC1205.webp?updatedAt=1773333436576",
+      "alt": "TEDx event moment 6"
     },
     {
-      "id": "1570097192570-4b49a6736f9f",
-      "alt": "Event moment 7"
+      "url": "https://ik.imagekit.io/tedxaceec/gallery/_DSC0552.webp?updatedAt=1773333436501",
+      "alt": "TEDx event moment 7"
     },
     {
-      "id": "1620789550663-2b10e0080354",
-      "alt": "Event moment 8"
-    },
-    {
-      "id": "1617775623669-20bff4ffaa5c",
-      "alt": "Event moment 9"
-    },
-    {
-      "id": "1548600916-dc8492f8e845",
-      "alt": "Event moment 10"
-    },
-    {
-      "id": "1573824969595-a76d4365a2e6",
-      "alt": "Event moment 11"
-    },
-    {
-      "id": "1633936929709-59991b5fdd72",
-      "alt": "Event moment 12"
+      "url": "https://ik.imagekit.io/tedxaceec/gallery/DSC07718.webp?updatedAt=1773333436524",
+      "alt": "TEDx event moment 8"
     }
   ],
   "bentoGrid": [
-    "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
-    "https://images.pexels.com/photos/3184311/pexels-photo-3184311.jpeg?auto=compress&cs=tinysrgb&w=800",
-    "https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&w=800",
-    "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=800",
-    "https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&w=800"
+    "https://ik.imagekit.io/tedxaceec/gallery/_DSC1459.webp?updatedAt=1773333436490",
+    "https://ik.imagekit.io/tedxaceec/gallery/_DSC0809.webp?updatedAt=1773333436533",
+    "https://ik.imagekit.io/tedxaceec/gallery/DSC07450.webp?updatedAt=1773333436448",
+    "https://ik.imagekit.io/tedxaceec/gallery/_DSC1290.webp?updatedAt=1773333436470",
+    "https://ik.imagekit.io/tedxaceec/gallery/_DSC1150.webp?updatedAt=1773333436484"
   ],
   "dragSlider": [
-    "https://images.pexels.com/photos/2833037/pexels-photo-2833037.jpeg?auto=compress&cs=tinysrgb&w=800",
-    "https://images.pexels.com/photos/7005101/pexels-photo-7005101.jpeg?auto=compress&cs=tinysrgb&w=800",
-    "https://images.pexels.com/photos/1181391/pexels-photo-1181391.jpeg?auto=compress&cs=tinysrgb&w=800",
-    "https://images.pexels.com/photos/1181373/pexels-photo-1181373.jpeg?auto=compress&cs=tinysrgb&w=800",
-    "https://images.pexels.com/photos/1708988/pexels-photo-1708988.jpeg?auto=compress&cs=tinysrgb&w=800",
-    "https://images.pexels.com/photos/1181345/pexels-photo-1181345.jpeg?auto=compress&cs=tinysrgb&w=800"
+    "https://ik.imagekit.io/tedxaceec/gallery/_DSC1595.webp?updatedAt=1773333436461",
+    "https://ik.imagekit.io/tedxaceec/gallery/DSC07305.webp?updatedAt=1773333436457",
+    "https://ik.imagekit.io/tedxaceec/gallery/_DSC0901.webp?updatedAt=1773333436449",
+    "https://ik.imagekit.io/tedxaceec/gallery/_DSC0945.webp?updatedAt=1773333436572",
+    "https://ik.imagekit.io/tedxaceec/gallery/DSC07622.webp?updatedAt=1773333436456",
+    "https://ik.imagekit.io/tedxaceec/gallery/_DSC1894.webp?updatedAt=1773333436404"
   ],
   "parallaxScroll": {
     "col1": [
-      "https://images.pexels.com/photos/1709003/pexels-photo-1709003.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/2774577/pexels-photo-2774577.jpeg?auto=compress&cs=tinysrgb&w=800"
+      "https://ik.imagekit.io/tedxaceec/gallery/_DSC1400.webp?updatedAt=1773333436468",
+      "https://ik.imagekit.io/tedxaceec/gallery/DSC07708.webp?updatedAt=1773333436480",
+      "https://ik.imagekit.io/tedxaceec/gallery/_DSC1523.webp?updatedAt=1773333436411"
     ],
     "col2": [
-      "https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/1181438/pexels-photo-1181438.jpeg?auto=compress&cs=tinysrgb&w=800"
+      "https://ik.imagekit.io/tedxaceec/gallery/_DSC1918.webp?updatedAt=1773333436444",
+      "https://ik.imagekit.io/tedxaceec/gallery/_DSC0550.webp?updatedAt=1773333436432",
+      "https://ik.imagekit.io/tedxaceec/gallery/DSC07242.webp?updatedAt=1773333436490"
     ],
     "col3": [
-      "https://images.pexels.com/photos/2833037/pexels-photo-2833037.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/1181391/pexels-photo-1181391.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/1181345/pexels-photo-1181345.jpeg?auto=compress&cs=tinysrgb&w=800"
+      "https://ik.imagekit.io/tedxaceec/gallery/_DSC0920.webp?updatedAt=1773333436419",
+      "https://ik.imagekit.io/tedxaceec/gallery/_DSC1064.webp?updatedAt=1773333436391",
+      "https://ik.imagekit.io/tedxaceec/gallery/_DSC1038.webp?updatedAt=1773333435972"
     ]
   }
 }
