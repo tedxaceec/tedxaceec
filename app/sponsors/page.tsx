@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
 import SponsorsHero from "./(sections)/SponsorsHero";
 import WhySponsor from "./(sections)/WhySponsor";
-import TitleSponsor from "./(sections)/TitleSponsor";
-import GoldSponsors from "./(sections)/GoldSponsors";
-import SilverBronzeSponsors from "./(sections)/SilverSponsors";
-import CommunityPartners from "./(sections)/CommunityPartners";
+import SponsorsComingSoon from "./(sections)/SponsorsComingSoon";
 import SponsorCTA from "./(sections)/SponsorCTA";
 
 export const metadata: Metadata = {
@@ -30,10 +27,7 @@ export default function SponsorsPage() {
         <div className="relative overflow-hidden">
             <SponsorsHero />
             <WhySponsor />
-            <TitleSponsor />
-            <GoldSponsors />
-            <SilverBronzeSponsors />
-            <CommunityPartners />
+            <SponsorsComingSoon />
             <SponsorCTA />
         </div>
     );
