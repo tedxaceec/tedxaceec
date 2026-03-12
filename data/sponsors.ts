@@ -282,7 +282,7 @@ export const SPONSOR_CTA = {
   },
   secondaryCTA: {
     text: "Download Brochure",
-    href: "#",
+    href: "https://drive.google.com/file/d/1ABij3WHkGpwC8Kl8vrkGhZtTN88AlHQD/view?usp=sharing",
   },
   notice:
     "This independent TEDx event is operated under license from TED. Sponsorships support the event and are not endorsements by TED.",
