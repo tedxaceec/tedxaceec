@@ -21,9 +21,9 @@
         {
             "type": "list",
             "items": [
-                "**Personal Information:** When you purchase a ticket, register as a volunteer, or apply as a speaker, we collect details such as your name, email address, phone number, institution/organization, profession, and student ID (if applicable).",
+                "**Personal Information:** When you purchase a ticket, or apply as a speaker, we collect details such as your name, email address, phone number, institution/organization, profession, and student ID (if applicable).",
                 "**Event Logistics Data:** We may collect specific preferences such as dietary requirements or accessibility needs to accommodate you during the event.",
-                "**Payment Information:** Ticket payments are processed securely through a third-party ticketing and payment gateway (e.g., Razorpay, Townscript). We do not process or store your credit/debit card details on our servers.",
+                "**Payment Information:** Ticket payments are processed securely through a third-party ticketing and payment gateway. We do not process or store your credit/debit card details on our servers.",
                 "**Technical Data:** When you browse our website, we may collect non-identifiable data such as your IP address, browser type, and device information via cookies to improve user experience."
             ]
         },
@@ -40,7 +40,7 @@
             "items": [
                 "Process your registration and issue event tickets.",
                 "Send you important updates regarding the event schedule, speakers, and venue.",
-                "Evaluate and process speaker, sponsor, and volunteer applications.",
+                "Evaluate and process speaker, and sponsor.",
                 "Facilitate event logistics (e.g., catering, seating arrangements).",
                 "Send you the official post-event TEDx attendee feedback survey."
             ]
