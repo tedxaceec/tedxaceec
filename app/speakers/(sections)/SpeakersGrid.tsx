@@ -6,7 +6,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import speakersData from "@/data/speakers.json";
-import { Twitter, Linkedin, ExternalLink } from "lucide-react";
+import { Twitter, Linkedin, ExternalLink, Instagram } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -113,6 +113,11 @@ export default function SpeakersGrid() {
                                         {speaker.social.linkedin && (
                                             <a href={speaker.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-[#eb0028] transition-colors">
                                                 <Linkedin className="w-4 h-4" />
+                                            </a>
+                                        )}
+                                        {speaker.social.instagram && (
+                                            <a href={speaker.social.instagram} target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-[#eb0028] transition-colors">
+                                                <Instagram className="w-4 h-4" />
                                             </a>
                                         )}
                                         <div className="flex-1" />
