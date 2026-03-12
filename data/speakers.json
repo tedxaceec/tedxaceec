@@ -9,7 +9,8 @@
     "image": "https://ik.imagekit.io/tedxaceec/speakers/charan_lakkaraju.png",
     "social": {
       "twitter": "https://x.com/lakkarajucharan",
-      "linkedin": "https://www.linkedin.com/in/sricharanlakkaraju/"
+      "linkedin": "https://www.linkedin.com/in/sricharanlakkaraju/",
+      "instagram": "https://www.instagram.com/charanlakkaraju/"
     },
     "isFeatured": true
   },
@@ -23,7 +24,8 @@
     "image": "https://images.unsplashs.com/photo-1573496359142-b8d87734a5a2?w=800&h=1000&fit=crop&q=80",
     "social": {
       "twitter": "https://x.com/kaushiknc",
-      "linkedin": "https://www.linkedin.com/in/kaushik-nc"
+      "linkedin": "https://www.linkedin.com/in/kaushik-nc",
+      "instagram": "https://www.instagram.com/kaushiknc"
     },
     "isFeatured": true
   },
@@ -37,7 +39,8 @@
     "image": "https://images.unssplash.com/photo-1472099645785-5658abf4ff4e?w=800&h=1000&fit=crop&q=80",
     "social": {
       "twitter": "https://x.com/KirrD",
-      "linkedin": "https://www.linkedin.com/in/kireeti-damaraju/"
+      "linkedin": "https://www.linkedin.com/in/kireeti-damaraju/",
+      "instagram": "https://www.instagram.com/kireetid"
     },
     "isFeatured": true
   },
@@ -51,7 +54,22 @@
     "image": "https://ik.imagekit.io/tedxaceec/speakers/poorna.jpeg",
     "social": {
       "twitter": "https://x.com/MalavathPoorna",
-      "linkedin": "http://linkedin.com/in/poorna-malavath/"
+      "linkedin": "http://linkedin.com/in/poorna-malavath/",
+      "instagram": "https://www.instagram.com/poorna_malavath"
+    },
+    "isFeatured": true
+  },
+  {
+    "id": "featured-5",
+    "name": "Malavika Pantula",
+    "role": "Singer",
+    "organization": "Independent Artist",
+    "topic": "Music and Creativity",
+    "bio": "A professional vocalist who has recorded over 500 songs, she shares music and creative content, blending her passion for singing with storytelling.",
+    "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&h=1000&fit=crop&q=80",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/malavika-pantula-b6365a23/",
+      "instagram": "https://www.instagram.com/singermalavika/"
     },
     "isFeatured": true
   },
