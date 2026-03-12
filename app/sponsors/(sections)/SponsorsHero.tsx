@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { SPONSOR_STATS } from "@/data/sponsors";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -114,25 +114,7 @@ export default function SponsorsHero() {
                     className="mx-auto mt-10 h-px max-w-xs bg-linear-to-r from-transparent via-red-500/50 to-transparent"
                 />
 
-                {/* Stats row */}
-                <div className="mx-auto mt-14 grid max-w-3xl grid-cols-2 gap-6 sm:grid-cols-4">
-                    {SPONSOR_STATS.map((stat, i) => (
-                        <motion.div
-                            key={stat.label}
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 1 + i * 0.1 }}
-                            className="flex flex-col items-center gap-1"
-                        >
-                            <span className="text-3xl font-bold text-white md:text-4xl">
-                                {stat.value}
-                            </span>
-                            <span className="text-xs font-medium uppercase tracking-[0.2em] text-neutral-500">
-                                {stat.label}
-                            </span>
-                        </motion.div>
-                    ))}
-                </div>
+
 
                 {/* Scroll indicator */}
                 <motion.div

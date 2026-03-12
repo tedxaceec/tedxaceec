@@ -232,8 +232,8 @@ export const SPONSOR_BENEFITS: SponsorBenefit[] = [
     title: "Audience Reach",
     description: "Connect with a curated, engaged audience.",
     highlights: [
-      "2,000+ in-person attendees",
-      "50,000+ social media impressions",
+      "Large in-person audience",
+      "Massive social media impressions",
       "Post-event YouTube viewership",
       "Campus-wide promotional reach",
     ],
@@ -263,12 +263,8 @@ export const SPONSOR_BENEFITS: SponsorBenefit[] = [
 ];
 
 // ─── Stats ───────────────────────────────────────────────────────────────────
-export const SPONSOR_STATS = [
-  { value: "2000+", label: "Attendees" },
-  { value: "50K+", label: "Social Reach" },
-  { value: "15+", label: "Speakers" },
-  { value: "8hrs", label: "of Content" },
-];
+// Stats will be updated once confirmed.
+export const SPONSOR_STATS: { value: string; label: string }[] = [];
 
 export const SPONSOR_CTA = {
   badge: "Open for Partnership",
@@ -278,7 +274,7 @@ export const SPONSOR_CTA = {
     part2: "?",
   },
   description:
-    "Join forces with us to bring the brightest minds to our stage. Connect with 2,000+ attendees, gain premium brand visibility, and be part of a movement at TEDxACE Engineering College.",
+    "Join forces with us to bring the brightest minds to our stage. Gain premium brand visibility and be part of a movement at TEDxACE Engineering College.",
   contactEmail: "tedx@aceec.ac.in",
   primaryCTA: {
     text: "Contact Us",
