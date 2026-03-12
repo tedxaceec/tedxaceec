@@ -66,24 +66,10 @@
     "organization": "Independent Artist",
     "topic": "Music and Creativity",
     "bio": "A professional vocalist who has recorded over 500 songs, she shares music and creative content, blending her passion for singing with storytelling.",
-    "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&h=1000&fit=crop&q=80",
+    "image": "https://ik.imagekit.io/tedxaceec/speakers/IMG_2886.JPG.jpeg",
     "social": {
       "linkedin": "https://www.linkedin.com/in/malavika-pantula-b6365a23/",
       "instagram": "https://www.instagram.com/singermalavika/"
-    },
-    "isFeatured": true
-  },
-  {
-    "id": "featured-5",
-    "name": "Malavika",
-    "role": "Singer",
-    "organization": "Telugu Music Industry",
-    "topic": "Music That Moves Us",
-    "bio": "Malavika is a Telugu singer and actress who has made a name for herself in the Telugu music industry. She has released several albums and singles, and has been featured in several music videos. She is known for her powerful voice and her ability to connect with her audience.",
-    "image": "https://ik.imagekit.io/tedxaceec/speakers/IMG_2886.JPG.jpeg",
-    "social": {
-      "twitter": "https://x.com/Malavika",
-      "linkedin": "http://linkedin.com/in/malavika/"
     },
     "isFeatured": true
   }
