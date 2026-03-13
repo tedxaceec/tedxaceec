@@ -348,6 +348,17 @@
                 }
             },
             {
+                "id": "emp-sowmyagouraram",
+                "name": "Gouraram Sowmya Reddy",
+                "role": "Event Management and Marketing team member",
+                "image": "/team/emm_sowmya.png",
+                "social": {
+                    "linkedin": "www.linkedin.com/in/g-sowmya-reddy-a387052b9",
+                    "instagram": "https://www.instagram.com/_sowmyareddyyy",
+                    "github": "https://github.com/Sowmya-726"
+                }
+            },
+            {
                 "id": "emp-balajikarthikeya",
                 "name": "Balaji Karthikeya",
                 "role": "Event Management & Promotions - Member",
