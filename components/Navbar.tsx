@@ -157,14 +157,14 @@ export default function Navbar() {
                                 alt="TEDxACEEC Logo"
                                 width={100}
                                 height={100}
-                                className="h-6 w-auto dark:hidden transition-transform duration-300 group-hover:scale-105"
+                                className="h-5 md:h-6 w-auto dark:hidden transition-transform duration-300 group-hover:scale-105"
                             />
                             <Image
                                 src="/tedxaceec.svg"
                                 alt="TEDxACEEC Logo"
                                 width={100}
                                 height={100}
-                                className="h-6 w-auto hidden dark:block transition-transform duration-300 group-hover:scale-105"
+                                className="h-5 md:h-6 w-auto hidden dark:block transition-transform duration-300 group-hover:scale-105"
                             />
                         </Link>
 
@@ -230,8 +230,29 @@ export default function Navbar() {
 
                         </div>
 
-                        {/* ── Mobile: Theme Toggle + Menu Toggle ──────── */}
-                        <div className="md:hidden flex items-center gap-1">
+                        {/* ── Mobile: Get Tickets + Menu Toggle ──────── */}
+                        <div className="md:hidden flex items-center gap-2">
+                            {/* Mobile Get Tickets CTA */}
+                            <Link
+                                href="https://events.studenttribe.in/event/69abeff62aa8ba7856944b10"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                data-transition-ignore
+                                className="relative px-3 py-1.5 text-[10px] font-semibold tracking-wider uppercase text-white rounded-lg overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(235,0,40,0.35)] group shrink-0"
+                            >
+                                <span className="absolute inset-0 bg-linear-to-r from-red-600 to-red-500 transition-opacity duration-300" />
+                                <span className="absolute inset-0 bg-linear-to-r from-red-500 to-rose-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                {/* Shimmer sweep */}
+                                <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-linear-to-r from-transparent via-white/20 to-transparent" />
+                                <span className="relative z-10 flex items-center gap-1">
+                                    <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" />
+                                    </svg>
+                                    Tickets
+                                </span>
+                            </Link>
+
+                            {/* Hamburger Menu Toggle */}
                             <button
                                 type="button"
                                 className="relative w-10 h-10 flex items-center justify-center rounded-xl transition-colors duration-300 hover:bg-white/8"

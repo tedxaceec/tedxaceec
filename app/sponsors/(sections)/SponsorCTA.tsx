@@ -124,13 +124,18 @@ export default function SponsorCTA() {
                                 </span>
                             </Link>
 
-                            {/* Secondary */}
-                            <Link
+                            {/* Secondary — External brochure PDF */}
+                            <a
                                 href={SPONSOR_CTA.secondaryCTA.href}
-                                className="px-8 py-3.5 text-sm font-semibold tracking-wide uppercase text-neutral-300 rounded-xl border border-white/10 bg-white/5 transition-all duration-300 hover:border-white/20 hover:bg-white/8 hover:text-white"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="px-8 py-3.5 text-sm font-semibold tracking-wide uppercase text-neutral-300 rounded-xl border border-white/10 bg-white/5 transition-all duration-300 hover:border-white/20 hover:bg-white/8 hover:text-white flex items-center gap-2"
                             >
+                                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
                                 {SPONSOR_CTA.secondaryCTA.text}
-                            </Link>
+                            </a>
                         </motion.div>
 
                         {/* TED notice */}

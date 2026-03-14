@@ -132,7 +132,8 @@
                 "image": "/team/content_akhira.png",
                 "social": {
                     "linkedin": "https://www.linkedin.com/in/akhiranandan-kaithala-a46a86291",
-                    "instagram": "https://www.instagram.com/akhiranandan_04"
+                    "instagram": "https://www.instagram.com/akhira.fx",
+                    "github": "https://github.com/akhiranandan-04"
                 }
             },
             {
@@ -167,6 +168,16 @@
                 }
             },
             {
+                "id": "cd-aneervesh",
+                "name": "J Aneervesh",
+                "role": "Content & Design - Photography",
+                "image": "/team/content_aneervesh.png",
+                "social": {
+                    "linkedin": "https://www.linkedin.com/in/aneervesh-jangiti-0354a627a",
+                    "instagram": "https://www.instagram.com/mr_shinchan3111"
+                }
+            },
+            {
                 "id": "cd-yashwanth",
                 "name": "M. Yashwanth",
                 "role": "Content & Design - Photography",
@@ -175,6 +186,17 @@
                     "linkedin": "https://www.linkedin.com/in/yashwanth-goud-54ab66329",
                     "instagram": "https://www.instagram.com/yashh_goud5",
                     "twitter": "https://x.com/goud_myg5?s=21"
+                }
+            },
+            {
+                "id": "cd-koushik",
+                "name": "Koushik",
+                "role": "Content & Design - Member",
+                "image": "/team/content_koushik.png",
+                "social": {
+                    "linkedin": "https://www.linkedin.com/in/kotha-lokesh-6b364b32a",
+                    "instagram": "https://www.instagram.com/___.l.o.k.i.__",
+                    "github": "https://github.com/Kothalokesh29"
                 }
             },
             {
@@ -277,7 +299,7 @@
                 "id": "emp-sandeepjamalpur",
                 "name": "Sandeep Jamalpur",
                 "role": "Event Management & Promotions - CoLead",
-                "image": "/team/emm_sandeep.png",
+                "image": "/team/emm_sandeep.webp",
                 "social": {
                     "linkedin": "https://www.linkedin.com/in/jamalpursandeep-5a806a303",
                     "instagram": "https://www.instagram.com/mr_sandeep_4007?igsh=YXZ5YmxoamxkYXIw"
@@ -316,17 +338,6 @@
                 }
             },
             {
-                "id": "emp-kothalokesh",
-                "name": "Kotha Lokesh",
-                "role": "Event Management & Promotions - Member",
-                "image": "/team/emm_koushik.png",
-                "social": {
-                    "linkedin": "https://www.linkedin.com/in/kotha-lokesh-6b364b32a",
-                    "instagram": "https://www.instagram.com/___.l.o.k.i.__",
-                    "github": "https://github.com/Kothalokesh29"
-                }
-            },
-            {
                 "id": "emp-aishwarya",
                 "name": "S Aishwarya",
                 "role": "Event Management & Promotions - Member",
@@ -334,6 +345,17 @@
                 "social": {
                     "instagram": "https://www.instagram.com/aishwarya.s_1217",
                     "linkedin": "https://www.linkedin.com/in/aishwarya-supreeth-096b263b4"
+                }
+            },
+            {
+                "id": "emp-sowmyagouraram",
+                "name": "Gouraram Sowmya Reddy",
+                "role": "Event Management and Marketing team member",
+                "image": "/team/emm_sowmya.png",
+                "social": {
+                    "linkedin": "www.linkedin.com/in/g-sowmya-reddy-a387052b9",
+                    "instagram": "https://www.instagram.com/_sowmyareddyyy",
+                    "github": "https://github.com/Sowmya-726"
                 }
             },
             {
