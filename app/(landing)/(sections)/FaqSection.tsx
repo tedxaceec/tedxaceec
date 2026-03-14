@@ -11,6 +11,18 @@ interface FAQItem {
     answer: string;
 }
 
+const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+        },
+    })),
+};
 
 const FaqItem = ({
     question,
@@ -72,6 +84,10 @@ const FaqSection = () => {
 
     return (
         <section className="relative w-full py-20 lg:py-32 overflow-hidden">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+            />
             <div className="mx-auto max-w-4xl px-4 md:px-6 relative z-10">
                 <div className="text-center mb-16">
                     <motion.div
