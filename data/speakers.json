@@ -72,5 +72,35 @@
       "instagram": "https://www.instagram.com/singermalavika/"
     },
     "isFeatured": true
+  },
+  {
+    "id": "featured-6",
+    "name": "Piyush Garg",
+    "role": "Founder, Tech Creator & Educator",
+    "organization": "Teachyst",
+    "topic": "Technology & Learning",
+    "bio": "Piyush Garg is a developer and technology educator known for simplifying programming concepts for learners. He is also the founder of Teachyst, a platform that helps educators share their knowledge online.",
+    "image": "TBA",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/piyushgarg195",
+      "website": "https://www.piyushgarg.dev",
+      "twitter": "https://x.com/piyushgarg_dev",
+      "youtube": "https://www.youtube.com/@piyushgargdev"
+    },
+    "isFeatured": true
+  },
+  {
+    "id": "featured-7",
+    "name": "Swaroop",
+    "role": "Founder, Content & Brand Head",
+    "organization": "MentiBy / Scaler",
+    "topic": "Education & Learning",
+    "bio": "Swaroop is the Content and Brand Head at Scaler and the founder of MentiBy, an edtech startup. He has extensive experience in the education technology sector and is passionate about helping learners navigate their career journeys.",
+    "image": "TBA",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/swaroop-talks",
+      "youtube": "https://www.youtube.com/@SwaroopVITB"
+    },
+    "isFeatured": true
   }
 ]
