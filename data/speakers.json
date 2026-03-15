@@ -16,21 +16,6 @@
     "isFeatured": true
   },
   {
-    "id": "featured-3",
-    "name": "Kireeti Damaraju",
-    "role": "Actor",
-    "organization": "Telugu Film Industry",
-    "topic": "Storytelling Through Cinema",
-    "bio": "Kireeti Damaraju is an Indian actor who works in Telugu cinema. He trained in acting through theatre before venturing into films and transitioned from an engineering background into film and media.",
-    "image": "https://ik.imagekit.io/tedxaceec/speakers/kireeti.png",
-    "social": {
-      "twitter": "https://x.com/KirrD",
-      "linkedin": "https://www.linkedin.com/in/kireeti-damaraju/",
-      "instagram": "https://www.instagram.com/kireetid"
-    },
-    "isFeatured": true
-  },
-  {
     "id": "featured-2",
     "name": "Kaushik NC",
     "role": "Sports Broadcaster & Host",
