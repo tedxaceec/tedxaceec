@@ -1,5 +1,51 @@
 [
   {
+    "id": "featured-6",
+    "name": "Piyush Garg",
+    "role": "Founder, Tech Creator & Educator",
+    "organization": "Teachyst",
+    "topic": "Technology & Learning",
+    "bio": "Piyush Garg is a developer and technology educator known for simplifying programming concepts for learners. He is also the founder of Teachyst, a platform that helps educators share their knowledge online.",
+    "image": "https://ik.imagekit.io/tedxaceec/speakers/piyush_garg.png",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/piyushgarg195",
+      "website": "https://www.piyushgarg.dev",
+      "twitter": "https://x.com/piyushgarg_dev",
+      "youtube": "https://www.youtube.com/@piyushgargdev"
+    },
+    "isFeatured": true
+  },
+  {
+    "id": "featured-3",
+    "name": "Kireeti Damaraju",
+    "role": "Actor",
+    "organization": "Telugu Film Industry",
+    "topic": "Storytelling Through Cinema",
+    "bio": "Kireeti Damaraju is an Indian actor who works in Telugu cinema. He trained in acting through theatre before venturing into films and transitioned from an engineering background into film and media.",
+    "image": "https://ik.imagekit.io/tedxaceec/speakers/kireeti.png",
+    "social": {
+      "twitter": "https://x.com/KirrD",
+      "linkedin": "https://www.linkedin.com/in/kireeti-damaraju/",
+      "instagram": "https://www.instagram.com/kireetid"
+    },
+    "isFeatured": true
+  },
+  {
+    "id": "featured-2",
+    "name": "Kaushik NC",
+    "role": "Sports Broadcaster & Host",
+    "organization": "Star Sports",
+    "topic": "The Voice Behind the Moment",
+    "bio": "Kaushik NC is a Telugu sports broadcaster, presenter, and storyteller. He is known for hosting pre- and post-match shows, interviewing cricketers, and bringing iconic sporting moments to life for millions of fans. Kaushik has voiced Virat Kohli's 71st international century, his 49th and 50th ODI centuries, the India vs Pakistan T20 World Cup 2022 clash, and the Olympics 2024.",
+    "image": "https://ik.imagekit.io/tedxaceec/speakers/koushik.png",
+    "social": {
+      "twitter": "https://x.com/kaushiknc",
+      "linkedin": "https://www.linkedin.com/in/kaushik-nc",
+      "instagram": "https://www.instagram.com/kaushiknc"
+    },
+    "isFeatured": true
+  },
+  {
     "id": "featured-1",
     "name": "Charan Lakkaraju",
     "role": "Founder & CEO, Student Tribe",
@@ -15,43 +61,13 @@
     "isFeatured": true
   },
   {
-    "id": "featured-2",
-    "name": "Kaushik NC",
-    "role": "Sports Broadcaster & Host",
-    "organization": "Star Sports",
-    "topic": "The Voice Behind the Moment",
-    "bio": "Kaushik NC is a Telugu sports broadcaster, presenter, and storyteller. He is known for hosting pre- and post-match shows, interviewing cricketers, and bringing iconic sporting moments to life for millions of fans. Kaushik has voiced Virat Kohli's 71st international century, his 49th and 50th ODI centuries, the India vs Pakistan T20 World Cup 2022 clash, and the Olympics 2024.",
-    "image": "https://images.unsplashs.com/photo-1573496359142-b8d87734a5a2?w=800&h=1000&fit=crop&q=80",
-    "social": {
-      "twitter": "https://x.com/kaushiknc",
-      "linkedin": "https://www.linkedin.com/in/kaushik-nc",
-      "instagram": "https://www.instagram.com/kaushiknc"
-    },
-    "isFeatured": true
-  },
-  {
-    "id": "featured-3",
-    "name": "Kireeti Damaraju",
-    "role": "Actor",
-    "organization": "Telugu Film Industry",
-    "topic": "Storytelling Through Cinema",
-    "bio": "Kireeti Damaraju is an Indian actor who works in Telugu cinema. He trained in acting through theatre before venturing into films and transitioned from an engineering background into film and media.",
-    "image": "https://images.unssplash.com/photo-1472099645785-5658abf4ff4e?w=800&h=1000&fit=crop&q=80",
-    "social": {
-      "twitter": "https://x.com/KirrD",
-      "linkedin": "https://www.linkedin.com/in/kireeti-damaraju/",
-      "instagram": "https://www.instagram.com/kireetid"
-    },
-    "isFeatured": true
-  },
-  {
     "id": "featured-4",
     "name": "Poorna Malavath",
     "role": "Mountaineer",
     "organization": "Transcend Adventures",
     "topic": "Stories That Shape Us",
     "bio": "Indian mountaineer who became the youngest female in the world to climb Mount Everest at age 13 in 2014. Hailing from a humble agricultural family in Telangana, she later completed the Seven Summits challenge in 2022 and was featured in Forbes India's list of Self-Made Women in 2020.",
-    "image": "https://ik.imagekit.io/tedxaceec/speakers/poorna.jpeg",
+    "image": "https://ik.imagekit.io/tedxaceec/speakers/poorna.png",
     "social": {
       "twitter": "https://x.com/MalavathPoorna",
       "linkedin": "http://linkedin.com/in/poorna-malavath/",
@@ -66,26 +82,10 @@
     "organization": "Independent Artist",
     "topic": "Music and Creativity",
     "bio": "A professional vocalist who has recorded over 500 songs, she shares music and creative content, blending her passion for singing with storytelling.",
-    "image": "https://ik.imagekit.io/tedxaceec/speakers/IMG_2886.JPG.jpeg",
+    "image": "https://ik.imagekit.io/tedxaceec/speakers/malavika.png",
     "social": {
       "linkedin": "https://www.linkedin.com/in/malavika-pantula-b6365a23/",
       "instagram": "https://www.instagram.com/singermalavika/"
-    },
-    "isFeatured": true
-  },
-  {
-    "id": "featured-6",
-    "name": "Piyush Garg",
-    "role": "Founder, Tech Creator & Educator",
-    "organization": "Teachyst",
-    "topic": "Technology & Learning",
-    "bio": "Piyush Garg is a developer and technology educator known for simplifying programming concepts for learners. He is also the founder of Teachyst, a platform that helps educators share their knowledge online.",
-    "image": "TBA",
-    "social": {
-      "linkedin": "https://www.linkedin.com/in/piyushgarg195",
-      "website": "https://www.piyushgarg.dev",
-      "twitter": "https://x.com/piyushgarg_dev",
-      "youtube": "https://www.youtube.com/@piyushgargdev"
     },
     "isFeatured": true
   },
@@ -96,7 +96,7 @@
     "organization": "MentiBy / Scaler",
     "topic": "Education & Learning",
     "bio": "Swaroop is the Content and Brand Head at Scaler and the founder of MentiBy, an edtech startup. He has extensive experience in the education technology sector and is passionate about helping learners navigate their career journeys.",
-    "image": "TBA",
+    "image": "https://ik.imagekit.io/tedxaceec/speakers/swaroop.png",
     "social": {
       "linkedin": "https://www.linkedin.com/in/swaroop-talks",
       "youtube": "https://www.youtube.com/@SwaroopVITB"
