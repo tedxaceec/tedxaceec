@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Bus, MapPin, Clock, ArrowRight, Route } from "lucide-react";
 
 const BUS_ROUTES_PDF_URL =
-    "https://drive.google.com/file/d/YOUR_FILE_ID_HERE/view?usp=sharing";
+    "https://drive.google.com/file/d/1S7OAIzqg1TPxon-mEZr2nv1PHSuHdWwe/view?usp=sharing";
 
 /* ─── Route Highlight Card ────────────────────────────────────────────── */
 function FeatureCard({
