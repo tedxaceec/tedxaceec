@@ -27,7 +27,7 @@ const speakers = allSpeakers
 /* ─── Speaker Card ────────────────────────────────────────────────────────── */
 function SpeakerCard({ speaker }: { speaker: Speaker }) {
     return (
-        <div className="group relative h-[400px] w-[280px] shrink-0 cursor-pointer overflow-hidden rounded-2xl bg-neutral-900 sm:h-[480px] sm:w-[360px] md:h-[520px] md:w-[400px]">
+        <Link href={`/speakers#${speaker.id}`} className="block group relative h-[400px] w-[280px] shrink-0 cursor-pointer overflow-hidden rounded-2xl bg-neutral-900 sm:h-[480px] sm:w-[360px] md:h-[520px] md:w-[400px]">
             {/* Speaker image: Grayscale to color on hover */}
             <div
                 style={{
@@ -85,7 +85,7 @@ function SpeakerCard({ speaker }: { speaker: Speaker }) {
                     </svg>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 }
 

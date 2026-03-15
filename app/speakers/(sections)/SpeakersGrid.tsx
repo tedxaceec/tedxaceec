@@ -55,7 +55,7 @@ export default function SpeakersGrid() {
                     className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8"
                 >
                     {speakersData.map((speaker, index) => (
-                        <div key={speaker.id} className="speaker-card break-inside-avoid shadow-xl shadow-black/50">
+                        <div key={speaker.id} id={speaker.id} className="speaker-card break-inside-avoid shadow-xl shadow-black/50 scroll-mt-24">
                             <motion.div
                                 whileHover={{ y: -10 }}
                                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
