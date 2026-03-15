@@ -1,6 +1,6 @@
 [
   {
-    "id": "featured-6",
+    "id": "code-mentor-piyush",
     "name": "Piyush Garg",
     "role": "Founder, Tech Creator & Educator",
     "organization": "Teachyst",
@@ -16,7 +16,7 @@
     "isFeatured": true
   },
   {
-    "id": "featured-2",
+    "id": "sports-voice-kaushik",
     "name": "Kaushik NC",
     "role": "Sports Broadcaster & Host",
     "organization": "Star Sports",
@@ -31,7 +31,7 @@
     "isFeatured": true
   },
   {
-    "id": "featured-1",
+    "id": "startup-visionary-charan",
     "name": "Charan Lakkaraju",
     "role": "Founder & CEO, Student Tribe",
     "organization": "Student Tribe",
@@ -46,7 +46,7 @@
     "isFeatured": true
   },
   {
-    "id": "featured-4",
+    "id": "everest-climber-poorna",
     "name": "Poorna Malavath",
     "role": "Mountaineer",
     "organization": "Transcend Adventures",
@@ -61,7 +61,7 @@
     "isFeatured": true
   },
   {
-    "id": "featured-5",
+    "id": "soulful-singer-malavika",
     "name": "Malavika Pantula",
     "role": "Singer",
     "organization": "Independent Artist",
@@ -75,7 +75,7 @@
     "isFeatured": true
   },
   {
-    "id": "featured-7",
+    "id": "learning-innovator-swaroop",
     "name": "Swaroop",
     "role": "Founder, Content & Brand Head",
     "organization": "MentiBy / Scaler",
