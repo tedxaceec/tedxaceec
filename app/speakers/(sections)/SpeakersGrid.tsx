@@ -7,6 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import speakersData from "@/data/speakers.json";
 import { Twitter, Linkedin, ExternalLink, Instagram } from "lucide-react";
+import { Modal, ModalBody, ModalContent, ModalFooter, ModalTrigger } from "@/components/ui/animated-modal";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -121,10 +122,64 @@ export default function SpeakersGrid() {
                                             </a>
                                         )}
                                         <div className="flex-1" />
-                                        <button className="text-xs font-bold uppercase tracking-wider text-neutral-300 group-hover:text-[#eb0028] flex items-center gap-2 transition-colors">
-                                            Read More
-                                            <ExternalLink className="w-3 h-3 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                                        </button>
+                                        <Modal>
+                                            <ModalTrigger className="p-0 border-none bg-transparent hover:bg-transparent">
+                                                <div className="text-xs font-bold uppercase tracking-wider text-neutral-300 group-hover:text-[#eb0028] flex items-center gap-2 transition-colors cursor-pointer">
+                                                    Who's this?
+                                                    <ExternalLink className="w-3 h-3 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                                                </div>
+                                            </ModalTrigger>
+                                            <ModalBody className="dark:bg-neutral-900 border border-white/10 rounded-2xl overflow-hidden shadow-2xl z-100">
+                                                <ModalContent>
+                                                    <h4 className="text-lg md:text-2xl text-neutral-600 dark:text-neutral-100 font-bold text-center mb-4">
+                                                        {speaker.name}
+                                                    </h4>
+                                                    <div className="flex justify-center items-center">
+                                                        <motion.div
+                                                            style={{ rotate: Math.random() * 8 - 4 }}
+                                                            whileHover={{ scale: 1.05, rotate: 0, zIndex: 100 }}
+                                                            whileTap={{ scale: 1.05, rotate: 0, zIndex: 100 }}
+                                                            className="rounded-xl p-1 bg-white dark:bg-neutral-800 dark:border-neutral-700 border border-neutral-100 shrink-0 overflow-hidden shadow-xl"
+                                                        >
+                                                            <img
+                                                                src={speaker.image}
+                                                                alt={speaker.name}
+                                                                width="500"
+                                                                height="500"
+                                                                className="rounded-lg h-32 w-32 md:h-48 md:w-48 object-cover shrink-0 block"
+                                                            />
+                                                        </motion.div>
+                                                    </div>
+                                                    <div className="py-6 flex flex-col gap-x-4 gap-y-4 items-center justify-start max-w-sm mx-auto">
+                                                        <span className="px-3 py-1 rounded-full bg-gray-100 dark:bg-neutral-800 dark:border-neutral-700 border border-gray-200 text-xs font-medium text-center text-neutral-800 dark:text-neutral-200">
+                                                            {speaker.role} @ {speaker.organization}
+                                                        </span>
+                                                        <p className="text-neutral-600 dark:text-neutral-300 text-sm text-center leading-relaxed">
+                                                            {speaker.bio}
+                                                        </p>
+                                                    </div>
+                                                </ModalContent>
+                                                <ModalFooter className="flex justify-center items-center py-4 bg-transparent border-t border-neutral-200 dark:border-neutral-800">
+                                                    <div className="flex items-center gap-6">
+                                                        {speaker.social.twitter && (
+                                                            <a href={speaker.social.twitter} target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-[#eb0028] transition-colors">
+                                                                <Twitter className="w-5 h-5" />
+                                                            </a>
+                                                        )}
+                                                        {speaker.social.linkedin && (
+                                                            <a href={speaker.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-[#eb0028] transition-colors">
+                                                                <Linkedin className="w-5 h-5" />
+                                                            </a>
+                                                        )}
+                                                        {speaker.social.instagram && (
+                                                            <a href={speaker.social.instagram} target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-[#eb0028] transition-colors">
+                                                                <Instagram className="w-5 h-5" />
+                                                            </a>
+                                                        )}
+                                                    </div>
+                                                </ModalFooter>
+                                            </ModalBody>
+                                        </Modal>
                                     </div>
                                 </div>
                             </motion.div>
