@@ -141,7 +141,14 @@ function PricingCard({
                 {/* Pricing */}
                 <div className="mt-2">
                     <div className="flex items-baseline gap-3">
-                        <span className="text-sm text-neutral-500 line-through">
+                        <span
+                            className="relative text-lg font-bold text-red-400/70 sm:text-xl"
+                            style={{
+                                textDecoration: "line-through",
+                                textDecorationColor: "rgba(239, 68, 68, 0.7)",
+                                textDecorationThickness: "2.5px",
+                            }}
+                        >
                             ₹{standardPrice.toLocaleString()}
                         </span>
                         <span className="text-4xl font-black text-white sm:text-5xl">
@@ -228,8 +235,8 @@ export default function TicketsCTA() {
     const perks = [
         { icon: <UtensilsCrossed className="h-4 w-4" />, label: "Full Lunch Box", highlight: "🍱" },
         { icon: <Coffee className="h-4 w-4" />, label: "Cold Coffee & Milkshake", highlight: "Premium" },
-        { icon: <Droplets className="h-4 w-4" />, label: "Water Bottles", highlight: "💧" },
-        { icon: <Gift className="h-4 w-4" />, label: "Swag Bag, Keychain & Brand Coupons", highlight: "TEDx" },
+        { icon: <Droplets className="h-4 w-4" />, label: "Water Bottles", highlight: " " },
+        { icon: <Gift className="h-4 w-4" />, label: "Swag Bag & Keychain", highlight: "TEDx" },
         { icon: <Award className="h-4 w-4" />, label: "Participant Certificate (Resume Builder!)", highlight: "Official TEDx" },
         { icon: <Camera className="h-4 w-4" />, label: "Speaker meet-and-greet & photo ops!", highlight: "📸" },
         { icon: <Bus className="h-4 w-4" />, label: "Transport for outside students", highlight: "Free" },
