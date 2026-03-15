@@ -14,9 +14,9 @@ const page = () => {
     <div>
       <HeroSection />
       <WhatIsTedx />
-      <TicketsCTA />
       <AboutTedxAce />
       <FeaturedSpeakers />
+      <TicketsCTA />
       <EventTimeline />
       <FaqSection />
       <RegisterCTA />
