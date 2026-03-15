@@ -3,6 +3,7 @@ import HeroSection from './(sections)/HeroSection'
 
 const WhatIsTedx = dynamic(() => import('./(sections)/WhatIsTedx'), { ssr: true })
 const TicketsCTA = dynamic(() => import('./(sections)/TicketsCTA'), { ssr: true })
+const BusTransport = dynamic(() => import('./(sections)/BusTransport'), { ssr: true })
 const AboutTedxAce = dynamic(() => import('./(sections)/AboutTedx'), { ssr: true })
 const FeaturedSpeakers = dynamic(() => import('./(sections)/FeaturedSpeakers'), { ssr: true })
 const EventTimeline = dynamic(() => import('./(sections)/Timeline'), { ssr: true })
@@ -17,6 +18,7 @@ const page = () => {
       <AboutTedxAce />
       <FeaturedSpeakers />
       <TicketsCTA />
+      <BusTransport />
       <EventTimeline />
       <FaqSection />
       <RegisterCTA />
