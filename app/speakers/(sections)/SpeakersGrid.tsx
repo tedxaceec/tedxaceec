@@ -72,7 +72,7 @@ export default function SpeakersGrid() {
                                     <img
                                         src={speaker.image}
                                         alt={speaker.name}
-                                        className="absolute inset-0 w-full h-full object-cover mix-blend-luminosity hover:mix-blend-normal opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 ease-in-out"
+                                        className="absolute inset-0 w-full h-full object-cover object-top mix-blend-luminosity hover:mix-blend-normal opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 ease-in-out"
                                         loading="lazy"
                                     />
 
@@ -146,7 +146,7 @@ export default function SpeakersGrid() {
                                                                 alt={speaker.name}
                                                                 width="500"
                                                                 height="500"
-                                                                className="rounded-lg h-32 w-32 md:h-48 md:w-48 object-cover shrink-0 block"
+                                                                className="rounded-lg h-32 w-32 md:h-48 md:w-48 object-cover object-top shrink-0 block"
                                                             />
                                                         </motion.div>
                                                     </div>
