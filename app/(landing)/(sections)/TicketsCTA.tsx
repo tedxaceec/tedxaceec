@@ -73,6 +73,7 @@ function PricingCard({
     isBestValue = false,
     subtitle,
     delay = 0,
+    buttonText,
 }: {
     title: string;
     people: number;
@@ -84,6 +85,7 @@ function PricingCard({
     isBestValue?: boolean;
     subtitle?: string;
     delay?: number;
+    buttonText?: string;
 }) {
     return (
         <motion.div
@@ -184,7 +186,7 @@ function PricingCard({
                     {/* Shine effect */}
                     <span className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/15 to-transparent transition-transform duration-700 group-hover/btn:translate-x-full" />
                     <span className="relative z-10">
-                        {isBestValue ? "Grab Tribe Pass" : "Select Squad Pass"}
+                        {buttonText || (isBestValue ? "Grab Tribe Pass" : "Select Squad Pass")}
                     </span>
                     <ArrowRight className="relative z-10 h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
                 </a>
@@ -354,7 +356,18 @@ export default function TicketsCTA() {
                 </div>
 
                 {/* ── Pricing Cards ──────────────────────────────────────── */}
-                <div className="mx-auto mt-16 grid max-w-4xl gap-6 md:grid-cols-2 lg:gap-8">
+                <div className="mx-auto mt-16 grid max-w-6xl gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+                    <PricingCard
+                        title="THE TRIO PASS"
+                        people={3}
+                        standardPrice={1800}
+                        yourPrice={1440}
+                        savings={360}
+                        perPerson={480}
+                        couponCode="TRIO"
+                        buttonText="Select Trio Pass"
+                        delay={0.1}
+                    />
                     <PricingCard
                         title="THE SQUAD PASS"
                         people={4}
@@ -363,7 +376,8 @@ export default function TicketsCTA() {
                         savings={450}
                         perPerson={487}
                         couponCode="SQUAD"
-                        delay={0.15}
+                        buttonText="Select Squad Pass"
+                        delay={0.2}
                     />
                     <PricingCard
                         title="THE TRIBE PASS"
@@ -375,6 +389,7 @@ export default function TicketsCTA() {
                         couponCode="TRIBE"
                         isBestValue
                         subtitle="ULTIMATE STEAL!"
+                        buttonText="Grab Tribe Pass"
                         delay={0.3}
                     />
                 </div>
