@@ -118,6 +118,15 @@
                 "social": {
                     "instagram": "https://www.instagram.com/__shivanshuu___/"
                 }
+            },
+            {
+                "id": "cur-sreehari",
+                "name": "Sree Hari",
+                "role": "Curation Team - Speaker Relations",
+                "image": "/team/curation_sreehari.png",
+                "social": {
+                    "instagram": "https://www.instagram.com/sreehari_07/"
+                }
             }
         ]
     },
@@ -479,8 +488,8 @@
                 }
             },
             {
-                "id": "emp-isaacchowdary",
-                "name": "Isaac Chowdary",
+                "id": "emp-isaac",
+                "name": "Victor Isaac",
                 "role": "Event Management & Promotions - Member",
                 "image": "/team/emm_isaac.png",
                 "social": {}
