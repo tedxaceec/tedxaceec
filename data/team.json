@@ -54,25 +54,6 @@
                 }
             },
             {
-                "id": "cur-akshaya",
-                "name": "Akshaya MV",
-                "role": "Curation - Speaker-Relations",
-                "image": "/team/curation_akshaya.png",
-                "social": {
-                    "instagram": "https://www.instagram.com/akshhyyaaa?igsh=ejV1ZDBsd21yaTJ1",
-                    "linkedin": "https://www.linkedin.com/in/akshaya-mavila-veettil-294990327"
-                }
-            },
-            {
-                "id": "cur-harshithamadisetti",
-                "name": "Harshitha Madisetti",
-                "role": "Curation - Speaker-Relations",
-                "image": "/team/curation_harshitha.png",
-                "social": {
-                    "linkedin": "https://www.linkedin.com/in/harshitha-madisetti-3a6bb53b4"
-                }
-            },
-            {
                 "id": "cur-ksaisnehitha",
                 "name": "K. Sai Snehitha",
                 "role": "Curation - Speaker-Relations",
@@ -89,15 +70,6 @@
                 "image": "/team/curation_veda.png",
                 "social": {
                     "linkedin": "https://www.linkedin.com/in/vedasri-peddapeta/"
-                }
-            },
-            {
-                "id": "cur-mounikabaddula",
-                "name": "Mounika Baddula",
-                "role": "Curation Team - Speaker Relations",
-                "image": "/team/curation_mounika.png",
-                "social": {
-                    "linkedin": "https://www.linkedin.com/in/mounika-coder2006/"
                 }
             },
             {
@@ -163,27 +135,6 @@
                 "social": {
                     "linkedin": "https://www.linkedin.com/in/sai-harshith-67330732a?utm_source=share_via&utm_content=profile&utm_medium=member_android",
                     "instagram": "https://www.instagram.com/harshith._96?igsh=dnBkZ3NyZ2piMzVy"
-                }
-            },
-            {
-                "id": "cd-praharsha",
-                "name": "Praharsha Maroju",
-                "role": "Content & Design - Designer",
-                "image": "/team/content_praharsha.png",
-                "social": {
-                    "linkedin": "https://www.linkedin.com/in/praharsha-maroju-b619b9327?utm_source=share_via&utm_content=profile&utm_medium=member_android",
-                    "instagram": "https://www.instagram.com/praharsha.maroju?igsh=djNhaTZwc3VvY25v",
-                    "github": "https://github.com/praharshamaroju"
-                }
-            },
-            {
-                "id": "cd-aneervesh",
-                "name": "J Aneervesh",
-                "role": "Content & Design - Photography",
-                "image": "/team/content_aneervesh.png",
-                "social": {
-                    "linkedin": "https://www.linkedin.com/in/aneervesh-jangiti-0354a627a",
-                    "instagram": "https://www.instagram.com/mr_shinchan3111"
                 }
             },
             {
@@ -268,13 +219,6 @@
                 "role": "Logistics & Sponsorship - Member",
                 "image": "/team/logistics_tejasree.png",
                 "social": {}
-            },
-            {
-                "id": "ls-priyanka",
-                "name": "Priyanka",
-                "role": "Logistics & Sponsorship - Member",
-                "image": "/team/logistics_priyanka.png",
-                "social": {}
             }
         ]
     },
@@ -315,16 +259,6 @@
                 }
             },
             {
-                "id": "emp-rohanoddam",
-                "name": "Rohan Oddam",
-                "role": "Event Management & Promotions - Member",
-                "image": "/team/emm_rohan.png",
-                "social": {
-                    "linkedin": "www.linkedin.com/in/rohanoddam",
-                    "github": "https://github.com/posderd"
-                }
-            },
-            {
                 "id": "emp-rohith",
                 "name": "Mashetty Rohith",
                 "role": "Event Management & Promotions - Member",
@@ -332,28 +266,6 @@
                 "social": {
                     "linkedin": "https://www.linkedin.com/in/mashetty-rohith-634a2228b",
                     "instagram": "https://www.instagram.com/x_rohith_02a"
-                }
-            },
-            {
-                "id": "emp-pothireddybhavyasri",
-                "name": "Pothireddy Bhavya Sri",
-                "role": "Event Management & Promotions - Member",
-                "image": "/team/emm_bhavyasri.png",
-                "social": {
-                    "linkedin": "https://www.linkedin.com/in/pothireddy-bhavya-sri-031193328/",
-                    "instagram": "https://www.instagram.com/pothireddy.bhavyasri",
-                    "Portfolio": "https://pothireddy-bhavya-sri-f8jh4i1.gamma.site/",
-                    "github": "https://github.com/pothireddybhavyasri"
-                }
-            },
-            {
-                "id": "emp-aishwarya",
-                "name": "S Aishwarya",
-                "role": "Event Management & Promotions - Member",
-                "image": "/team/emm_aishwarya.png",
-                "social": {
-                    "instagram": "https://www.instagram.com/aishwarya.s_1217",
-                    "linkedin": "https://www.linkedin.com/in/aishwarya-supreeth-096b263b4"
                 }
             },
             {
@@ -447,16 +359,6 @@
                 }
             },
             {
-                "id": "emp-saisrijanreddykatta",
-                "name": "Sai Srijan Reddy Katta",
-                "role": "Event Management & Promotions - Member",
-                "image": "/team/emm_srijan.png",
-                "social": {
-                    "linkedin": "https://www.linkedin.com/in/sai-srijan-reddy-katta-ba204b377",
-                    "instagram": "https://www.instagram.com/srijan.rdy"
-                }
-            },
-            {
                 "id": "emp-hansini",
                 "name": "Keesari Hansini",
                 "role": "Event Management & Promotions - Member",
@@ -474,17 +376,6 @@
                 "image": "/team/emm_firdous.png",
                 "social": {
                     "linkedin": "https://www.linkedin.com/in/zuveriya-firdous-6b7631329"
-                }
-            },
-            {
-                "id": "emp-beemaninithinkumar",
-                "name": "Beemani Nithin Kumar",
-                "role": "Event Management & Promotions - Member",
-                "image": "/team/emm_nithin.png",
-                "social": {
-                    "linkedin": "https://www.linkedin.com/in/nithin-beemani-72a423324",
-                    "instagram": "https://www.instagram.com/nithin_beemani_06",
-                    "github": "https://github.com/nithinkumar006"
                 }
             },
             {
