@@ -71,34 +71,6 @@
                 "social": {
                     "linkedin": "https://www.linkedin.com/in/vedasri-peddapeta/"
                 }
-            },
-            {
-                "id": "cur-jacob",
-                "name": "Jacob Kothapally",
-                "role": "Curation - Speaker-Relations",
-                "image": "/team/curation_jacob.png",
-                "social": {
-                    "instagram": "https://www.instagram.com/jkayy1_",
-                    "linkedin": "https://www.linkedin.com/in/jacob-kothapally-747224387"
-                }
-            },
-            {
-                "id": "cur-shivanshu",
-                "name": "Shivanshu",
-                "role": "Curation Team - Speaker Relations",
-                "image": "/team/curation_shivanshu.png",
-                "social": {
-                    "instagram": "https://www.instagram.com/__shivanshuu___/"
-                }
-            },
-            {
-                "id": "cur-sreehari",
-                "name": "Sree Hari",
-                "role": "Curation Team - Speaker Relations",
-                "image": "/team/curation_sreehari.png",
-                "social": {
-                    "instagram": "https://www.instagram.com/sreehari_07/"
-                }
             }
         ]
     },
@@ -146,28 +118,6 @@
                     "linkedin": "https://www.linkedin.com/in/yashwanth-goud-54ab66329",
                     "instagram": "https://www.instagram.com/yashh_goud5",
                     "twitter": "https://x.com/goud_myg5?s=21"
-                }
-            },
-            {
-                "id": "cd-koushik",
-                "name": "Koushik",
-                "role": "Content & Design - Member",
-                "image": "/team/content_koushik.png",
-                "social": {
-                    "linkedin": "https://www.linkedin.com/in/kotha-lokesh-6b364b32a",
-                    "instagram": "https://www.instagram.com/___.l.o.k.i.__",
-                    "github": "https://github.com/Kothalokesh29"
-                }
-            },
-            {
-                "id": "cd-sanjay",
-                "name": "Sanjay Kumar Marepally",
-                "role": "Content & Design - Video Editor(sfx)",
-                "image": "/team/content_sanjay.png",
-                "social": {
-                    "linkedin": "https://www.linkedin.com/in/sanjay-kumar-64a3452b9",
-                    "instagram": "https://www.instagram.com/sanjayyy.110",
-                    "youtube": "https://youtube.com/@motologistic110"
                 }
             }
         ]
@@ -259,56 +209,6 @@
                 }
             },
             {
-                "id": "emp-rohith",
-                "name": "Mashetty Rohith",
-                "role": "Event Management & Promotions - Member",
-                "image": "/team/emm_rohit.png",
-                "social": {
-                    "linkedin": "https://www.linkedin.com/in/mashetty-rohith-634a2228b",
-                    "instagram": "https://www.instagram.com/x_rohith_02a"
-                }
-            },
-            {
-                "id": "emp-sowmyagouraram",
-                "name": "Gouraram Sowmya Reddy",
-                "role": "Event Management and Marketing team member",
-                "image": "/team/emm_sowmya.png",
-                "social": {
-                    "linkedin": "www.linkedin.com/in/g-sowmya-reddy-a387052b9",
-                    "instagram": "https://www.instagram.com/_sowmyareddyyy",
-                    "github": "https://github.com/Sowmya-726"
-                }
-            },
-            {
-                "id": "emp-balajikarthikeya",
-                "name": "Balaji Karthikeya",
-                "role": "Event Management & Promotions - Member",
-                "image": "/team/emm_karthikeya.png",
-                "social": {
-                    "linkedin": "https://www.linkedin.com/in/karthikeya-balaji-8b3b2a371",
-                    "instagram": "https://www.instagram.com/karth1k.xd"
-                }
-            },
-            {
-                "id": "emp-samhikar",
-                "name": "Samhika Reddy Puli",
-                "role": "Event Management & Promotions - Member",
-                "image": "/team/emm_samhika.png",
-                "social": {
-                    "linkedin": "www.linkedin.com/in/samhika-puli",
-                    "instagram": "https://www.instagram.com/samhika_puli"
-                }
-            },
-            {
-                "id": "emp-sayarisreeharsha",
-                "name": "Sayari Sreeharsha",
-                "role": "Event Management & Promotions - Member",
-                "image": "/team/emm_sreeharsha.png",
-                "social": {
-                    "linkedin": "https://www.linkedin.com/in/sreeharsha-sayari-1b5911327"
-                }
-            },
-            {
                 "id": "emp-venneladevanapalli",
                 "name": "Vennela Devanapalli",
                 "role": "Event Management & Promotions - Member",
@@ -316,36 +216,6 @@
                 "social": {
                     "linkedin": "https://www.linkedin.com/in/vennela-devanapalli",
                     "instagram": "https://www.instagram.com/_.vennelaa_"
-                }
-            },
-            {
-                "id": "emp-cdhikshitha",
-                "name": "C.Dhikshitha",
-                "role": "Event Management & Promotions - Member",
-                "image": "/team/emm_dikshitha.png",
-                "social": {
-                    "instagram": "https://www.instagram.com/dhikshitha_004",
-                    "linkedin": "https://www.linkedin.com/in/dhikshitha-chilimikoti-3b33653b0"
-                }
-            },
-            {
-                "id": "emp-ankithakamble",
-                "name": "Ankitha Kamble",
-                "role": "Event Management & Promotions - Member",
-                "image": "/team/emm_ankitha.png",
-                "social": {
-                    "instagram": "https://www.instagram.com/ank1_tha",
-                    "linkedin": "https://www.linkedin.com/in/ankitha-kamble-4ba3b5380"
-                }
-            },
-            {
-                "id": "emp-pratiksha",
-                "name": "Pratiksha Reddy",
-                "role": "Event Management & Promotions - Member",
-                "image": "/team/emm_pratiksha.png",
-                "social": {
-                    "linkedin": "https://www.linkedin.com/in/bogale-pratiksha-reddy-11a186328",
-                    "Instagram": "https://www.instagram.com/urstrulypratikshaaa?igsh=cnFyaDR5ejZiYmdi"
                 }
             },
             {
@@ -359,23 +229,13 @@
                 }
             },
             {
-                "id": "emp-hansini",
-                "name": "Keesari Hansini",
+                "id": "emp-pratiksha",
+                "name": "Pratiksha Reddy",
                 "role": "Event Management & Promotions - Member",
-                "image": "/team/emm_hansini.png",
+                "image": "/team/emm_pratiksha.png",
                 "social": {
-                    "linkedin": "https://www.linkedin.com/in/hansini-reddy-k-152740327/",
-                    "instagram": "https://www.instagram.com/hansini_reddyy/",
-                    "github": "https://github.com/hansini01"
-                }
-            },
-            {
-                "id": "emp-zuveriyafirdous",
-                "name": "Zuveriya Firdous",
-                "role": "Event Management & Promotions - Member",
-                "image": "/team/emm_firdous.png",
-                "social": {
-                    "linkedin": "https://www.linkedin.com/in/zuveriya-firdous-6b7631329"
+                    "linkedin": "https://www.linkedin.com/in/bogale-pratiksha-reddy-11a186328",
+                    "Instagram": "https://www.instagram.com/urstrulypratikshaaa?igsh=cnFyaDR5ejZiYmdi"
                 }
             },
             {
